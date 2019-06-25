@@ -1,3 +1,0 @@
-variables:
-  NodeVersion: "10.x"
-  skipComponentGovernanceDetection: true
