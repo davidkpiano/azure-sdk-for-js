@@ -1,0 +1,619 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@azure/arm-apimanagement</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@azure/arm-apimanagement</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> @azure/arm-apimanagement</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h2 id="azure-apimanagementclient-sdk-for-javascript">Azure ApiManagementClient SDK for JavaScript</h2>
+				<p>This package contains an isomorphic SDK for ApiManagementClient.</p>
+				<h3 id="currently-supported-environments">Currently supported environments</h3>
+				<ul>
+					<li>Node.js version 6.x.x or higher</li>
+					<li>Browser JavaScript</li>
+				</ul>
+				<h3 id="how-to-install">How to Install</h3>
+				<pre><code class="language-bash">npm install @azure/arm-apimanagement</code></pre>
+				<h3 id="how-to-use">How to use</h3>
+				<h4 id="nodejs-authentication-client-creation-and-listbyservice-api-as-an-example-written-in-typescript-">nodejs - Authentication, client creation and listByService api as an example written in TypeScript.</h4>
+				<h5 id="install-azure-ms-rest-nodeauth">Install @azure/ms-rest-nodeauth</h5>
+				<pre><code class="language-bash">npm install @azure/ms-rest-nodeauth</code></pre>
+				<h5 id="sample-code">Sample code</h5>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRest <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-js"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRestAzure <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-azure-js"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRestNodeAuth <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-nodeauth"</span>;
+<span class="hljs-keyword">import</span> { ApiManagementClient, ApiManagementModels, ApiManagementMappers } <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/arm-apimanagement"</span>;
+<span class="hljs-keyword">const</span> subscriptionId = process.env[<span class="hljs-string">"AZURE_SUBSCRIPTION_ID"</span>];
+
+msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class="hljs-params">creds</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> ApiManagementClient(creds, subscriptionId);
+  <span class="hljs-keyword">const</span> resourceGroupName = <span class="hljs-string">"testresourceGroupName"</span>;
+  <span class="hljs-keyword">const</span> serviceName = <span class="hljs-string">"testserviceName"</span>;
+  <span class="hljs-keyword">const</span> filter = <span class="hljs-string">"testfilter"</span>;
+  <span class="hljs-keyword">const</span> top = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">const</span> skip = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">const</span> tags = <span class="hljs-string">"testtags"</span>;
+  <span class="hljs-keyword">const</span> expandApiVersionSet = <span class="hljs-literal">true</span>;
+  client.api.listByService(resourceGroupName, serviceName, filter, top, skip, tags, expandApiVersionSet).then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The result is:"</span>);
+    <span class="hljs-built_in">console</span>.log(result);
+  });
+}).catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.error(err);
+});</code></pre>
+				<h4 id="browser-authentication-client-creation-and-listbyservice-api-as-an-example-written-in-javascript-">browser - Authentication, client creation and listByService api as an example written in JavaScript.</h4>
+				<h5 id="install-azure-ms-rest-browserauth">Install @azure/ms-rest-browserauth</h5>
+				<pre><code class="language-bash">npm install @azure/ms-rest-browserauth</code></pre>
+				<h5 id="sample-code">Sample code</h5>
+				<p>See <a href="https://github.com/Azure/ms-rest-browserauth">https://github.com/Azure/ms-rest-browserauth</a> to learn how to authenticate to Azure in the browser.</p>
+				<ul>
+					<li>index.html<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>@azure/arm-apimanagement sample<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node_modules/@azure/ms-rest-js/dist/msRest.browser.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node_modules/@azure/ms-rest-azure-js/dist/msRestAzure.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node_modules/@azure/ms-rest-browserauth/dist/msAuth.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node_modules/@azure/arm-apimanagement/dist/arm-apimanagement.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> subscriptionId = <span class="hljs-string">"&lt;Subscription_Id&gt;"</span>;
+    <span class="hljs-keyword">const</span> authManager = <span class="hljs-keyword">new</span> msAuth.AuthManager({
+      <span class="hljs-attr">clientId</span>: <span class="hljs-string">"&lt;client id for your Azure AD app&gt;"</span>,
+      <span class="hljs-attr">tenant</span>: <span class="hljs-string">"&lt;optional tenant for your organization&gt;"</span>
+    });
+    authManager.finalizeLogin().then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (!res.isLoggedIn) {
+        <span class="hljs-comment">// may cause redirects</span>
+        authManager.login();
+      }
+      <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Azure.ArmApimanagement.ApiManagementClient(res.creds, subscriptionId);
+      <span class="hljs-keyword">const</span> resourceGroupName = <span class="hljs-string">"testresourceGroupName"</span>;
+      <span class="hljs-keyword">const</span> serviceName = <span class="hljs-string">"testserviceName"</span>;
+      <span class="hljs-keyword">const</span> filter = <span class="hljs-string">"testfilter"</span>;
+      <span class="hljs-keyword">const</span> top = <span class="hljs-number">1</span>;
+      <span class="hljs-keyword">const</span> skip = <span class="hljs-number">1</span>;
+      <span class="hljs-keyword">const</span> tags = <span class="hljs-string">"testtags"</span>;
+      <span class="hljs-keyword">const</span> expandApiVersionSet = <span class="hljs-literal">true</span>;
+      client.api.listByService(resourceGroupName, serviceName, filter, top, skip, tags, expandApiVersionSet).then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The result is:"</span>);
+        <span class="hljs-built_in">console</span>.log(result);
+      }).catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"An error occurred:"</span>);
+        <span class="hljs-built_in">console</span>.error(err);
+      });
+    });
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+					</li>
+				</ul>
+				<h2 id="related-projects">Related projects</h2>
+				<ul>
+					<li><a href="https://github.com/Azure/azure-sdk-for-js">Microsoft Azure SDK for Javascript</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_apimanagementclient_.html">"api<wbr>Management<wbr>Client"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_apimanagementclientcontext_.html">"api<wbr>Management<wbr>Client<wbr>Context"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apidiagnosticmappers_.html">"models/api<wbr>Diagnostic<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apiexportmappers_.html">"models/api<wbr>Export<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apiissueattachmentmappers_.html">"models/api<wbr>Issue<wbr>Attachment<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apiissuecommentmappers_.html">"models/api<wbr>Issue<wbr>Comment<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apiissuemappers_.html">"models/api<wbr>Issue<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apimanagementoperationsmappers_.html">"models/api<wbr>Management<wbr>Operations<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apimanagementservicemappers_.html">"models/api<wbr>Management<wbr>Service<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apimanagementserviceskusmappers_.html">"models/api<wbr>Management<wbr>Service<wbr>Skus<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apimappers_.html">"models/api<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apioperationmappers_.html">"models/api<wbr>Operation<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apioperationpolicymappers_.html">"models/api<wbr>Operation<wbr>Policy<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apipolicymappers_.html">"models/api<wbr>Policy<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apiproductmappers_.html">"models/api<wbr>Product<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apireleasemappers_.html">"models/api<wbr>Release<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apirevisionmappers_.html">"models/api<wbr>Revision<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apischemamappers_.html">"models/api<wbr>Schema<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apitagdescriptionmappers_.html">"models/api<wbr>Tag<wbr>Description<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_apiversionsetmappers_.html">"models/api<wbr>Version<wbr>Set<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_authorizationservermappers_.html">"models/authorization<wbr>Server<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_backendmappers_.html">"models/backend<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_cachemappers_.html">"models/cache<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_certificatemappers_.html">"models/certificate<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_delegationsettingsmappers_.html">"models/delegation<wbr>Settings<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_diagnosticmappers_.html">"models/diagnostic<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_emailtemplatemappers_.html">"models/email<wbr>Template<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_groupmappers_.html">"models/group<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_groupusermappers_.html">"models/group<wbr>User<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_identityprovidermappers_.html">"models/identity<wbr>Provider<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_index_.html">"models/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_issuemappers_.html">"models/issue<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_loggermappers_.html">"models/logger<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_mappers_.html">"models/mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_networkstatusmappers_.html">"models/network<wbr>Status<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_notificationmappers_.html">"models/notification<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_notificationrecipientemailmappers_.html">"models/notification<wbr>Recipient<wbr>Email<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_notificationrecipientusermappers_.html">"models/notification<wbr>Recipient<wbr>User<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_openidconnectprovidermappers_.html">"models/open<wbr>IdConnect<wbr>Provider<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_operationoperationsmappers_.html">"models/operation<wbr>Operations<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_parameters_.html">"models/parameters"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_policymappers_.html">"models/policy<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_policysnippetmappers_.html">"models/policy<wbr>Snippet<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_productapimappers_.html">"models/product<wbr>Api<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_productgroupmappers_.html">"models/product<wbr>Group<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_productmappers_.html">"models/product<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_productpolicymappers_.html">"models/product<wbr>Policy<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_productsubscriptionsmappers_.html">"models/product<wbr>Subscriptions<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_propertymappers_.html">"models/property<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_quotabycounterkeysmappers_.html">"models/quota<wbr>ByCounter<wbr>Keys<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_quotabyperiodkeysmappers_.html">"models/quota<wbr>ByPeriod<wbr>Keys<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_regionmappers_.html">"models/region<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_reportsmappers_.html">"models/reports<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_signinsettingsmappers_.html">"models/sign<wbr>InSettings<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_signupsettingsmappers_.html">"models/sign<wbr>UpSettings<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_subscriptionmappers_.html">"models/subscription<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_tagmappers_.html">"models/tag<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_tagresourcemappers_.html">"models/tag<wbr>Resource<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_tenantaccessgitmappers_.html">"models/tenant<wbr>Access<wbr>Git<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_tenantaccessmappers_.html">"models/tenant<wbr>Access<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_tenantconfigurationmappers_.html">"models/tenant<wbr>Configuration<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_userconfirmationpasswordmappers_.html">"models/user<wbr>Confirmation<wbr>Password<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_usergroupmappers_.html">"models/user<wbr>Group<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_useridentitiesmappers_.html">"models/user<wbr>Identities<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_usermappers_.html">"models/user<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_models_usersubscriptionmappers_.html">"models/user<wbr>Subscription<wbr>Mappers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_api_.html">"operations/api"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apidiagnostic_.html">"operations/api<wbr>Diagnostic"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apiexport_.html">"operations/api<wbr>Export"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apiissue_.html">"operations/api<wbr>Issue"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apiissueattachment_.html">"operations/api<wbr>Issue<wbr>Attachment"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apiissuecomment_.html">"operations/api<wbr>Issue<wbr>Comment"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apimanagementoperations_.html">"operations/api<wbr>Management<wbr>Operations"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apimanagementservice_.html">"operations/api<wbr>Management<wbr>Service"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apimanagementserviceskus_.html">"operations/api<wbr>Management<wbr>Service<wbr>Skus"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apioperation_.html">"operations/api<wbr>Operation"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apioperationpolicy_.html">"operations/api<wbr>Operation<wbr>Policy"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apipolicy_.html">"operations/api<wbr>Policy"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apiproduct_.html">"operations/api<wbr>Product"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apirelease_.html">"operations/api<wbr>Release"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apirevision_.html">"operations/api<wbr>Revision"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apischema_.html">"operations/api<wbr>Schema"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apitagdescription_.html">"operations/api<wbr>Tag<wbr>Description"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_apiversionset_.html">"operations/api<wbr>Version<wbr>Set"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_authorizationserver_.html">"operations/authorization<wbr>Server"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_backend_.html">"operations/backend"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_cache_.html">"operations/cache"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_certificate_.html">"operations/certificate"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_delegationsettings_.html">"operations/delegation<wbr>Settings"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_diagnostic_.html">"operations/diagnostic"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_emailtemplate_.html">"operations/email<wbr>Template"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_group_.html">"operations/group"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_groupuser_.html">"operations/group<wbr>User"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_identityprovider_.html">"operations/identity<wbr>Provider"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_index_.html">"operations/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_issue_.html">"operations/issue"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_logger_.html">"operations/logger"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_networkstatus_.html">"operations/network<wbr>Status"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_notification_.html">"operations/notification"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_notificationrecipientemail_.html">"operations/notification<wbr>Recipient<wbr>Email"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_notificationrecipientuser_.html">"operations/notification<wbr>Recipient<wbr>User"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_openidconnectprovider_.html">"operations/open<wbr>IdConnect<wbr>Provider"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_operationoperations_.html">"operations/operation<wbr>Operations"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_policy_.html">"operations/policy"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_policysnippet_.html">"operations/policy<wbr>Snippet"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_product_.html">"operations/product"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_productapi_.html">"operations/product<wbr>Api"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_productgroup_.html">"operations/product<wbr>Group"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_productpolicy_.html">"operations/product<wbr>Policy"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_productsubscriptions_.html">"operations/product<wbr>Subscriptions"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_property_.html">"operations/property"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_quotabycounterkeys_.html">"operations/quota<wbr>ByCounter<wbr>Keys"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_quotabyperiodkeys_.html">"operations/quota<wbr>ByPeriod<wbr>Keys"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_region_.html">"operations/region"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_reports_.html">"operations/reports"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_signinsettings_.html">"operations/sign<wbr>InSettings"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_signupsettings_.html">"operations/sign<wbr>UpSettings"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_subscription_.html">"operations/subscription"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_tag_.html">"operations/tag"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_tagresource_.html">"operations/tag<wbr>Resource"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_tenantaccess_.html">"operations/tenant<wbr>Access"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_tenantaccessgit_.html">"operations/tenant<wbr>Access<wbr>Git"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_tenantconfiguration_.html">"operations/tenant<wbr>Configuration"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_user_.html">"operations/user"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_userconfirmationpassword_.html">"operations/user<wbr>Confirmation<wbr>Password"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_usergroup_.html">"operations/user<wbr>Group"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_useridentities_.html">"operations/user<wbr>Identities"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operations_usersubscription_.html">"operations/user<wbr>Subscription"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
