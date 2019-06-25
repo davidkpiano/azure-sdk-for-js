@@ -66,14 +66,66 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>External modules</h3>
+							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-external-module"><a href="modules/_abortcontroller_.html" class="tsd-kind-icon">"<wbr>Abort<wbr>Controller"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_abortsignal_.html" class="tsd-kind-icon">"<wbr>Abort<wbr>Signal"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_aborter_.html" class="tsd-kind-icon">"aborter"</a></li>
+								<li class="tsd-kind-class"><a href="classes/abortcontroller.html" class="tsd-kind-icon">Abort<wbr>Controller</a></li>
+								<li class="tsd-kind-class"><a href="classes/aborterror.html" class="tsd-kind-icon">Abort<wbr>Error</a></li>
+								<li class="tsd-kind-class"><a href="classes/abortsignal.html" class="tsd-kind-icon">Abort<wbr>Signal</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface"><a href="interfaces/abortsignallike.html" class="tsd-kind-icon">Abort<wbr>Signal<wbr>Like</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="globals.html#abortsignal" class="tsd-kind-icon">abort<wbr>Signal</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="abortsignal" class="tsd-anchor"></a>
+					<h3>abort<wbr>Signal</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">abort<wbr>Signal<span class="tsd-signature-symbol">(</span>signal<span class="tsd-signature-symbol">: </span><a href="classes/abortsignal.html" class="tsd-signature-type">AbortSignal</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/core/abort-controller/src/AbortSignal.ts#L144">AbortSignal.ts:144</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Helper to trigger an abort event immediately, the onabort and all abort event listeners will be triggered.
+									Will try to trigger abort event for all linked AbortSignal nodes.</p>
+								</div>
+								<ul>
+									<li>If there is a timeout, the timer will be cancelled.</li>
+									<li>If aborted is true, nothing will happen.</li>
+								</ul>
+								<dl class="tsd-comment-tags">
+									<dt>internal</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>signal: <a href="classes/abortsignal.html" class="tsd-signature-type">AbortSignal</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -83,19 +135,25 @@
 					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_abortcontroller_.html">"<wbr>Abort<wbr>Controller"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_abortsignal_.html">"<wbr>Abort<wbr>Signal"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_aborter_.html">"aborter"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/abortcontroller.html" class="tsd-kind-icon">Abort<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/aborterror.html" class="tsd-kind-icon">Abort<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/abortsignal.html" class="tsd-kind-icon">Abort<wbr>Signal</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/abortsignallike.html" class="tsd-kind-icon">Abort<wbr>Signal<wbr>Like</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#abortsignal" class="tsd-kind-icon">abort<wbr>Signal</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

@@ -66,19 +66,2464 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>External modules</h3>
+							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-external-module"><a href="modules/_models_eventsmappers_.html" class="tsd-kind-icon">"models/events<wbr>Mappers"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_models_index_.html" class="tsd-kind-icon">"models/index"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_models_mappers_.html" class="tsd-kind-icon">"models/mappers"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_models_parameters_.html" class="tsd-kind-icon">"models/parameters"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_operations_events_.html" class="tsd-kind-icon">"operations/events"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_operations_index_.html" class="tsd-kind-icon">"operations/index"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_personalizerclient_.html" class="tsd-kind-icon">"personalizer<wbr>Client"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_personalizerclientcontext_.html" class="tsd-kind-icon">"personalizer<wbr>Client<wbr>Context"</a></li>
+								<li class="tsd-kind-class"><a href="classes/events.html" class="tsd-kind-icon">Events</a></li>
+								<li class="tsd-kind-class"><a href="classes/personalizerclientcontext.html" class="tsd-kind-icon">Personalizer<wbr>Client<wbr>Context</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="globals.html#errorcode" class="tsd-kind-icon">Error<wbr>Code</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#rankresponse2" class="tsd-kind-icon">Rank<wbr>Response2</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal"><a href="globals.html#errorresponse" class="tsd-kind-icon">Error<wbr>Response</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#internalerror" class="tsd-kind-icon">Internal<wbr>Error</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#personalizererror" class="tsd-kind-icon">Personalizer<wbr>Error</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#rankrequest" class="tsd-kind-icon">Rank<wbr>Request</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#rankresponse" class="tsd-kind-icon">Rank<wbr>Response</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#rankableaction" class="tsd-kind-icon">Rankable<wbr>Action</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#rankedaction" class="tsd-kind-icon">Ranked<wbr>Action</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#rewardrequest" class="tsd-kind-icon">Reward<wbr>Request</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#endpoint" class="tsd-kind-icon">endpoint</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#eventid" class="tsd-kind-icon">event<wbr>Id</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="errorcode" class="tsd-anchor"></a>
+					<h3>Error<wbr>Code</h3>
+					<div class="tsd-signature tsd-kind-icon">Error<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"BadRequest"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"ResourceNotFound"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"InternalServerError"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L172">models/index.ts:172</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Defines values for ErrorCode.
+							Possible values include: &#39;BadRequest&#39;, &#39;ResourceNotFound&#39;, &#39;InternalServerError&#39;</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>readonly</dt>
+							<dd></dd>
+							<dt>enum</dt>
+							<dd><p>{string}</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="rankresponse2" class="tsd-anchor"></a>
+					<h3>Rank<wbr>Response2</h3>
+					<div class="tsd-signature tsd-kind-icon">Rank<wbr>Response2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RankResponse</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L177">models/index.ts:177</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Contains response data for the rank operation.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="errorresponse" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Error<wbr>Response</h3>
+					<div class="tsd-signature tsd-kind-icon">Error<wbr>Response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L84">models/mappers.ts:84</a></li>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L56">models/index.ts:56</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used to return an error to the client</p>
+						</div>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="errorresponse.error" class="tsd-anchor"></a>
+						<h3>error</h3>
+						<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PersonalizerError</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L60">models/index.ts:60</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>The error object.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="errorresponse.serializedname" class="tsd-anchor"></a>
+						<h3>serialized<wbr>Name</h3>
+						<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;ErrorResponse&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L85">models/mappers.ts:85</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="errorresponse.type" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L86">models/mappers.ts:86</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="errorresponse.type.classname" class="tsd-anchor"></a>
+							<h3>class<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;ErrorResponse&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L88">models/mappers.ts:88</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="errorresponse.type.name" class="tsd-anchor"></a>
+							<h3>name</h3>
+							<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L87">models/mappers.ts:87</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="errorresponse.type.modelproperties" class="tsd-anchor"></a>
+							<h3>model<wbr>Properties</h3>
+							<div class="tsd-signature tsd-kind-icon">model<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L89">models/mappers.ts:89</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="errorresponse.type.modelproperties.error-1" class="tsd-anchor"></a>
+								<h3>error</h3>
+								<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L90">models/mappers.ts:90</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="errorresponse.type.modelproperties.error-1.required" class="tsd-anchor"></a>
+									<h3>required</h3>
+									<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L91">models/mappers.ts:91</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="errorresponse.type.modelproperties.error-1.serializedname-1" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;error&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L92">models/mappers.ts:92</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="errorresponse.type.modelproperties.error-1.type-1" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L93">models/mappers.ts:93</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="errorresponse.type.modelproperties.error-1.type-1.classname-1" class="tsd-anchor"></a>
+										<h3>class<wbr>Name</h3>
+										<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;PersonalizerError&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L95">models/mappers.ts:95</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="errorresponse.type.modelproperties.error-1.type-1.name-1" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L94">models/mappers.ts:94</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="internalerror" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Internal<wbr>Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Internal<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L12">models/mappers.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L15">models/index.ts:15</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An object containing more specific information than the parent object about the error.</p>
+						</div>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="internalerror.code" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> code</h3>
+						<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L19">models/index.ts:19</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Detailed error code.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="internalerror.innererror" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> innererror</h3>
+						<div class="tsd-signature tsd-kind-icon">innererror<span class="tsd-signature-symbol">:</span> <a href="globals.html#internalerror" class="tsd-signature-type">InternalError</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L23">models/index.ts:23</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>The error object.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="internalerror.serializedname" class="tsd-anchor"></a>
+						<h3>serialized<wbr>Name</h3>
+						<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;InternalError&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L13">models/mappers.ts:13</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="internalerror.type" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L14">models/mappers.ts:14</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="internalerror.type.classname" class="tsd-anchor"></a>
+							<h3>class<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;InternalError&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L16">models/mappers.ts:16</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="internalerror.type.name" class="tsd-anchor"></a>
+							<h3>name</h3>
+							<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L15">models/mappers.ts:15</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="internalerror.type.modelproperties" class="tsd-anchor"></a>
+							<h3>model<wbr>Properties</h3>
+							<div class="tsd-signature tsd-kind-icon">model<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L17">models/mappers.ts:17</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="internalerror.type.modelproperties.code-1" class="tsd-anchor"></a>
+								<h3>code</h3>
+								<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L18">models/mappers.ts:18</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="internalerror.type.modelproperties.code-1.serializedname-1" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;code&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L19">models/mappers.ts:19</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="internalerror.type.modelproperties.code-1.type-1" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L20">models/mappers.ts:20</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="internalerror.type.modelproperties.code-1.type-1.name-1" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L21">models/mappers.ts:21</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="internalerror.type.modelproperties.innererror-1" class="tsd-anchor"></a>
+								<h3>innererror</h3>
+								<div class="tsd-signature tsd-kind-icon">innererror<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L24">models/mappers.ts:24</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="internalerror.type.modelproperties.innererror-1.serializedname-2" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;innererror&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L25">models/mappers.ts:25</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="internalerror.type.modelproperties.innererror-1.type-2" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L26">models/mappers.ts:26</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="internalerror.type.modelproperties.innererror-1.type-2.classname-1" class="tsd-anchor"></a>
+										<h3>class<wbr>Name</h3>
+										<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;InternalError&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L28">models/mappers.ts:28</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="internalerror.type.modelproperties.innererror-1.type-2.name-2" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L27">models/mappers.ts:27</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="personalizererror" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Personalizer<wbr>Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Personalizer<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L35">models/mappers.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L29">models/index.ts:29</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The error object.</p>
+						</div>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="personalizererror.code" class="tsd-anchor"></a>
+						<h3>code</h3>
+						<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <a href="globals.html#errorcode" class="tsd-signature-type">ErrorCode</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L34">models/index.ts:34</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>High level error code. Possible values include: &#39;BadRequest&#39;, &#39;ResourceNotFound&#39;,
+								&#39;InternalServerError&#39;</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="personalizererror.details" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> details</h3>
+						<div class="tsd-signature tsd-kind-icon">details<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PersonalizerError</span><span class="tsd-signature-symbol">[]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L46">models/index.ts:46</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>An array of details about specific errors that led to this reported error.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="personalizererror.innererror" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> inner<wbr>Error</h3>
+						<div class="tsd-signature tsd-kind-icon">inner<wbr>Error<span class="tsd-signature-symbol">:</span> <a href="globals.html#internalerror" class="tsd-signature-type">InternalError</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L50">models/index.ts:50</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Finer error details.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="personalizererror.message" class="tsd-anchor"></a>
+						<h3>message</h3>
+						<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L38">models/index.ts:38</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>A message explaining the error reported by the service.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="personalizererror.serializedname" class="tsd-anchor"></a>
+						<h3>serialized<wbr>Name</h3>
+						<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;PersonalizerError&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L36">models/mappers.ts:36</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="personalizererror.target" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> target</h3>
+						<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L42">models/index.ts:42</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Error source element.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="personalizererror.type" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L37">models/mappers.ts:37</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="personalizererror.type.classname" class="tsd-anchor"></a>
+							<h3>class<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;PersonalizerError&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L39">models/mappers.ts:39</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="personalizererror.type.name" class="tsd-anchor"></a>
+							<h3>name</h3>
+							<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L38">models/mappers.ts:38</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="personalizererror.type.modelproperties" class="tsd-anchor"></a>
+							<h3>model<wbr>Properties</h3>
+							<div class="tsd-signature tsd-kind-icon">model<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L40">models/mappers.ts:40</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="personalizererror.type.modelproperties.code-1" class="tsd-anchor"></a>
+								<h3>code</h3>
+								<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L41">models/mappers.ts:41</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.code-1.required" class="tsd-anchor"></a>
+									<h3>required</h3>
+									<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L42">models/mappers.ts:42</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.code-1.serializedname-1" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;code&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L43">models/mappers.ts:43</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.code-1.type-1" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L44">models/mappers.ts:44</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="personalizererror.type.modelproperties.code-1.type-1.name-1" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L45">models/mappers.ts:45</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="personalizererror.type.modelproperties.details-1" class="tsd-anchor"></a>
+								<h3>details</h3>
+								<div class="tsd-signature tsd-kind-icon">details<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L61">models/mappers.ts:61</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.details-1.serializedname-2" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;details&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L62">models/mappers.ts:62</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.details-1.type-2" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L63">models/mappers.ts:63</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="personalizererror.type.modelproperties.details-1.type-2.name-2" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Sequence"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Sequence&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L64">models/mappers.ts:64</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+										<a name="personalizererror.type.modelproperties.details-1.type-2.element" class="tsd-anchor"></a>
+										<h3>element</h3>
+										<div class="tsd-signature tsd-kind-icon">element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L65">models/mappers.ts:65</a></li>
+											</ul>
+										</aside>
+										<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+											<a name="personalizererror.type.modelproperties.details-1.type-2.element.type-3" class="tsd-anchor"></a>
+											<h3>type</h3>
+											<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L66">models/mappers.ts:66</a></li>
+												</ul>
+											</aside>
+											<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+												<a name="personalizererror.type.modelproperties.details-1.type-2.element.type-3.classname-1" class="tsd-anchor"></a>
+												<h3>class<wbr>Name</h3>
+												<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;PersonalizerError&quot;</span></div>
+												<aside class="tsd-sources">
+													<ul>
+														<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L68">models/mappers.ts:68</a></li>
+													</ul>
+												</aside>
+											</section>
+											<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+												<a name="personalizererror.type.modelproperties.details-1.type-2.element.type-3.name-3" class="tsd-anchor"></a>
+												<h3>name</h3>
+												<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+												<aside class="tsd-sources">
+													<ul>
+														<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L67">models/mappers.ts:67</a></li>
+													</ul>
+												</aside>
+											</section>
+										</section>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="personalizererror.type.modelproperties.innererror-1" class="tsd-anchor"></a>
+								<h3>inner<wbr>Error</h3>
+								<div class="tsd-signature tsd-kind-icon">inner<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L73">models/mappers.ts:73</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.innererror-1.serializedname-3" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;innerError&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L74">models/mappers.ts:74</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.innererror-1.type-4" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L75">models/mappers.ts:75</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="personalizererror.type.modelproperties.innererror-1.type-4.classname-2" class="tsd-anchor"></a>
+										<h3>class<wbr>Name</h3>
+										<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;InternalError&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L77">models/mappers.ts:77</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="personalizererror.type.modelproperties.innererror-1.type-4.name-4" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L76">models/mappers.ts:76</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="personalizererror.type.modelproperties.message-1" class="tsd-anchor"></a>
+								<h3>message</h3>
+								<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L48">models/mappers.ts:48</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.message-1.required-1" class="tsd-anchor"></a>
+									<h3>required</h3>
+									<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L49">models/mappers.ts:49</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.message-1.serializedname-4" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;message&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L50">models/mappers.ts:50</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.message-1.type-5" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L51">models/mappers.ts:51</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="personalizererror.type.modelproperties.message-1.type-5.name-5" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L52">models/mappers.ts:52</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="personalizererror.type.modelproperties.target-1" class="tsd-anchor"></a>
+								<h3>target</h3>
+								<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L55">models/mappers.ts:55</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.target-1.serializedname-5" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;target&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L56">models/mappers.ts:56</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="personalizererror.type.modelproperties.target-1.type-6" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L57">models/mappers.ts:57</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="personalizererror.type.modelproperties.target-1.type-6.name-6" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L58">models/mappers.ts:58</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="rankrequest" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Rank<wbr>Request</h3>
+					<div class="tsd-signature tsd-kind-icon">Rank<wbr>Request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L151">models/mappers.ts:151</a></li>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L90">models/index.ts:90</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Request a set of actions to be ranked by the Personalizer service.</p>
+						</div>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankrequest.actions" class="tsd-anchor"></a>
+						<h3>actions</h3>
+						<div class="tsd-signature tsd-kind-icon">actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RankableAction</span><span class="tsd-signature-symbol">[]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L104">models/index.ts:104</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>The set of actions the Personalizer service can pick from.
+									The set should not contain more than 50 actions.
+									The order of the actions does not affect the rank result but the order
+								should match the sequence your application would have used to display them.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankrequest.contextfeatures" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> context<wbr>Features</h3>
+						<div class="tsd-signature tsd-kind-icon">context<wbr>Features<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L97">models/index.ts:97</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Features of the context used for Personalizer as a
+									dictionary of dictionaries. This depends on the application, and
+									typically includes features about the current user, their
+								device, profile information, data about time and date, etc.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankrequest.deferactivation" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> defer<wbr>Activation</h3>
+						<div class="tsd-signature tsd-kind-icon">defer<wbr>Activation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L123">models/index.ts:123</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Send false if the user will see the rank results, therefore
+									Personalizer will expect a Reward call, otherwise it will assign the default
+									Reward to the event. Send true if it is possible the user will not see the
+									rank results, because the page is rendering later, or the Rank results may be
+								overridden by code further downstream. Default value: false.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankrequest.eventid" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> event<wbr>Id</h3>
+						<div class="tsd-signature tsd-kind-icon">event<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L115">models/index.ts:115</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Optionally pass an eventId that uniquely identifies this Rank event.
+									If null, the service generates a unique eventId. The eventId will be used for
+									associating this request with its reward, as well as seeding the pseudo-random
+								generator when making a Personalizer call.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankrequest.excludedactions" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> excluded<wbr>Actions</h3>
+						<div class="tsd-signature tsd-kind-icon">excluded<wbr>Actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L108">models/index.ts:108</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>The set of action ids to exclude from ranking.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankrequest.serializedname" class="tsd-anchor"></a>
+						<h3>serialized<wbr>Name</h3>
+						<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankRequest&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L152">models/mappers.ts:152</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="rankrequest.type" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L153">models/mappers.ts:153</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rankrequest.type.classname" class="tsd-anchor"></a>
+							<h3>class<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankRequest&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L155">models/mappers.ts:155</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rankrequest.type.name" class="tsd-anchor"></a>
+							<h3>name</h3>
+							<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L154">models/mappers.ts:154</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="rankrequest.type.modelproperties" class="tsd-anchor"></a>
+							<h3>model<wbr>Properties</h3>
+							<div class="tsd-signature tsd-kind-icon">model<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L156">models/mappers.ts:156</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankrequest.type.modelproperties.actions-1" class="tsd-anchor"></a>
+								<h3>actions</h3>
+								<div class="tsd-signature tsd-kind-icon">actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L168">models/mappers.ts:168</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.actions-1.required" class="tsd-anchor"></a>
+									<h3>required</h3>
+									<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L169">models/mappers.ts:169</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.actions-1.serializedname-1" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;actions&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L170">models/mappers.ts:170</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.actions-1.type-1" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L171">models/mappers.ts:171</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankrequest.type.modelproperties.actions-1.type-1.name-1" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Sequence"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Sequence&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L172">models/mappers.ts:172</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+										<a name="rankrequest.type.modelproperties.actions-1.type-1.element" class="tsd-anchor"></a>
+										<h3>element</h3>
+										<div class="tsd-signature tsd-kind-icon">element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L173">models/mappers.ts:173</a></li>
+											</ul>
+										</aside>
+										<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+											<a name="rankrequest.type.modelproperties.actions-1.type-1.element.type-2" class="tsd-anchor"></a>
+											<h3>type</h3>
+											<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L174">models/mappers.ts:174</a></li>
+												</ul>
+											</aside>
+											<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+												<a name="rankrequest.type.modelproperties.actions-1.type-1.element.type-2.classname-1" class="tsd-anchor"></a>
+												<h3>class<wbr>Name</h3>
+												<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankableAction&quot;</span></div>
+												<aside class="tsd-sources">
+													<ul>
+														<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L176">models/mappers.ts:176</a></li>
+													</ul>
+												</aside>
+											</section>
+											<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+												<a name="rankrequest.type.modelproperties.actions-1.type-1.element.type-2.name-2" class="tsd-anchor"></a>
+												<h3>name</h3>
+												<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+												<aside class="tsd-sources">
+													<ul>
+														<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L175">models/mappers.ts:175</a></li>
+													</ul>
+												</aside>
+											</section>
+										</section>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankrequest.type.modelproperties.contextfeatures-1" class="tsd-anchor"></a>
+								<h3>context<wbr>Features</h3>
+								<div class="tsd-signature tsd-kind-icon">context<wbr>Features<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L157">models/mappers.ts:157</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.contextfeatures-1.serializedname-2" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;contextFeatures&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L158">models/mappers.ts:158</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.contextfeatures-1.type-3" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L159">models/mappers.ts:159</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankrequest.type.modelproperties.contextfeatures-1.type-3.name-3" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Sequence"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Sequence&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L160">models/mappers.ts:160</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+										<a name="rankrequest.type.modelproperties.contextfeatures-1.type-3.element-1" class="tsd-anchor"></a>
+										<h3>element</h3>
+										<div class="tsd-signature tsd-kind-icon">element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L161">models/mappers.ts:161</a></li>
+											</ul>
+										</aside>
+										<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+											<a name="rankrequest.type.modelproperties.contextfeatures-1.type-3.element-1.type-4" class="tsd-anchor"></a>
+											<h3>type</h3>
+											<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L162">models/mappers.ts:162</a></li>
+												</ul>
+											</aside>
+											<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+												<a name="rankrequest.type.modelproperties.contextfeatures-1.type-3.element-1.type-4.name-4" class="tsd-anchor"></a>
+												<h3>name</h3>
+												<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Object"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Object&quot;</span></div>
+												<aside class="tsd-sources">
+													<ul>
+														<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L163">models/mappers.ts:163</a></li>
+													</ul>
+												</aside>
+											</section>
+										</section>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankrequest.type.modelproperties.deferactivation-1" class="tsd-anchor"></a>
+								<h3>defer<wbr>Activation</h3>
+								<div class="tsd-signature tsd-kind-icon">defer<wbr>Activation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L201">models/mappers.ts:201</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.deferactivation-1.defaultvalue" class="tsd-anchor"></a>
+									<h3>default<wbr>Value</h3>
+									<div class="tsd-signature tsd-kind-icon">default<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L203">models/mappers.ts:203</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.deferactivation-1.serializedname-3" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;deferActivation&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L202">models/mappers.ts:202</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.deferactivation-1.type-5" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L204">models/mappers.ts:204</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankrequest.type.modelproperties.deferactivation-1.type-5.name-5" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Boolean"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Boolean&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L205">models/mappers.ts:205</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankrequest.type.modelproperties.eventid-1" class="tsd-anchor"></a>
+								<h3>event<wbr>Id</h3>
+								<div class="tsd-signature tsd-kind-icon">event<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L192">models/mappers.ts:192</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.eventid-1.serializedname-4" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;eventId&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L193">models/mappers.ts:193</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.eventid-1.constraints" class="tsd-anchor"></a>
+									<h3>constraints</h3>
+									<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L194">models/mappers.ts:194</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankrequest.type.modelproperties.eventid-1.constraints.maxlength" class="tsd-anchor"></a>
+										<h3>Max<wbr>Length</h3>
+										<div class="tsd-signature tsd-kind-icon">Max<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;256</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L195">models/mappers.ts:195</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.eventid-1.type-6" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L197">models/mappers.ts:197</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankrequest.type.modelproperties.eventid-1.type-6.name-6" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L198">models/mappers.ts:198</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankrequest.type.modelproperties.excludedactions-1" class="tsd-anchor"></a>
+								<h3>excluded<wbr>Actions</h3>
+								<div class="tsd-signature tsd-kind-icon">excluded<wbr>Actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L181">models/mappers.ts:181</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.excludedactions-1.serializedname-5" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;excludedActions&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L182">models/mappers.ts:182</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankrequest.type.modelproperties.excludedactions-1.type-7" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L183">models/mappers.ts:183</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankrequest.type.modelproperties.excludedactions-1.type-7.name-7" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Sequence"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Sequence&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L184">models/mappers.ts:184</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+										<a name="rankrequest.type.modelproperties.excludedactions-1.type-7.element-2" class="tsd-anchor"></a>
+										<h3>element</h3>
+										<div class="tsd-signature tsd-kind-icon">element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L185">models/mappers.ts:185</a></li>
+											</ul>
+										</aside>
+										<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+											<a name="rankrequest.type.modelproperties.excludedactions-1.type-7.element-2.type-8" class="tsd-anchor"></a>
+											<h3>type</h3>
+											<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L186">models/mappers.ts:186</a></li>
+												</ul>
+											</aside>
+											<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+												<a name="rankrequest.type.modelproperties.excludedactions-1.type-7.element-2.type-8.name-8" class="tsd-anchor"></a>
+												<h3>name</h3>
+												<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+												<aside class="tsd-sources">
+													<ul>
+														<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L187">models/mappers.ts:187</a></li>
+													</ul>
+												</aside>
+											</section>
+										</section>
+									</section>
+								</section>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="rankresponse" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Rank<wbr>Response</h3>
+					<div class="tsd-signature tsd-kind-icon">Rank<wbr>Response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L243">models/mappers.ts:243</a></li>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L145">models/index.ts:145</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A resulting ordered list of actions that result from a rank request.</p>
+						</div>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankresponse.eventid" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> event<wbr>Id</h3>
+						<div class="tsd-signature tsd-kind-icon">event<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L155">models/index.ts:155</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>The eventId for the round trip from request to response.
+								<strong>NOTE: This property will not be serialized. It can only be populated by the server.</strong></p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankresponse.ranking" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> ranking</h3>
+						<div class="tsd-signature tsd-kind-icon">ranking<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RankedAction</span><span class="tsd-signature-symbol">[]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L150">models/index.ts:150</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>The calculated ranking for the current request.
+								<strong>NOTE: This property will not be serialized. It can only be populated by the server.</strong></p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankresponse.rewardactionid" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> reward<wbr>Action<wbr>Id</h3>
+						<div class="tsd-signature tsd-kind-icon">reward<wbr>Action<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L163">models/index.ts:163</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>The action chosen by the Personalizer service. This is the action for which to report the
+									reward. This might not be the
+									first found in &#39;ranking&#39; if an action in the request in first position was part of the
+									excluded ids.
+								<strong>NOTE: This property will not be serialized. It can only be populated by the server.</strong></p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankresponse.serializedname" class="tsd-anchor"></a>
+						<h3>serialized<wbr>Name</h3>
+						<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankResponse&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L244">models/mappers.ts:244</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="rankresponse.type" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L245">models/mappers.ts:245</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rankresponse.type.classname" class="tsd-anchor"></a>
+							<h3>class<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankResponse&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L247">models/mappers.ts:247</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rankresponse.type.name" class="tsd-anchor"></a>
+							<h3>name</h3>
+							<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L246">models/mappers.ts:246</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="rankresponse.type.modelproperties" class="tsd-anchor"></a>
+							<h3>model<wbr>Properties</h3>
+							<div class="tsd-signature tsd-kind-icon">model<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L248">models/mappers.ts:248</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankresponse.type.modelproperties.eventid-1" class="tsd-anchor"></a>
+								<h3>event<wbr>Id</h3>
+								<div class="tsd-signature tsd-kind-icon">event<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L262">models/mappers.ts:262</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.eventid-1.readonly" class="tsd-anchor"></a>
+									<h3>read<wbr>Only</h3>
+									<div class="tsd-signature tsd-kind-icon">read<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L263">models/mappers.ts:263</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.eventid-1.serializedname-1" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;eventId&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L264">models/mappers.ts:264</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.eventid-1.constraints" class="tsd-anchor"></a>
+									<h3>constraints</h3>
+									<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L265">models/mappers.ts:265</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankresponse.type.modelproperties.eventid-1.constraints.maxlength" class="tsd-anchor"></a>
+										<h3>Max<wbr>Length</h3>
+										<div class="tsd-signature tsd-kind-icon">Max<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;256</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L266">models/mappers.ts:266</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.eventid-1.type-1" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L268">models/mappers.ts:268</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankresponse.type.modelproperties.eventid-1.type-1.name-1" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L269">models/mappers.ts:269</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankresponse.type.modelproperties.ranking-1" class="tsd-anchor"></a>
+								<h3>ranking</h3>
+								<div class="tsd-signature tsd-kind-icon">ranking<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L249">models/mappers.ts:249</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.ranking-1.readonly-1" class="tsd-anchor"></a>
+									<h3>read<wbr>Only</h3>
+									<div class="tsd-signature tsd-kind-icon">read<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L250">models/mappers.ts:250</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.ranking-1.serializedname-2" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;ranking&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L251">models/mappers.ts:251</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.ranking-1.type-2" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L252">models/mappers.ts:252</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankresponse.type.modelproperties.ranking-1.type-2.name-2" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Sequence"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Sequence&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L253">models/mappers.ts:253</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+										<a name="rankresponse.type.modelproperties.ranking-1.type-2.element" class="tsd-anchor"></a>
+										<h3>element</h3>
+										<div class="tsd-signature tsd-kind-icon">element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L254">models/mappers.ts:254</a></li>
+											</ul>
+										</aside>
+										<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+											<a name="rankresponse.type.modelproperties.ranking-1.type-2.element.type-3" class="tsd-anchor"></a>
+											<h3>type</h3>
+											<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L255">models/mappers.ts:255</a></li>
+												</ul>
+											</aside>
+											<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+												<a name="rankresponse.type.modelproperties.ranking-1.type-2.element.type-3.classname-1" class="tsd-anchor"></a>
+												<h3>class<wbr>Name</h3>
+												<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankedAction&quot;</span></div>
+												<aside class="tsd-sources">
+													<ul>
+														<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L257">models/mappers.ts:257</a></li>
+													</ul>
+												</aside>
+											</section>
+											<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+												<a name="rankresponse.type.modelproperties.ranking-1.type-2.element.type-3.name-3" class="tsd-anchor"></a>
+												<h3>name</h3>
+												<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+												<aside class="tsd-sources">
+													<ul>
+														<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L256">models/mappers.ts:256</a></li>
+													</ul>
+												</aside>
+											</section>
+										</section>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankresponse.type.modelproperties.rewardactionid-1" class="tsd-anchor"></a>
+								<h3>reward<wbr>Action<wbr>Id</h3>
+								<div class="tsd-signature tsd-kind-icon">reward<wbr>Action<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L272">models/mappers.ts:272</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.rewardactionid-1.readonly-2" class="tsd-anchor"></a>
+									<h3>read<wbr>Only</h3>
+									<div class="tsd-signature tsd-kind-icon">read<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L273">models/mappers.ts:273</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.rewardactionid-1.serializedname-3" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;rewardActionId&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L274">models/mappers.ts:274</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.rewardactionid-1.constraints-1" class="tsd-anchor"></a>
+									<h3>constraints</h3>
+									<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L275">models/mappers.ts:275</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankresponse.type.modelproperties.rewardactionid-1.constraints-1.maxlength-1" class="tsd-anchor"></a>
+										<h3>Max<wbr>Length</h3>
+										<div class="tsd-signature tsd-kind-icon">Max<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;256</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L276">models/mappers.ts:276</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankresponse.type.modelproperties.rewardactionid-1.type-4" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L278">models/mappers.ts:278</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankresponse.type.modelproperties.rewardactionid-1.type-4.name-4" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L279">models/mappers.ts:279</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="rankableaction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Rankable<wbr>Action</h3>
+					<div class="tsd-signature tsd-kind-icon">Rankable<wbr>Action<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L119">models/mappers.ts:119</a></li>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L76">models/index.ts:76</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An action with it&#39;s associated features used for ranking.</p>
+						</div>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankableaction.features" class="tsd-anchor"></a>
+						<h3>features</h3>
+						<div class="tsd-signature tsd-kind-icon">features<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L84">models/index.ts:84</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>List of dictionaries containing features.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankableaction.id" class="tsd-anchor"></a>
+						<h3>id</h3>
+						<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L80">models/index.ts:80</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Id of the action.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankableaction.serializedname" class="tsd-anchor"></a>
+						<h3>serialized<wbr>Name</h3>
+						<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankableAction&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L120">models/mappers.ts:120</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="rankableaction.type" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L121">models/mappers.ts:121</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rankableaction.type.classname" class="tsd-anchor"></a>
+							<h3>class<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankableAction&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L123">models/mappers.ts:123</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rankableaction.type.name" class="tsd-anchor"></a>
+							<h3>name</h3>
+							<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L122">models/mappers.ts:122</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="rankableaction.type.modelproperties" class="tsd-anchor"></a>
+							<h3>model<wbr>Properties</h3>
+							<div class="tsd-signature tsd-kind-icon">model<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L124">models/mappers.ts:124</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankableaction.type.modelproperties.features-1" class="tsd-anchor"></a>
+								<h3>features</h3>
+								<div class="tsd-signature tsd-kind-icon">features<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L135">models/mappers.ts:135</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankableaction.type.modelproperties.features-1.required" class="tsd-anchor"></a>
+									<h3>required</h3>
+									<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L136">models/mappers.ts:136</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankableaction.type.modelproperties.features-1.serializedname-1" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;features&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L137">models/mappers.ts:137</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankableaction.type.modelproperties.features-1.type-1" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L138">models/mappers.ts:138</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankableaction.type.modelproperties.features-1.type-1.name-1" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Sequence"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Sequence&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L139">models/mappers.ts:139</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+										<a name="rankableaction.type.modelproperties.features-1.type-1.element" class="tsd-anchor"></a>
+										<h3>element</h3>
+										<div class="tsd-signature tsd-kind-icon">element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L140">models/mappers.ts:140</a></li>
+											</ul>
+										</aside>
+										<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+											<a name="rankableaction.type.modelproperties.features-1.type-1.element.type-2" class="tsd-anchor"></a>
+											<h3>type</h3>
+											<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L141">models/mappers.ts:141</a></li>
+												</ul>
+											</aside>
+											<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+												<a name="rankableaction.type.modelproperties.features-1.type-1.element.type-2.name-2" class="tsd-anchor"></a>
+												<h3>name</h3>
+												<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Object"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Object&quot;</span></div>
+												<aside class="tsd-sources">
+													<ul>
+														<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L142">models/mappers.ts:142</a></li>
+													</ul>
+												</aside>
+											</section>
+										</section>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankableaction.type.modelproperties.id-1" class="tsd-anchor"></a>
+								<h3>id</h3>
+								<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L125">models/mappers.ts:125</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankableaction.type.modelproperties.id-1.required-1" class="tsd-anchor"></a>
+									<h3>required</h3>
+									<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L126">models/mappers.ts:126</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankableaction.type.modelproperties.id-1.serializedname-2" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;id&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L127">models/mappers.ts:127</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankableaction.type.modelproperties.id-1.constraints" class="tsd-anchor"></a>
+									<h3>constraints</h3>
+									<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L128">models/mappers.ts:128</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankableaction.type.modelproperties.id-1.constraints.maxlength" class="tsd-anchor"></a>
+										<h3>Max<wbr>Length</h3>
+										<div class="tsd-signature tsd-kind-icon">Max<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;256</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L129">models/mappers.ts:129</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankableaction.type.modelproperties.id-1.type-3" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L131">models/mappers.ts:131</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankableaction.type.modelproperties.id-1.type-3.name-3" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L132">models/mappers.ts:132</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="rankedaction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Ranked<wbr>Action</h3>
+					<div class="tsd-signature tsd-kind-icon">Ranked<wbr>Action<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L212">models/mappers.ts:212</a></li>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L129">models/index.ts:129</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A ranked action with its resulting probability.</p>
+						</div>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankedaction.id" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> id</h3>
+						<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L134">models/index.ts:134</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Id of the action
+								<strong>NOTE: This property will not be serialized. It can only be populated by the server.</strong></p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankedaction.probability" class="tsd-anchor"></a>
+						<h3><span class="tsd-flag ts-flagOptional">Optional</span> probability</h3>
+						<div class="tsd-signature tsd-kind-icon">probability<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L139">models/index.ts:139</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Probability of the action
+								<strong>NOTE: This property will not be serialized. It can only be populated by the server.</strong></p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rankedaction.serializedname" class="tsd-anchor"></a>
+						<h3>serialized<wbr>Name</h3>
+						<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankedAction&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L213">models/mappers.ts:213</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="rankedaction.type" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L214">models/mappers.ts:214</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rankedaction.type.classname" class="tsd-anchor"></a>
+							<h3>class<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RankedAction&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L216">models/mappers.ts:216</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rankedaction.type.name" class="tsd-anchor"></a>
+							<h3>name</h3>
+							<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L215">models/mappers.ts:215</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="rankedaction.type.modelproperties" class="tsd-anchor"></a>
+							<h3>model<wbr>Properties</h3>
+							<div class="tsd-signature tsd-kind-icon">model<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L217">models/mappers.ts:217</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankedaction.type.modelproperties.id-1" class="tsd-anchor"></a>
+								<h3>id</h3>
+								<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L218">models/mappers.ts:218</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankedaction.type.modelproperties.id-1.readonly" class="tsd-anchor"></a>
+									<h3>read<wbr>Only</h3>
+									<div class="tsd-signature tsd-kind-icon">read<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L219">models/mappers.ts:219</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankedaction.type.modelproperties.id-1.serializedname-1" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;id&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L220">models/mappers.ts:220</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankedaction.type.modelproperties.id-1.constraints" class="tsd-anchor"></a>
+									<h3>constraints</h3>
+									<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L221">models/mappers.ts:221</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankedaction.type.modelproperties.id-1.constraints.maxlength" class="tsd-anchor"></a>
+										<h3>Max<wbr>Length</h3>
+										<div class="tsd-signature tsd-kind-icon">Max<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;256</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L222">models/mappers.ts:222</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankedaction.type.modelproperties.id-1.type-1" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L224">models/mappers.ts:224</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankedaction.type.modelproperties.id-1.type-1.name-1" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L225">models/mappers.ts:225</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rankedaction.type.modelproperties.probability-1" class="tsd-anchor"></a>
+								<h3>probability</h3>
+								<div class="tsd-signature tsd-kind-icon">probability<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L228">models/mappers.ts:228</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankedaction.type.modelproperties.probability-1.readonly-1" class="tsd-anchor"></a>
+									<h3>read<wbr>Only</h3>
+									<div class="tsd-signature tsd-kind-icon">read<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L229">models/mappers.ts:229</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rankedaction.type.modelproperties.probability-1.serializedname-2" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;probability&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L230">models/mappers.ts:230</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankedaction.type.modelproperties.probability-1.constraints-1" class="tsd-anchor"></a>
+									<h3>constraints</h3>
+									<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L231">models/mappers.ts:231</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankedaction.type.modelproperties.probability-1.constraints-1.inclusivemaximum" class="tsd-anchor"></a>
+										<h3>Inclusive<wbr>Maximum</h3>
+										<div class="tsd-signature tsd-kind-icon">Inclusive<wbr>Maximum<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L232">models/mappers.ts:232</a></li>
+											</ul>
+										</aside>
+									</section>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankedaction.type.modelproperties.probability-1.constraints-1.inclusiveminimum" class="tsd-anchor"></a>
+										<h3>Inclusive<wbr>Minimum</h3>
+										<div class="tsd-signature tsd-kind-icon">Inclusive<wbr>Minimum<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L233">models/mappers.ts:233</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rankedaction.type.modelproperties.probability-1.type-2" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L235">models/mappers.ts:235</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rankedaction.type.modelproperties.probability-1.type-2.name-2" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Number"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Number&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L236">models/mappers.ts:236</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="rewardrequest" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Reward<wbr>Request</h3>
+					<div class="tsd-signature tsd-kind-icon">Reward<wbr>Request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L102">models/mappers.ts:102</a></li>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L66">models/index.ts:66</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reward given to a rank response.</p>
+						</div>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rewardrequest.serializedname" class="tsd-anchor"></a>
+						<h3>serialized<wbr>Name</h3>
+						<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RewardRequest&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L103">models/mappers.ts:103</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="rewardrequest.value" class="tsd-anchor"></a>
+						<h3>value</h3>
+						<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/index.ts#L70">models/index.ts:70</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Reward to be assigned to an action. Value should be between -1 and 1 inclusive.</p>
+							</div>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="rewardrequest.type" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L104">models/mappers.ts:104</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rewardrequest.type.classname" class="tsd-anchor"></a>
+							<h3>class<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;RewardRequest&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L106">models/mappers.ts:106</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="rewardrequest.type.name" class="tsd-anchor"></a>
+							<h3>name</h3>
+							<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Composite"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Composite&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L105">models/mappers.ts:105</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="rewardrequest.type.modelproperties" class="tsd-anchor"></a>
+							<h3>model<wbr>Properties</h3>
+							<div class="tsd-signature tsd-kind-icon">model<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L107">models/mappers.ts:107</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+								<a name="rewardrequest.type.modelproperties.value-1" class="tsd-anchor"></a>
+								<h3>value</h3>
+								<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L108">models/mappers.ts:108</a></li>
+									</ul>
+								</aside>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rewardrequest.type.modelproperties.value-1.required" class="tsd-anchor"></a>
+									<h3>required</h3>
+									<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L109">models/mappers.ts:109</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+									<a name="rewardrequest.type.modelproperties.value-1.serializedname-1" class="tsd-anchor"></a>
+									<h3>serialized<wbr>Name</h3>
+									<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;value&quot;</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L110">models/mappers.ts:110</a></li>
+										</ul>
+									</aside>
+								</section>
+								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+									<a name="rewardrequest.type.modelproperties.value-1.type-1" class="tsd-anchor"></a>
+									<h3>type</h3>
+									<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+									<aside class="tsd-sources">
+										<ul>
+											<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L111">models/mappers.ts:111</a></li>
+										</ul>
+									</aside>
+									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+										<a name="rewardrequest.type.modelproperties.value-1.type-1.name-1" class="tsd-anchor"></a>
+										<h3>name</h3>
+										<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Number"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Number&quot;</span></div>
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/mappers.ts#L112">models/mappers.ts:112</a></li>
+											</ul>
+										</aside>
+									</section>
+								</section>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="endpoint" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> endpoint</h3>
+					<div class="tsd-signature tsd-kind-icon">endpoint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L13">models/parameters.ts:13</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="endpoint.parameterpath" class="tsd-anchor"></a>
+						<h3>parameter<wbr>Path</h3>
+						<div class="tsd-signature tsd-kind-icon">parameter<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;endpoint&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L14">models/parameters.ts:14</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="endpoint.skipencoding" class="tsd-anchor"></a>
+						<h3>skip<wbr>Encoding</h3>
+						<div class="tsd-signature tsd-kind-icon">skip<wbr>Encoding<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L23">models/parameters.ts:23</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="endpoint.mapper" class="tsd-anchor"></a>
+						<h3>mapper</h3>
+						<div class="tsd-signature tsd-kind-icon">mapper<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L15">models/parameters.ts:15</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="endpoint.mapper.defaultvalue" class="tsd-anchor"></a>
+							<h3>default<wbr>Value</h3>
+							<div class="tsd-signature tsd-kind-icon">default<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L18">models/parameters.ts:18</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="endpoint.mapper.required" class="tsd-anchor"></a>
+							<h3>required</h3>
+							<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L16">models/parameters.ts:16</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="endpoint.mapper.serializedname" class="tsd-anchor"></a>
+							<h3>serialized<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Endpoint&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L17">models/parameters.ts:17</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="endpoint.mapper.type" class="tsd-anchor"></a>
+							<h3>type</h3>
+							<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L19">models/parameters.ts:19</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+								<a name="endpoint.mapper.type.name" class="tsd-anchor"></a>
+								<h3>name</h3>
+								<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L20">models/parameters.ts:20</a></li>
+									</ul>
+								</aside>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="eventid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> event<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">event<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L25">models/parameters.ts:25</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="eventid.parameterpath" class="tsd-anchor"></a>
+						<h3>parameter<wbr>Path</h3>
+						<div class="tsd-signature tsd-kind-icon">parameter<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;eventId&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L26">models/parameters.ts:26</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="eventid.mapper" class="tsd-anchor"></a>
+						<h3>mapper</h3>
+						<div class="tsd-signature tsd-kind-icon">mapper<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L27">models/parameters.ts:27</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="eventid.mapper.required" class="tsd-anchor"></a>
+							<h3>required</h3>
+							<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L28">models/parameters.ts:28</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="eventid.mapper.serializedname" class="tsd-anchor"></a>
+							<h3>serialized<wbr>Name</h3>
+							<div class="tsd-signature tsd-kind-icon">serialized<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;eventId&quot;</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L29">models/parameters.ts:29</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="eventid.mapper.constraints" class="tsd-anchor"></a>
+							<h3>constraints</h3>
+							<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L30">models/parameters.ts:30</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+								<a name="eventid.mapper.constraints.maxlength" class="tsd-anchor"></a>
+								<h3>Max<wbr>Length</h3>
+								<div class="tsd-signature tsd-kind-icon">Max<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;256</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L31">models/parameters.ts:31</a></li>
+									</ul>
+								</aside>
+							</section>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="eventid.mapper.type" class="tsd-anchor"></a>
+							<h3>type</h3>
+							<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L33">models/parameters.ts:33</a></li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+								<a name="eventid.mapper.type.name" class="tsd-anchor"></a>
+								<h3>name</h3>
+								<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"String"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;String&quot;</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/cognitiveservices/cognitiveservices-personalizer/src/models/parameters.ts#L34">models/parameters.ts:34</a></li>
+									</ul>
+								</aside>
+							</section>
+						</section>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -88,34 +2533,52 @@
 					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_eventsmappers_.html">"models/events<wbr>Mappers"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_index_.html">"models/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_mappers_.html">"models/mappers"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_parameters_.html">"models/parameters"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_operations_events_.html">"operations/events"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_operations_index_.html">"operations/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_personalizerclient_.html">"personalizer<wbr>Client"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_personalizerclientcontext_.html">"personalizer<wbr>Client<wbr>Context"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/events.html" class="tsd-kind-icon">Events</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/personalizerclientcontext.html" class="tsd-kind-icon">Personalizer<wbr>Client<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#errorcode" class="tsd-kind-icon">Error<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#rankresponse2" class="tsd-kind-icon">Rank<wbr>Response2</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#errorresponse" class="tsd-kind-icon">Error<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#internalerror" class="tsd-kind-icon">Internal<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#personalizererror" class="tsd-kind-icon">Personalizer<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#rankrequest" class="tsd-kind-icon">Rank<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#rankresponse" class="tsd-kind-icon">Rank<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#rankableaction" class="tsd-kind-icon">Rankable<wbr>Action</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#rankedaction" class="tsd-kind-icon">Ranked<wbr>Action</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#rewardrequest" class="tsd-kind-icon">Reward<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#endpoint" class="tsd-kind-icon">endpoint</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#eventid" class="tsd-kind-icon">event<wbr>Id</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
