@@ -70,11 +70,13 @@
 					<li>Browser JavaScript</li>
 				</ul>
 				<h3 id="how-to-install">How to Install</h3>
-				<pre><code><span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">install</span> @<span class="hljs-keyword">azure</span>/<span class="hljs-keyword">arm</span>-<span class="hljs-keyword">machinelearningservices</span></code></pre><h3 id="how-to-use">How to use</h3>
+				<pre><code class="language-bash">npm install @azure/arm-machinelearningservices</code></pre>
+				<h3 id="how-to-use">How to use</h3>
 				<h4 id="nodejs-authentication-client-creation-and-list-operations-as-an-example-written-in-typescript-">nodejs - Authentication, client creation and list operations as an example written in TypeScript.</h4>
 				<h5 id="install-azure-ms-rest-nodeauth">Install @azure/ms-rest-nodeauth</h5>
-				<pre><code><span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">install</span> @<span class="hljs-keyword">azure</span>/<span class="hljs-keyword">ms</span>-<span class="hljs-keyword">rest</span>-<span class="hljs-keyword">nodeauth</span></code></pre><h5 id="sample-code">Sample code</h5>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRest <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-js"</span>;
+				<pre><code class="language-bash">npm install @azure/ms-rest-nodeauth</code></pre>
+				<h5 id="sample-code">Sample code</h5>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRest <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-js"</span>;
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRestAzure <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-azure-js"</span>;
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRestNodeAuth <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-nodeauth"</span>;
 <span class="hljs-keyword">import</span> { AzureMachineLearningWorkspaces, AzureMachineLearningWorkspacesModels, AzureMachineLearningWorkspacesMappers } <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/arm-machinelearningservices"</span>;
@@ -91,7 +93,8 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 });</code></pre>
 				<h4 id="browser-authentication-client-creation-and-list-operations-as-an-example-written-in-javascript-">browser - Authentication, client creation and list operations as an example written in JavaScript.</h4>
 				<h5 id="install-azure-ms-rest-browserauth">Install @azure/ms-rest-browserauth</h5>
-				<pre><code><span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">install</span> @<span class="hljs-keyword">azure</span>/<span class="hljs-keyword">ms</span>-<span class="hljs-keyword">rest</span>-<span class="hljs-keyword">browserauth</span></code></pre><h5 id="sample-code">Sample code</h5>
+				<pre><code class="language-bash">npm install @azure/ms-rest-browserauth</code></pre>
+				<h5 id="sample-code">Sample code</h5>
 				<p>See <a href="https://github.com/Azure/ms-rest-browserauth">https://github.com/Azure/ms-rest-browserauth</a> to learn how to authenticate to Azure in the browser.</p>
 				<ul>
 					<li>index.html<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
@@ -155,6 +158,12 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="classes/operations.html" class="tsd-kind-icon">Operations</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/usages.html" class="tsd-kind-icon">Usages</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/virtualmachinesizes.html" class="tsd-kind-icon">Virtual<wbr>Machine<wbr>Sizes</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/workspaces.html" class="tsd-kind-icon">Workspaces</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -170,6 +179,12 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="interfaces/workspaceslistbysubscriptionoptionalparams.html" class="tsd-kind-icon">Workspaces<wbr>List<wbr>BySubscription<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#allocationstate" class="tsd-kind-icon">Allocation<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#computenodesinformationunion" class="tsd-kind-icon">Compute<wbr>Nodes<wbr>Information<wbr>Union</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#computesecretsunion" class="tsd-kind-icon">Compute<wbr>Secrets<wbr>Union</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -177,6 +192,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#computeunion" class="tsd-kind-icon">Compute<wbr>Union</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#machinelearningcomputebeginupdateresponse" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Compute<wbr>Begin<wbr>Update<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#machinelearningcomputecreateorupdateresponse" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Compute<wbr>Create<wbr>OrUpdate<wbr>Response</a>
@@ -197,7 +215,10 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#machinelearningcomputelistkeysresponse" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Compute<wbr>List<wbr>Keys<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#machinelearningcomputesystemupdateresponse" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Compute<wbr>System<wbr>Update<wbr>Response</a>
+						<a href="globals.html#machinelearningcomputelistnodesresponse" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Compute<wbr>List<wbr>Nodes<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#machinelearningcomputeupdateresponse" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Compute<wbr>Update<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#operationslistresponse" class="tsd-kind-icon">Operations<wbr>List<wbr>Response</a>
@@ -210,6 +231,24 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#status" class="tsd-kind-icon">Status</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#underlyingresourceaction" class="tsd-kind-icon">Underlying<wbr>Resource<wbr>Action</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#usageunit" class="tsd-kind-icon">Usage<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#usageslistnextresponse" class="tsd-kind-icon">Usages<wbr>List<wbr>Next<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#usageslistresponse" class="tsd-kind-icon">Usages<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#virtualmachinesizeslistresponse" class="tsd-kind-icon">Virtual<wbr>Machine<wbr>Sizes<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#vmpriority" class="tsd-kind-icon">Vm<wbr>Priority</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#workspacescreateorupdateresponse" class="tsd-kind-icon">Workspaces<wbr>Create<wbr>OrUpdate<wbr>Response</a>
@@ -251,13 +290,28 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#akscomputesecrets" class="tsd-kind-icon">Aks<wbr>Compute<wbr>Secrets</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
-						<a href="globals.html#batchai" class="tsd-kind-icon">BatchAI</a>
+						<a href="globals.html#aksnetworkingconfiguration" class="tsd-kind-icon">Aks<wbr>Networking<wbr>Configuration</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
-						<a href="globals.html#batchaiproperties" class="tsd-kind-icon">BatchAIProperties</a>
+						<a href="globals.html#amlcompute" class="tsd-kind-icon">Aml<wbr>Compute</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#amlcomputenodeinformation" class="tsd-kind-icon">Aml<wbr>Compute<wbr>Node<wbr>Information</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#amlcomputenodesinformation" class="tsd-kind-icon">Aml<wbr>Compute<wbr>Nodes<wbr>Information</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#amlcomputeproperties" class="tsd-kind-icon">Aml<wbr>Compute<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#clusterupdateparameters" class="tsd-kind-icon">Cluster<wbr>Update<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#compute" class="tsd-kind-icon">Compute</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#computenodesinformation" class="tsd-kind-icon">Compute<wbr>Nodes<wbr>Information</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#computeresource" class="tsd-kind-icon">Compute<wbr>Resource</a>
@@ -267,6 +321,21 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#datafactory" class="tsd-kind-icon">Data<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#datalakeanalytics" class="tsd-kind-icon">Data<wbr>Lake<wbr>Analytics</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#datalakeanalyticsproperties" class="tsd-kind-icon">Data<wbr>Lake<wbr>Analytics<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#databricks" class="tsd-kind-icon">Databricks</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#databrickscomputesecrets" class="tsd-kind-icon">Databricks<wbr>Compute<wbr>Secrets</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#databricksproperties" class="tsd-kind-icon">Databricks<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#errordetail" class="tsd-kind-icon">Error<wbr>Detail</a>
@@ -284,6 +353,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#identity" class="tsd-kind-icon">Identity</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#listusagesresult" class="tsd-kind-icon">List<wbr>Usages<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#listworkspacekeysresult" class="tsd-kind-icon">List<wbr>Workspace<wbr>Keys<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
@@ -293,10 +365,10 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#machinelearningcomputedeleteheaders" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Compute<wbr>Delete<wbr>Headers</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
-						<a href="globals.html#machinelearningcomputesystemupdateheaders" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Compute<wbr>System<wbr>Update<wbr>Headers</a>
+						<a href="globals.html#machinelearningserviceerror" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Service<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
-						<a href="globals.html#machinelearningserviceerror" class="tsd-kind-icon">Machine<wbr>Learning<wbr>Service<wbr>Error</a>
+						<a href="globals.html#nodestatecounts" class="tsd-kind-icon">Node<wbr>State<wbr>Counts</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#operation" class="tsd-kind-icon">Operation</a>
@@ -320,6 +392,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#resource" class="tsd-kind-icon">Resource</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#resourceid" class="tsd-kind-icon">Resource<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#scalesettings" class="tsd-kind-icon">Scale<wbr>Settings</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
@@ -332,6 +407,15 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#systemservice" class="tsd-kind-icon">System<wbr>Service</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#usage" class="tsd-kind-icon">Usage</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#usagename" class="tsd-kind-icon">Usage<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#useraccountcredentials" class="tsd-kind-icon">User<wbr>Account<wbr>Credentials</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#virtualmachine" class="tsd-kind-icon">Virtual<wbr>Machine</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
@@ -339,6 +423,12 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#virtualmachinesecrets" class="tsd-kind-icon">Virtual<wbr>Machine<wbr>Secrets</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#virtualmachinesize" class="tsd-kind-icon">Virtual<wbr>Machine<wbr>Size</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#virtualmachinesizelistresult" class="tsd-kind-icon">Virtual<wbr>Machine<wbr>Size<wbr>List<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#virtualmachinesshcredentials" class="tsd-kind-icon">Virtual<wbr>Machine<wbr>Ssh<wbr>Credentials</a>
@@ -365,6 +455,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#discriminators" class="tsd-kind-icon">discriminators</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#location" class="tsd-kind-icon">location</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#nextpagelink" class="tsd-kind-icon">next<wbr>Page<wbr>Link</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
@@ -375,6 +468,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#subscriptionid" class="tsd-kind-icon">subscription<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#underlyingresourceaction" class="tsd-kind-icon">underlying<wbr>Resource<wbr>Action</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#workspacename" class="tsd-kind-icon">workspace<wbr>Name</a>

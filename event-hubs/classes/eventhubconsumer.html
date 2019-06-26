@@ -67,14 +67,18 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The EventHubConsumer class can be used to receive messages in a batch or by registering handlers.
-							Use the <code>createConsumer</code> function on the EventHubClient to instantiate an EventHubConsumer.
-						The EventHubConsumer class is an abstraction over the underlying AMQP receiver link.</p>
+						<p>A consumer is responsible for reading <code>EventData</code> from a specific Event Hub partition
+						in the context of a specific consumer group.</p>
 					</div>
+					<p>Multiple consumers are allowed on the same partition in a consumer group.
+						If there is a need to have an exclusive consumer for a partition in a consumer group,
+						then specify the <code>ownerLevel</code> in the <code>options</code>.
+					Exclusive consumers were previously referred to as &quot;Epoch Receivers&quot;.</p>
+					<p>The consumer can be used to receive messages in a batch or by registering handlers.
+					Use the <code>createConsumer</code> function on the EventHubClient to instantiate an EventHubConsumer.</p>
 					<dl class="tsd-comment-tags">
 						<dt>class</dt>
-						<dd><p>EventHubConsumer</p>
-						</dd>
+						<dd></dd>
 					</dl>
 				</div>
 			</section>
@@ -90,12 +94,6 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="eventhubconsumer.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
@@ -119,52 +117,6 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Event<wbr>Hub<wbr>Consumer<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConnectionContext</span>, consumerGroup<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, partitionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, eventPosition<span class="tsd-signature-symbol">: </span><a href="eventposition.html" class="tsd-signature-type">EventPosition</a>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/eventhubconsumeroptions.html" class="tsd-signature-type">EventHubConsumerOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="eventhubconsumer.html" class="tsd-signature-type">EventHubConsumer</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L105">receiver.ts:105</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>constructor</dt>
-									<dd></dd>
-									<dt>internal</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>context: <span class="tsd-signature-type">ConnectionContext</span></h5>
-								</li>
-								<li>
-									<h5>consumerGroup: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>partitionId: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>eventPosition: <a href="eventposition.html" class="tsd-signature-type">EventPosition</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/eventhubconsumeroptions.html" class="tsd-signature-type">EventHubConsumerOptions</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="eventhubconsumer.html" class="tsd-signature-type">EventHubConsumer</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="consumergroup" class="tsd-anchor"></a>
@@ -176,14 +128,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L81">receiver.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/receiver.ts#L90">receiver.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>property</dt>
-									<dd><p>The consumer group from which the handler is receiving
-										events from.</p>
+									<dd><p>The name of the consumer group that this consumer is associated with.
+										Events will be read only in the context of this group.</p>
 									</dd>
 									<dt>readonly</dt>
 									<dd></dd>
@@ -203,7 +155,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L64">receiver.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/receiver.ts#L72">receiver.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -230,7 +182,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L97">receiver.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/receiver.ts#L111">receiver.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -253,13 +205,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L89">receiver.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/receiver.ts#L103">receiver.ts:103</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>property</dt>
-									<dd><p>The ownerLevel value of the underlying consumer, if present.</p>
+									<dd><p>The owner level associated with an exclusive consumer; for a non-exclusive consumer, this value will be null or undefined.</p>
+										<p>When provided, the owner level indicates that a consumer is intended to be the exclusive receiver of events for the
+											requested partition and the associated consumer group.
+											When multiple consumers exist for the same partition/consumer group pair, then the ones with lower or no
+										<code>ownerLevel</code> will get a <code>ReceiverDisconnectedError</code> during the next attempted receive operation.</p>
 									</dd>
 									<dt>readonly</dt>
 									<dd></dd>
@@ -282,13 +238,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L72">receiver.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/receiver.ts#L81">receiver.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>property</dt>
-									<dd><p>Returns the Partition ID to receive events from.</p>
+									<dd><p>The identifier of the Event Hub partition that this consumer is associated with.
+										Events will be read only from this partition.</p>
 									</dd>
 									<dt>readonly</dt>
 									<dd></dd>
@@ -311,7 +268,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L268">receiver.ts:268</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/receiver.ts#L290">receiver.ts:290</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -319,7 +276,7 @@
 									<p>Closes the underlying AMQP receiver link.
 										Once closed, the consumer cannot be used for any further operations.
 										Use the <code>createConsumer</code> function on the EventHubClient to instantiate
-									a new EventHubConsumer</p>
+									a new EventHubConsumer.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
@@ -341,13 +298,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L168">receiver.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/receiver.ts#L189">receiver.ts:189</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Gets an async iterator over events from the consumer.</p>
+									<p>Returns an async iterable that retrieves events.</p>
 								</div>
+								<p>The async iterable cannot indicate that it is done.
+									When using <code>for..await..of</code> to iterate over the events returned
+									by the async iterable, take care to exit the for loop after receiving the
+								desired number of messages, or provide an <code>AbortSignal</code> to control when to exit the loop.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -363,13 +324,13 @@
 					<a name="receive" class="tsd-anchor"></a>
 					<h3>receive</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">receive<span class="tsd-signature-symbol">(</span>onMessage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OnMessage</span>, onError<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OnError</span>, abortSignal<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AbortSignalLike</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReceiveHandler</span></li>
+						<li class="tsd-signature tsd-kind-icon">receive<span class="tsd-signature-symbol">(</span>onMessage<span class="tsd-signature-symbol">: </span><a href="../globals.html#onmessage" class="tsd-signature-type">OnMessage</a>, onError<span class="tsd-signature-symbol">: </span><a href="../globals.html#onerror" class="tsd-signature-type">OnError</a>, abortSignal<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AbortSignalLike</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="receivehandler.html" class="tsd-signature-type">ReceiveHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L140">receiver.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/receiver.ts#L155">receiver.ts:155</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -396,13 +357,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>onMessage: <span class="tsd-signature-type">OnMessage</span></h5>
+									<h5>onMessage: <a href="../globals.html#onmessage" class="tsd-signature-type">OnMessage</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The message handler to receive event data objects.</p>
 									</div>
 								</li>
 								<li>
-									<h5>onError: <span class="tsd-signature-type">OnError</span></h5>
+									<h5>onError: <a href="../globals.html#onerror" class="tsd-signature-type">OnError</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The error handler to receive an error that occurs
 										while receiving messages.</p>
@@ -411,11 +372,12 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> abortSignal: <span class="tsd-signature-type">AbortSignalLike</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Signal to cancel current operation.</p>
+										<p>An implementation of the <code>AbortSignalLike</code> interface to signal the request to cancel the operation.
+										For example, use the &commat;azure/abort-controller to create an <code>AbortSignal</code>.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReceiveHandler</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="receivehandler.html" class="tsd-signature-type">ReceiveHandler</a></h4>
 							<p>ReceiveHandler - An object that provides a mechanism to stop receiving more messages.</p>
 						</li>
 					</ul>
@@ -430,7 +392,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/receiver.ts#L200">receiver.ts:200</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/receiver.ts#L222">receiver.ts:222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -459,7 +421,7 @@
 								<li>
 									<h5>maxMessageCount: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The maximum message count. Must be a value greater than 0.</p>
+										<p>The maximum number of messages to receive in this batch. Must be a value greater than 0.</p>
 									</div>
 								</li>
 								<li>
@@ -468,7 +430,8 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> abortSignal: <span class="tsd-signature-type">AbortSignalLike</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Signal to cancel current operation.</p>
+										<p>An implementation of the <code>AbortSignalLike</code> interface to signal the request to cancel the operation.
+										For example, use the &commat;azure/abort-controller to create an <code>AbortSignal</code>.</p>
 									</div>
 								</li>
 							</ul>
@@ -497,9 +460,6 @@
 					<li class="current tsd-kind-class">
 						<a href="eventhubconsumer.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Consumer</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="eventhubconsumer.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="eventhubconsumer.html#consumergroup" class="tsd-kind-icon">consumer<wbr>Group</a>
 							</li>
@@ -537,6 +497,9 @@
 					<li class=" tsd-kind-class">
 						<a href="eventposition.html" class="tsd-kind-icon">Event<wbr>Position</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="receivehandler.html" class="tsd-kind-icon">Receive<wbr>Handler</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/eventdata.html" class="tsd-kind-icon">Event<wbr>Data</a>
 					</li>
@@ -550,10 +513,13 @@
 						<a href="../interfaces/eventhubproduceroptions.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Producer<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="../interfaces/eventhubproperties.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="../interfaces/eventiteratoroptions.html" class="tsd-kind-icon">Event<wbr>Iterator<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/eventpositionoptions.html" class="tsd-kind-icon">Event<wbr>Position<wbr>Options</a>
+						<a href="../interfaces/partitionproperties.html" class="tsd-kind-icon">Partition<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/receivedeventdata.html" class="tsd-kind-icon">Received<wbr>Event<wbr>Data</a>
@@ -564,8 +530,11 @@
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/sendoptions.html" class="tsd-kind-icon">Send<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#geteventpositionfilter" class="tsd-kind-icon">get<wbr>Event<wbr>Position<wbr>Filter</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onerror" class="tsd-kind-icon">On<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onmessage" class="tsd-kind-icon">On<wbr>Message</a>
 					</li>
 				</ul>
 			</nav>

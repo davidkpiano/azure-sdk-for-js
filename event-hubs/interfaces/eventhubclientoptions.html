@@ -109,7 +109,7 @@
 					<div class="tsd-signature tsd-kind-icon">data<wbr>Transformer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DataTransformer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L126">eventHubClient.ts:126</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L130">eventHubClient.ts:130</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -141,13 +141,13 @@
 					<div class="tsd-signature tsd-kind-icon">retry<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="retryoptions.html" class="tsd-signature-type">RetryOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L154">eventHubClient.ts:154</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L158">eventHubClient.ts:158</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>Retry options for all the operations on the client/producer/consumer.
+							<dd><p>The retry options for all the operations on the client/producer/consumer.
 								This can be overridden by the retry options set on the producer and consumer.</p>
 							</dd>
 						</dl>
@@ -159,14 +159,14 @@
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L132">eventHubClient.ts:132</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L136">eventHubClient.ts:136</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
 							<dd><p>The user agent that will be appended to the built in user agent string that is passed as a
-								connection property to the Event Hubs service</p>
+								connection property to the Event Hubs service.</p>
 							</dd>
 						</dl>
 					</div>
@@ -177,14 +177,14 @@
 					<div class="tsd-signature tsd-kind-icon">web<wbr>Socket<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketImpl</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L142">eventHubClient.ts:142</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L146">eventHubClient.ts:146</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
 							<dd><p>The WebSocket constructor used to create an AMQP connection over a WebSocket.
-								This option should be provided in the below scenarios</p>
+								This option should be provided in the below scenarios:</p>
 								<ul>
 									<li>The TCP port 5671 which is what is used by the AMQP connection to Event Hubs is blocked in your environment.</li>
 									<li>Your application needs to be run behind a proxy server</li>
@@ -201,7 +201,7 @@
 					<div class="tsd-signature tsd-kind-icon">web<wbr>Socket<wbr>Constructor<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L148">eventHubClient.ts:148</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L152">eventHubClient.ts:152</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -237,6 +237,9 @@
 					<li class=" tsd-kind-class">
 						<a href="../classes/eventposition.html" class="tsd-kind-icon">Event<wbr>Position</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/receivehandler.html" class="tsd-kind-icon">Receive<wbr>Handler</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="eventdata.html" class="tsd-kind-icon">Event<wbr>Data</a>
 					</li>
@@ -271,10 +274,13 @@
 						<a href="eventhubproduceroptions.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Producer<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="eventhubproperties.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="eventiteratoroptions.html" class="tsd-kind-icon">Event<wbr>Iterator<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="eventpositionoptions.html" class="tsd-kind-icon">Event<wbr>Position<wbr>Options</a>
+						<a href="partitionproperties.html" class="tsd-kind-icon">Partition<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="receivedeventdata.html" class="tsd-kind-icon">Received<wbr>Event<wbr>Data</a>
@@ -285,8 +291,11 @@
 					<li class=" tsd-kind-interface">
 						<a href="sendoptions.html" class="tsd-kind-icon">Send<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#geteventpositionfilter" class="tsd-kind-icon">get<wbr>Event<wbr>Position<wbr>Filter</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onerror" class="tsd-kind-icon">On<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onmessage" class="tsd-kind-icon">On<wbr>Message</a>
 					</li>
 				</ul>
 			</nav>

@@ -68,8 +68,9 @@
 				<div class="tsd-comment tsd-typography">
 					<dl class="tsd-comment-tags">
 						<dt>class</dt>
-						<dd><p>EventHubClient
-							Describes the EventHub client.</p>
+						<dd><p>The client is the main point of interaction with Azure Event Hubs service.
+								It offers connection to a specific Event Hub within the Event Hubs namespace along with
+							operations for sending event data, receiving events, and inspecting the connected Event Hub.</p>
 						</dd>
 					</dl>
 				</div>
@@ -95,7 +96,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="eventhubclient.html#defaultconsumergroup" class="tsd-kind-icon">default<wbr>Consumer<wbr>Group</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="eventhubclient.html#defaultconsumergroupname" class="tsd-kind-icon">default<wbr>Consumer<wbr>Group<wbr>Name</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -133,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L179">eventHubClient.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L185">eventHubClient.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -148,7 +149,9 @@
 									<h5>connectionString: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Connection string of the form &#39;Endpoint=sb://my-servicebus-namespace.servicebus.windows.net/;SharedAccessKeyName=my-SA-name;SharedAccessKey=my-SA-key;EntityPath=my-event-hub-name&#39;.</p>
+											<p>The connection string to use for connecting to the Event Hubs namespace.
+												It is expected that the shared key properties and the Event Hub path are contained in this connection string.
+											e.g. &#39;Endpoint=sb://my-servicebus-namespace.servicebus.windows.net/;SharedAccessKeyName=my-SA-name;SharedAccessKey=my-SA-key;EntityPath=my-event-hub-name&#39;.</p>
 										</div>
 									</div>
 								</li>
@@ -156,7 +159,7 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/eventhubclientoptions.html" class="tsd-signature-type">EventHubClientOptions</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The options that can be provided during client creation.</p>
+											<p>A set of options to apply when configuring the client.</p>
 										</div>
 									</div>
 								</li>
@@ -166,7 +169,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L186">eventHubClient.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L194">eventHubClient.ts:194</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -181,7 +184,9 @@
 									<h5>connectionString: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Connection string of the form &#39;Endpoint=sb://my-servicebus-namespace.servicebus.windows.net/;SharedAccessKeyName=my-SA-name;SharedAccessKey=my-SA-key;EntityPath=my-event-hub-name&#39;.</p>
+											<p>The connection string to use for connecting to the Event Hubs namespace.
+												It is expected that the shared key properties and the Event Hub path are contained in this connection string.
+											e.g. &#39;Endpoint=sb://my-servicebus-namespace.servicebus.windows.net/;SharedAccessKeyName=my-SA-name;SharedAccessKey=my-SA-key;EntityPath=my-event-hub-name&#39;.</p>
 										</div>
 									</div>
 								</li>
@@ -189,7 +194,7 @@
 									<h5>eventHubPath: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>EventHub path of the form &#39;my-event-hub-name&#39;</p>
+											<p>The path of the specific Event Hub to connect the client to.</p>
 										</div>
 									</div>
 								</li>
@@ -197,7 +202,7 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/eventhubclientoptions.html" class="tsd-signature-type">EventHubClientOptions</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The options that can be provided during client creation.</p>
+											<p>A set of options to apply when configuring the client.</p>
 										</div>
 									</div>
 								</li>
@@ -207,7 +212,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L193">eventHubClient.ts:193</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L203">eventHubClient.ts:203</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -222,7 +227,7 @@
 									<h5>host: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Fully qualified domain name for Event Hubs. Most likely,
+											<p>The fully qualified host name for the Event Hubs namespace. This is likely to be similar to
 											<yournamespace>.servicebus.windows.net</p>
 										</div>
 									</div>
@@ -231,7 +236,7 @@
 									<h5>eventHubPath: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>EventHub path of the form &#39;my-event-hub-name&#39;</p>
+											<p>The path of the specific Event Hub to connect the client to.</p>
 										</div>
 									</div>
 								</li>
@@ -247,7 +252,7 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/eventhubclientoptions.html" class="tsd-signature-type">EventHubClientOptions</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The options that can be provided during client creation.</p>
+											<p>A set of options to apply when configuring the client.</p>
 										</div>
 									</div>
 								</li>
@@ -260,18 +265,18 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="defaultconsumergroup" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> default<wbr>Consumer<wbr>Group</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Consumer<wbr>Group<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;Constants.defaultConsumerGroup</span></div>
+					<a name="defaultconsumergroupname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> default<wbr>Consumer<wbr>Group<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Consumer<wbr>Group<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;Constants.defaultConsumerGroup</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L399">eventHubClient.ts:399</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L426">eventHubClient.ts:426</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>The name of the default consumer group for any Event Hub instance</p>
+							<dd><p>The name of the default consumer group in the Event Hubs service.</p>
 							</dd>
 						</dl>
 					</div>
@@ -289,7 +294,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L177">eventHubClient.ts:177</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L183">eventHubClient.ts:183</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -318,12 +323,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L251">eventHubClient.ts:251</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L261">eventHubClient.ts:261</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Closes the AMQP connection to the Event Hub for this client,
+									<p>Closes the AMQP connection to the Event Hub instance,
 									returning a promise that will be resolved when disconnection is completed.</p>
 								</div>
 								<dl class="tsd-comment-tags">
@@ -347,14 +352,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L305">eventHubClient.ts:305</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L326">eventHubClient.ts:326</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates an EventHubConsumer that can be used to receive events from the Event Hub for which this
-									client was created.</p>
+									<p>Creates an Event Hub consumer responsible for reading <code>EventData</code> from a specific Event Hub partition,
+									in the context of a specific consumer group.</p>
 								</div>
+								<p>Multiple consumers are allowed on the same partition in a consumer group.
+									If there is a need to have an exclusive consumer for a partition in a consumer group,
+									then specify the <code>ownerLevel</code> in the <code>options</code>.
+								Exclusive consumers were previously referred to as &quot;Epoch Receivers&quot;.</p>
+								<p>Designating a consumer as exclusive may be specified in the <code>options</code> via <code>ownerLevel</code>.</p>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
 									<dd><p>{Error} Thrown if the underlying connection has been closed, create a new EventHubClient.</p>
@@ -369,27 +379,25 @@
 								<li>
 									<h5>consumerGroup: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The consumer group from which the consumer should receive events.</p>
+										<p>The name of the consumer group this consumer is associated with. Events are read in the context of this group.</p>
 									</div>
 								</li>
 								<li>
 									<h5>partitionId: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The id of the partition from which to receive events.</p>
+										<p>The identifier of the Event Hub partition from which events will be received.</p>
 									</div>
 								</li>
 								<li>
 									<h5>eventPosition: <a href="eventposition.html" class="tsd-signature-type">EventPosition</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The event position in the partition at which to start receiving messages.</p>
+										<p>The position within the partition where the consumer should begin reading events.</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/eventhubconsumeroptions.html" class="tsd-signature-type">EventHubConsumerOptions</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Options to create the EventHubConsumer where you can specify the position from
-											which to start receiving events, the consumer group to receive events from, retry options
-										and more.</p>
+										<p>The set of options to apply when creating the consumer where you can specify retry options and ownerLevel.</p>
 									</div>
 								</li>
 							</ul>
@@ -407,14 +415,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L287">eventHubClient.ts:287</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L303">eventHubClient.ts:303</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates an EventHubProducer that can be used to send events to the Event Hub for which this client
-									was created.</p>
+									<p>Creates an Event Hub producer responsible for sending <code>EventData</code> to the Event Hub.
+										If <code>partitionId</code> is specified in the <code>options</code>, all event data sent using the producer
+										will be sent to the specified partition.
+									Otherwise, they are automatically routed to an available partition by the Event Hubs service.</p>
 								</div>
+								<p>Allowing automatic routing of partitions is recommended when:</p>
+								<ul>
+									<li>The sending of events needs to be highly available.</li>
+									<li>The event data should be evenly distributed among all available partitions.</li>
+								</ul>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
 									<dd><p>{Error} Thrown if the underlying connection has been closed, create a new EventHubClient.</p>
@@ -426,7 +441,7 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/eventhubproduceroptions.html" class="tsd-signature-type">EventHubProducerOptions</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Options to create a EventHubProducer where you can specify the id of the partition
+										<p>The set of options to apply when creating the producer where you can specify the id of the partition
 										to which events need to be sent to, and retry options.</p>
 									</div>
 								</li>
@@ -446,7 +461,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L344">eventHubClient.ts:344</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L369">eventHubClient.ts:369</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -466,6 +481,10 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> abortSignal: <span class="tsd-signature-type">AbortSignalLike</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An implementation of the <code>AbortSignalLike</code> interface to signal the request to cancel the operation.
+										For example, use the &commat;azure/abort-controller to create an <code>AbortSignal</code>.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -477,13 +496,13 @@
 					<a name="getpartitionproperties" class="tsd-anchor"></a>
 					<h3>get<wbr>Partition<wbr>Properties</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Partition<wbr>Properties<span class="tsd-signature-symbol">(</span>partitionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, abortSignal<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AbortSignalLike</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PartitionProperties</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Partition<wbr>Properties<span class="tsd-signature-symbol">(</span>partitionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, abortSignal<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AbortSignalLike</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/partitionproperties.html" class="tsd-signature-type">PartitionProperties</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L362">eventHubClient.ts:362</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L389">eventHubClient.ts:389</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -509,9 +528,13 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> abortSignal: <span class="tsd-signature-type">AbortSignalLike</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An implementation of the <code>AbortSignalLike</code> interface to signal the request to cancel the operation.
+										For example, use the &commat;azure/abort-controller to create an <code>AbortSignal</code>.</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PartitionProperties</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/partitionproperties.html" class="tsd-signature-type">PartitionProperties</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resoloves with PartitionProperties.</p>
 						</li>
 					</ul>
@@ -520,13 +543,13 @@
 					<a name="getproperties" class="tsd-anchor"></a>
 					<h3>get<wbr>Properties</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Properties<span class="tsd-signature-symbol">(</span>abortSignal<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AbortSignalLike</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventHubProperties</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Properties<span class="tsd-signature-symbol">(</span>abortSignal<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AbortSignalLike</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/eventhubproperties.html" class="tsd-signature-type">EventHubProperties</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L325">eventHubClient.ts:325</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L348">eventHubClient.ts:348</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -546,9 +569,13 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> abortSignal: <span class="tsd-signature-type">AbortSignalLike</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An implementation of the <code>AbortSignalLike</code> interface to signal the request to cancel the operation.
+										For example, use the &commat;azure/abort-controller to create an <code>AbortSignal</code>.</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventHubProperties</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/eventhubproperties.html" class="tsd-signature-type">EventHubProperties</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves with EventHubProperties.</p>
 						</li>
 					</ul>
@@ -563,7 +590,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L384">eventHubClient.ts:384</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L411">eventHubClient.ts:411</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -616,7 +643,7 @@
 								<a href="eventhubclient.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="eventhubclient.html#defaultconsumergroup" class="tsd-kind-icon">default<wbr>Consumer<wbr>Group</a>
+								<a href="eventhubclient.html#defaultconsumergroupname" class="tsd-kind-icon">default<wbr>Consumer<wbr>Group<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="eventhubclient.html#eventhubname" class="tsd-kind-icon">event<wbr>Hub<wbr>Name</a>
@@ -655,6 +682,9 @@
 					<li class=" tsd-kind-class">
 						<a href="eventposition.html" class="tsd-kind-icon">Event<wbr>Position</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="receivehandler.html" class="tsd-kind-icon">Receive<wbr>Handler</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/eventdata.html" class="tsd-kind-icon">Event<wbr>Data</a>
 					</li>
@@ -668,10 +698,13 @@
 						<a href="../interfaces/eventhubproduceroptions.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Producer<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="../interfaces/eventhubproperties.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="../interfaces/eventiteratoroptions.html" class="tsd-kind-icon">Event<wbr>Iterator<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/eventpositionoptions.html" class="tsd-kind-icon">Event<wbr>Position<wbr>Options</a>
+						<a href="../interfaces/partitionproperties.html" class="tsd-kind-icon">Partition<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/receivedeventdata.html" class="tsd-kind-icon">Received<wbr>Event<wbr>Data</a>
@@ -682,8 +715,11 @@
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/sendoptions.html" class="tsd-kind-icon">Send<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#geteventpositionfilter" class="tsd-kind-icon">get<wbr>Event<wbr>Position<wbr>Filter</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onerror" class="tsd-kind-icon">On<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onmessage" class="tsd-kind-icon">On<wbr>Message</a>
 					</li>
 				</ul>
 			</nav>

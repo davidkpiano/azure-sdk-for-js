@@ -67,7 +67,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Options to passed when creating a producer using the EventHubClient.</p>
+						<p>The set of options to configure the behavior of an <code>EventHubProducer</code>.
+						These can be specified when creating the producer via the <code>createProducer</code> method.</p>
 					</div>
 				</div>
 			</section>
@@ -101,14 +102,15 @@
 					<div class="tsd-signature tsd-kind-icon">partition<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L59">eventHubClient.ts:59</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L61">eventHubClient.ts:61</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>The id of the partition to which the event should be sent. If no id is provided,
-								the service will determine the partition to which the event will be sent.</p>
+							<dd><p>The identifier of the partition that the producer will be bound to.
+									If a value is provided, all events sent using the producer will reach the same partition.
+								If no value is provided, the service will determine the partition to which the event will be sent.</p>
 							</dd>
 						</dl>
 					</div>
@@ -119,14 +121,14 @@
 					<div class="tsd-signature tsd-kind-icon">retry<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="retryoptions.html" class="tsd-signature-type">RetryOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L65">eventHubClient.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L67">eventHubClient.ts:67</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>Retry options for the send operation on the producer. If no value is provided here, the
-								retry options set when creating the <code>EventHubClient</code> is used.</p>
+							<dd><p>The retry options used to govern retry attempts when an issue is encountered while sending events.
+								If no value is provided here, the retry options set when creating the <code>EventHubClient</code> is used.</p>
 							</dd>
 						</dl>
 					</div>
@@ -155,6 +157,9 @@
 					<li class=" tsd-kind-class">
 						<a href="../classes/eventposition.html" class="tsd-kind-icon">Event<wbr>Position</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/receivehandler.html" class="tsd-kind-icon">Receive<wbr>Handler</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="eventdata.html" class="tsd-kind-icon">Event<wbr>Data</a>
 					</li>
@@ -180,10 +185,13 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface">
+						<a href="eventhubproperties.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="eventiteratoroptions.html" class="tsd-kind-icon">Event<wbr>Iterator<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="eventpositionoptions.html" class="tsd-kind-icon">Event<wbr>Position<wbr>Options</a>
+						<a href="partitionproperties.html" class="tsd-kind-icon">Partition<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="receivedeventdata.html" class="tsd-kind-icon">Received<wbr>Event<wbr>Data</a>
@@ -194,8 +202,11 @@
 					<li class=" tsd-kind-interface">
 						<a href="sendoptions.html" class="tsd-kind-icon">Send<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#geteventpositionfilter" class="tsd-kind-icon">get<wbr>Event<wbr>Position<wbr>Filter</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onerror" class="tsd-kind-icon">On<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onmessage" class="tsd-kind-icon">On<wbr>Message</a>
 					</li>
 				</ul>
 			</nav>

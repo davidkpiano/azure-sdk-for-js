@@ -67,14 +67,20 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The EventHubProducer class can be used to send messages.
-							Use the <code>createProducer</code> function on the EventHubClient to instantiate an EventHubProducer.
-						The EventHubProducer class is an abstraction over the underlying AMQP sender link.</p>
+						<p>A producer responsible for sending <code>EventData</code> to a specific Event Hub.
+							If <code>partitionId</code> is specified in the <code>options</code>, all event data sent using the producer
+							will be sent to the specified partition.
+						Otherwise, they are automatically routed to an available partition by the Event Hubs service.</p>
 					</div>
+					<p>Allowing automatic routing of partitions is recommended when:</p>
+					<ul>
+						<li>The sending of events needs to be highly available.</li>
+						<li>The event data should be evenly distributed among all available partitions.</li>
+					</ul>
+					<p>Use the <code>createProducer</code> function on the EventHubClient to instantiate an EventHubProducer.</p>
 					<dl class="tsd-comment-tags">
 						<dt>class</dt>
-						<dd><p>EventHubProducer</p>
-						</dd>
+						<dd></dd>
 					</dl>
 				</div>
 			</section>
@@ -90,12 +96,6 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="eventhubproducer.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
@@ -113,43 +113,6 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Event<wbr>Hub<wbr>Producer<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConnectionContext</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/eventhubproduceroptions.html" class="tsd-signature-type">EventHubProducerOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="eventhubproducer.html" class="tsd-signature-type">EventHubProducer</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/sender.ts#L37">sender.ts:37</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>constructor</dt>
-									<dd></dd>
-									<dt>internal</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>context: <span class="tsd-signature-type">ConnectionContext</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/eventhubproduceroptions.html" class="tsd-signature-type">EventHubProducerOptions</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="eventhubproducer.html" class="tsd-signature-type">EventHubProducer</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="isclosed" class="tsd-anchor"></a>
@@ -161,7 +124,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/sender.ts#L35">sender.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/sender.ts#L42">sender.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -190,7 +153,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/sender.ts#L83">sender.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/sender.ts#L91">sender.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -219,12 +182,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/sender.ts#L66">sender.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/sender.ts#L74">sender.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Send a batch of EventData to the EventHub using the options provided.</p>
+									<p>Send a single or an array of events to the associated Event Hub.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
@@ -250,14 +213,14 @@
 								<li>
 									<h5>eventData: <a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>An individual EventData or array of EventData objects to be sent in a Batch message.</p>
+										<p>An individual event data or array of event data objects to send.</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/sendoptions.html" class="tsd-signature-type">SendOptions</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Options where you can specifiy the partition to send the message to along with controlling the send
-										request via retry options, log level and cancellation token.</p>
+										<p>The set of options that can be specified to influence the way in which
+										events are sent to the associated Event Hub, including an abort signal to cancel the operation.</p>
 									</div>
 								</li>
 							</ul>
@@ -289,9 +252,6 @@
 					<li class="current tsd-kind-class">
 						<a href="eventhubproducer.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Producer</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="eventhubproducer.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="eventhubproducer.html#isclosed" class="tsd-kind-icon">is<wbr>Closed</a>
 							</li>
@@ -308,6 +268,9 @@
 					<li class=" tsd-kind-class">
 						<a href="eventposition.html" class="tsd-kind-icon">Event<wbr>Position</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="receivehandler.html" class="tsd-kind-icon">Receive<wbr>Handler</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/eventdata.html" class="tsd-kind-icon">Event<wbr>Data</a>
 					</li>
@@ -321,10 +284,13 @@
 						<a href="../interfaces/eventhubproduceroptions.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Producer<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="../interfaces/eventhubproperties.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="../interfaces/eventiteratoroptions.html" class="tsd-kind-icon">Event<wbr>Iterator<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/eventpositionoptions.html" class="tsd-kind-icon">Event<wbr>Position<wbr>Options</a>
+						<a href="../interfaces/partitionproperties.html" class="tsd-kind-icon">Partition<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/receivedeventdata.html" class="tsd-kind-icon">Received<wbr>Event<wbr>Data</a>
@@ -335,8 +301,11 @@
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/sendoptions.html" class="tsd-kind-icon">Send<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#geteventpositionfilter" class="tsd-kind-icon">get<wbr>Event<wbr>Position<wbr>Filter</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onerror" class="tsd-kind-icon">On<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onmessage" class="tsd-kind-icon">On<wbr>Message</a>
 					</li>
 				</ul>
 			</nav>

@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Options that can be passed when sending a batch of events using the EventHubsClient.</p>
+						<p>The set of options to configure the send operation on the <code>EventHubProducer</code>.</p>
 					</div>
 				</div>
 			</section>
@@ -101,13 +101,14 @@
 					<div class="tsd-signature tsd-kind-icon">abort<wbr>Signal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AbortSignalLike</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L83">eventHubClient.ts:83</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L86">eventHubClient.ts:86</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>Can cancel the current operation.</p>
+							<dd><p>An implementation of the <code>AbortSignalLike</code> interface to signal the request to cancel the operation.
+								For example, use the &commat;azure/abort-controller to create an <code>AbortSignal</code>.</p>
 							</dd>
 						</dl>
 					</div>
@@ -118,13 +119,13 @@
 					<div class="tsd-signature tsd-kind-icon">partition<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KarishmaGhiya/azure-sdk-for-js/blob/bd895158f/sdk/eventhub/event-hubs/src/eventHubClient.ts#L78">eventHubClient.ts:78</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/b7480d845/sdk/eventhub/event-hubs/src/eventHubClient.ts#L80">eventHubClient.ts:80</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>If specified, Event Hubs will hash this string to map to a partitionId.
+							<dd><p>A value that is hashed to produce a partition assignment.
 									It guarantees that messages with the same partitionKey end up in the same partition.
 								Specifying this will throw an error if the producer was created using a <code>paritionId</code>.</p>
 							</dd>
@@ -155,6 +156,9 @@
 					<li class=" tsd-kind-class">
 						<a href="../classes/eventposition.html" class="tsd-kind-icon">Event<wbr>Position</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/receivehandler.html" class="tsd-kind-icon">Receive<wbr>Handler</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="eventdata.html" class="tsd-kind-icon">Event<wbr>Data</a>
 					</li>
@@ -168,10 +172,13 @@
 						<a href="eventhubproduceroptions.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Producer<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="eventhubproperties.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="eventiteratoroptions.html" class="tsd-kind-icon">Event<wbr>Iterator<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="eventpositionoptions.html" class="tsd-kind-icon">Event<wbr>Position<wbr>Options</a>
+						<a href="partitionproperties.html" class="tsd-kind-icon">Partition<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="receivedeventdata.html" class="tsd-kind-icon">Received<wbr>Event<wbr>Data</a>
@@ -194,8 +201,11 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#geteventpositionfilter" class="tsd-kind-icon">get<wbr>Event<wbr>Position<wbr>Filter</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onerror" class="tsd-kind-icon">On<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#onmessage" class="tsd-kind-icon">On<wbr>Message</a>
 					</li>
 				</ul>
 			</nav>
