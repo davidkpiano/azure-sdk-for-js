@@ -111,7 +111,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/4285e1859/sdk/identity/identity/src/client/identityClient.ts#L23">client/identityClient.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/9003ff39d/sdk/identity/identity/src/client/identityClient.ts#L25">client/identityClient.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -137,7 +137,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/4285e1859/sdk/identity/identity/src/client/identityClient.ts#L138">client/identityClient.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/9003ff39d/sdk/identity/identity/src/client/identityClient.ts#L255">client/identityClient.ts:255</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -175,7 +175,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/4285e1859/sdk/identity/identity/src/client/identityClient.ts#L79">client/identityClient.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/9003ff39d/sdk/identity/identity/src/client/identityClient.ts#L179">client/identityClient.ts:179</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -204,19 +204,22 @@
 					<a name="authenticatemanagedidentity" class="tsd-anchor"></a>
 					<h3>authenticate<wbr>Managed<wbr>Identity</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">authenticate<wbr>Managed<wbr>Identity<span class="tsd-signature-symbol">(</span>scopes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, clientId<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, getTokenOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">GetTokenOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessToken</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">authenticate<wbr>Managed<wbr>Identity<span class="tsd-signature-symbol">(</span>scopes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, checkIfImdsEndpointAvailable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, clientId<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, getTokenOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">GetTokenOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessToken</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/4285e1859/sdk/identity/identity/src/client/identityClient.ts#L108">client/identityClient.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/9003ff39d/sdk/identity/identity/src/client/identityClient.ts#L208">client/identityClient.ts:208</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>scopes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>checkIfImdsEndpointAvailable: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> clientId: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
@@ -239,7 +242,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/4285e1859/sdk/identity/identity/src/client/identityClient.ts#L192">client/identityClient.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/9003ff39d/sdk/identity/identity/src/client/identityClient.ts#L309">client/identityClient.ts:309</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/identityclientoptions.html" class="tsd-signature-type">IdentityClientOptions</a></h4>
@@ -311,6 +314,15 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/identityclientoptions.html" class="tsd-kind-icon">Identity<wbr>Client<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#appservicemsiapiversion" class="tsd-kind-icon">App<wbr>Service<wbr>Msi<wbr>Api<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#imdsapiversion" class="tsd-kind-icon">Imds<wbr>Api<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#imdsendpoint" class="tsd-kind-icon">Imds<wbr>Endpoint</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="../globals.html#getdefaultazurecredential" class="tsd-kind-icon">get<wbr>Default<wbr>Azure<wbr>Credential</a>
