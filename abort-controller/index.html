@@ -63,15 +63,14 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="azure-abort-controller-library-for-js">Azure Abort Controller library for JS</h1>
-				<p>The <code>@azure/abort-controller</code> package provides <code>AbortController</code> and <code>AbortSignal</code> classes that are compatible
-					with the <code>AbortController</code> built into modern browsers and the <code>AbortSignal</code> used by <code>fetch</code>.
-					These classes are provided for use with APIs in the Azure SDK for JavaScript that accept an <code>AbortSignalLike</code>
-				parameter to cancel an operation.</p>
+				<p>The <code>@azure/abort-controller</code> package provides <code>AbortController</code> and <code>AbortSignal</code> classes. These classes are compatible
+					with the <a href="https://developer.mozilla.org/docs/Web/API/AbortController">AbortController</a> built into modern browsers
+					and the <code>AbortSignal</code> used by <a href="https://developer.mozilla.org/docs/Web/API/Fetch_API">fetch</a>.
+					Use the <code>AbortController</code> class to create an instance of the <code>AbortSignal</code> class that can be used to cancel an operation
+				in an Azure SDK that accept a parameter of type <code>AbortSignalLike</code>.</p>
 				<h2 id="getting-started">Getting started</h2>
 				<h3 id="installation">Installation</h3>
-				<ul>
-					<li>Installing this library</li>
-				</ul>
+				<p>Install this libray using npm as follows</p>
 				<pre><code><span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">install</span> @<span class="hljs-keyword">azure</span>/<span class="hljs-keyword">abort</span>-<span class="hljs-keyword">controller</span></code></pre><h2 id="key-concepts">Key Concepts</h2>
 				<p>Use the <code>AbortController</code> to create an <code>AbortSignal</code> which can then be passed to Azure SDK operations to cancel
 					pending work. The <code>AbortSignal</code> can be accessed via the <code>signal</code> property on an instantiated <code>AbortController</code>.
@@ -81,11 +80,13 @@
 					event listeners on the associated <code>AbortSignal</code>.
 				Any subsequent calls to <code>abort()</code> on the same controller will have no effect.</p>
 				<p>The <code>AbortSignal.none</code> static property returns an <code>AbortSignal</code> that can not be aborted.</p>
-				<p><code>AbortSignals</code> can also be linked so that when <code>abort()</code> is called on parent signal,
-					it also fires on all linked signals.
+				<p>Multiple instances of an <code>AbortSignal</code> can be linked so that calling <code>abort()</code> on the parent signal,
+					aborts all linked signals.
 					This linkage is one-way, meaning that a parent signal can affect a linked signal, but not the other way around.
 				To link <code>AbortSignals</code> together, pass in the parent signals to the <code>AbortController</code> constructor.</p>
 				<h2 id="examples">Examples</h2>
+				<p>The below examples assume that <code>doAsyncWork</code> is a function that takes a bag of properties, one of which is
+				of the abort signal.</p>
 				<h3 id="example-1-basic-usage">Example 1 - basic usage</h3>
 				<pre><code class="language-js"><span class="hljs-keyword">import</span> { AbortController } <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/abort-controller"</span>;
 
@@ -120,8 +121,6 @@ subTask1.abort(); <span class="hljs-comment">// aborts only subTask1</span></cod
 
 allTasksController.abort(); <span class="hljs-comment">// aborts allTasksSignal, subTask</span>
 subTask.abort(); <span class="hljs-comment">// aborts only subTask</span></code></pre>
-				<h2 id="next-steps">Next Steps</h2>
-				<p>Please take a look at the Examples section above to use this package.</p>
 				<h2 id="contributing">Contributing</h2>
 				<p>This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor
 					License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your
