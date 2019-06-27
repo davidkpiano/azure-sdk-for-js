@@ -63,19 +63,15 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="azure-event-hubs-client-library-for-javascript">Azure Event Hubs client library for Javascript</h1>
-				<p>Azure Event Hubs is a scalable event processing service that ingests and processes large volumes of events and data, with low latency and high reliability.</p>
-				<p>Use the client library for Azure Event Hubs in your Node.js application to</p>
-				<ul>
-					<li>Send events to Event Hub</li>
-					<li>Receive events from Event Hub</li>
-				</ul>
-				<p><a href="https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs">Source code</a> | <a href="https://www.npmjs.com/package/@azure/event-hubs">Package (npm)</a> | <a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/event-hubs/index?view=azure-node-latest">API Reference Documentation</a> | <a href="https://azure.microsoft.com/en-us/services/event-hubs/">Product documentation</a> | <a href="https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs/samples">Samples</a></p>
+				<p>Azure Event Hubs is a highly scalable publish-subscribe service that can ingest millions of events per second and stream them to multiple consumers. This lets you process and analyze the massive amounts of data produced by your connected devices and applications. If you would like to know more about Azure Event Hubs, you may wish to review: <a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about">What is Event Hubs</a>?</p>
+				<p>The Azure Event Hubs client library allows you to send and receive events in your Node.js application.</p>
+				<p><a href="https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs">Source code</a> | <a href="https://www.npmjs.com/package/@azure/event-hubs">Package (npm)</a> | <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/index.html">API Reference Documentation</a> | <a href="https://azure.microsoft.com/en-us/services/event-hubs/">Product documentation</a> | <a href="https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs/samples">Samples</a></p>
 				<p><strong>NOTE</strong>: If you are using version 2.1.0 or lower, then please use the below links instead</p>
 				<p><a href="https://github.com/Azure/azure-sdk-for-js/tree/%40azure/event-hubs_2.1.0/sdk/eventhub/event-hubs">Source code for v2.1.0</a> | <a href="https://www.npmjs.com/package/@azure/event-hubs/v/2.1.0">Package for v2.1.0 (npm)</a> | <a href="https://github.com/Azure/azure-sdk-for-js/tree/%40azure/event-hubs_2.1.0/sdk/eventhub/event-hubs/samples">Samples for v2.1.0</a></p>
 				<h2 id="getting-started">Getting Started</h2>
 				<h3 id="install-the-package">Install the package</h3>
 				<p>Install the Azure Event Hubs client library using npm</p>
-				<p><code>npm install @azure/event-hubs</code></p>
+				<p><code>npm install @azure/event-hubs@5.0.0-preview.1</code></p>
 				<p><strong>Prerequisites</strong>: You must have an <a href="https://azure.microsoft.com/free/">Azure subscription</a> and a
 					<a href="https://docs.microsoft.com/en-us/azure/event-hubs/">Event Hubs Namespace</a> to use this package.
 				If you are using this package in a Node.js application, then use Node.js 6.x or higher.</p>
@@ -98,47 +94,52 @@
 				</ul>
 				<p>For more concepts and deeper discussion, see: <a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features">Event Hubs Features</a></p>
 				<h3 id="authenticate-the-client">Authenticate the client</h3>
-				<p>Interaction with Event Hubs starts with an instance of the <a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/event-hubs/eventhubclient?view=azure-node-latest">EventHubClient</a> class. You can instantiate
+				<p>Interaction with Event Hubs starts with an instance of the <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/classes/eventhubclient.html#constructor">EventHubClient</a> class. You can instantiate
 				this class using one of the below</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> EventHubClient(<span class="hljs-string">"my-connection-string"</span>, <span class="hljs-string">"my-event-hub"</span>);</code></pre>
 				<ul>
-					<li>This constructor takes the connection string of the form &#39;Endpoint=sb://my-servicebus-namespace.servicebus.windows.net/;SharedAccessKeyName=my-SA-name;SharedAccessKey=my-SA-key;&#39; and entity name to your Event Hub instance. You can get the connection string from the <a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#get-connection-string-from-the-portal">Azure portal</a></li>
+					<li>This constructor takes the connection string of the form &#39;Endpoint=sb://my-servicebus-namespace.servicebus.windows.net/;SharedAccessKeyName=my-SA-name;SharedAccessKey=my-SA-key;&#39; and entity name to your Event Hub instance. You can get the connection string from the <a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#get-connection-string-from-the-portal">Azure portal</a>.</li>
 				</ul>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> EventHubClient(<span class="hljs-string">"my-connection-string-with-entity-path"</span>);</code></pre>
 				<ul>
-					<li>The <a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#get-connection-string-from-the-portal">connection string from Azure Portal</a> is for the entire Event Hubs namespace and will not contain the path to the desired Event Hub instance which is needed for this constructor overload. In this case, the path can be added manually by adding &quot;;EntityPath=[[ EVENT HUB NAME ]]&quot; to the end of the connection string. For example, &quot;;EntityPath=my-event-hub-name&quot;.</li>
+					<li>The <a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#get-connection-string-from-the-portal">connection string from the Azure Portal</a> is for the entire Event Hubs namespace and will not contain the path to the desired Event Hub instance which is needed for this constructor overload. In this case, the path can be added manually by adding &quot;;EntityPath=[[ EVENT HUB NAME ]]&quot; to the end of the connection string. For example, &quot;;EntityPath=my-event-hub-name&quot;.</li>
 				</ul>
 				<p>If you have defined a shared access policy directly on the Event Hub itself, then copying the connection string from that Event Hub will result in a connection string that contains the path.</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> EventHubClient(<span class="hljs-string">"my-host-name"</span>, <span class="hljs-string">"my-event-hub"</span>, <span class="hljs-string">"credential"</span>);</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> EventHubClient(<span class="hljs-string">"my-host-name"</span>, <span class="hljs-string">"my-event-hub"</span>, credential);</code></pre>
 				<ul>
-					<li>This constructor takes the host name and entity name of your Event Hub instance and credential that implements the TokenCredential interface. The host name is of the format <code>&lt;yournamespace&gt;.servicebus.windows.net</code>.</li>
+					<li>This constructor takes the host name and entity name of your Event Hub instance and credential that implements the TokenCredential interface. There are implementations of the <code>TokenCredential</code> interface available in the <code>@azure/identity</code> package. The host name is of the format <code>&lt;yournamespace&gt;.servicebus.windows.net</code>.</li>
 				</ul>
 				<h3 id="examples">Examples</h3>
 				<p>The following sections provide code snippets that cover some of the common tasks using Azure Event Hubs</p>
 				<ul>
-					<li><a href="#publish-events-to-an-hvent-hub">Publish events to an Event Hub</a></li>
+					<li><a href="#publish-events-to-an-event-hub">Publish events to an Event Hub</a></li>
 					<li><a href="#consume-events-from-an-event-hub">Consume events from an Event Hub</a></li>
 					<li><a href="#use-eventHubClient-to-work-with-IotHub">Use EventHubClient to work with IotHub</a></li>
 				</ul>
 				<h3 id="publish-events-to-an-event-hub">Publish events to an Event Hub</h3>
 				<p>In order to publish events, you&#39;ll need to create an <code>EventHubProducer</code>. Producers may be dedicated to a specific partition, or allow the Event Hubs service to decide which partition events should be published to. It is recommended to use automatic routing when the publishing of events needs to be highly available or when event data should be distributed evenly among the partitions. In the our example, we will take advantage of automatic routing.</p>
-				<p>You can also use the <a href="link">send</a> method to send multiple events using a single call.</p>
+				<p>You can also use the <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/classes/eventhubproducer.html#send">send</a> method to send multiple events using a single call.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> EventHubClient(<span class="hljs-string">"connectionString"</span>, <span class="hljs-string">"eventHubName"</span>);
 <span class="hljs-keyword">const</span> producer = client.createProducer();
 <span class="hljs-keyword">await</span> producer.send({ <span class="hljs-attr">body</span>: <span class="hljs-string">"my-event-body"</span> });</code></pre>
-				<p>To send events to a particular partition, use the optional parameter <code>partitionId</code> on the <code>createProducer</code> function.
-					Many Event Hub operations take place within the scope of a specific partition. Because partitions are owned by the Event Hub, their names are assigned at the time of creation. To understand what partitions are available, You can use the <a href="link">getPartitionIds</a>
+				<p>Many Event Hub operations take place within the scope of a specific partition. Because partitions are owned by the Event Hub, their names are assigned at the time of creation. To understand what partitions are available, You can use the <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/classes/eventhubclient.html#getpartitionids">getPartitionIds</a>
 				function to get the ids of all available partitions in your Event Hub instance.</p>
-				<p><code>createProducer</code> method takes an optional parameter of type <a href="link">EventHubProducerOptions</a> which you can use to specify the retry options for the send operation.</p>
-				<p><code>send</code> method takes an optional parameter of type <a href="link">SendOptions</a> which you can use to specify <code>abortSignal</code> to cancel current operation.</p>
+				<p>The <code>createProducer</code> method takes an optional parameter of type <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/interfaces/eventhubproduceroptions.html">EventHubProducerOptions</a> which you can use to specify the retry options and partition id for the send operation.</p>
+				<p>The <code>send</code> method takes an optional parameter of type <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/interfaces/sendoptions.html">SendOptions</a> which you can use to specify <code>abortSignal</code> to cancel current operation.
+					You can also specify <code>partitionKey</code> if you did not specify a partition id when creating the producer.
+				All events that use the same partition key will be sent to the same partition.</p>
 				<p><strong>Note</strong>: When working with Azure Stream Analytics, the body of the event being sent should be a JSON object as well.
 				For example: <code>body: { &quot;message&quot;: &quot;Hello World&quot; }</code></p>
 				<h3 id="consume-events-from-an-event-hub">Consume events from an Event Hub</h3>
 				<p>In order to consume events, you&#39;ll need to create an <code>EventHubConsumer</code> for a specific partition and consumer group combination. When an Event Hub is created, it starts with a default consumer group that can be used to get started. A consumer also needs to specify where in the event stream to begin receiving events; in our example, we will focus on reading new events as they are published.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> EventHubClient(<span class="hljs-string">"connectionString"</span>, <span class="hljs-string">"eventHubName"</span>);
-<span class="hljs-keyword">const</span> consumer = client.createConsumer(<span class="hljs-string">"$Default"</span>, partitionIds[<span class="hljs-number">0</span>], EventPosition.latest());</code></pre>
-				<p>You can use the <a href="https://docs.microsoft.com/en-us/javascript/api/@azure/event-hubs/eventhubclient?view=azure-node-latest#getpartitionids--">getPartitionIds</a> function to get the ids of all available partitions in your Event Hub instance.</p>
-				<p><code>createConsumer</code> method takes an optional parameter of type <a href="link">EventHubConsumerOptions</a> which you can use to specify the ownerLevel, the level that this consumer is currently using for partition ownership. If another consumer is currently active for the same partition with no or lower level, then it will get disconnected. If another consumer is currently active with a higher level, then this consumer will fail to connect. You can also specify retryOptions for the receive operation on the consumer.</p>
+<span class="hljs-keyword">const</span> consumer = client.createConsumer(
+  EventHubClient.defaultConsumerGroupName,
+  partitionIds[<span class="hljs-number">0</span>],
+  EventPosition.latest()
+);</code></pre>
+				<p>You can use the <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/classes/eventhubclient.html#getpartitionids">getPartitionIds</a> function to get the ids of all available partitions in your Event Hub instance.</p>
+				<p>The <code>createConsumer</code> method takes an optional parameter of type <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/interfaces/eventhubconsumeroptions.html">EventHubConsumerOptions</a> which you can use to specify the ownerLevel, the level that this consumer is currently using for partition ownership. If another consumer is currently active for the same partition with no or lower level, then it will get disconnected. If another consumer is currently active with a higher level, then this consumer will fail to connect. You can also specify retryOptions for the receive operation on the consumer.</p>
 				<p>You can use this consumer in one of 3 ways to receive events:</p>
 				<ul>
 					<li><a href="#get-an-array-of-events">Get an array of events</a></li>
@@ -146,11 +147,12 @@
 					<li><a href="#use-async-iterator">Use async iterator</a></li>
 				</ul>
 				<h4 id="get-an-array-of-events">Get an array of events</h4>
-				<p>Use the <a href="link">receiveBatch</a> function which returns a promise that resolves to an array of events.</p>
+				<p>Use the <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/classes/eventhubconsumer.html#receivebatch">receiveBatch</a> function which returns a promise that resolves to an array of events.</p>
 				<p>This function takes an optional parameter called <code>abortSignal</code> to cancel current operation.</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> myEvents = <span class="hljs-keyword">await</span> consumer.receiveBatch(<span class="hljs-number">10</span>);</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> maxMessageCount = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">const</span> myEvents = <span class="hljs-keyword">await</span> consumer.receiveBatch(maxMessageCount);</code></pre>
 				<h4 id="register-event-handler">Register event handler</h4>
-				<p>Use the <a href="link">receive</a> to set up event handlers and have it running as long as you need.</p>
+				<p>Use the <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/classes/eventhubconsumer.html#receive">receive</a> to set up event handlers and have it running as long as you need.</p>
 				<p>This function takes an optional parameter called <code>abortSignal</code> to cancel current operation.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> myEventHandler = <span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> {
   <span class="hljs-comment">// your code here</span>
@@ -163,8 +165,8 @@
 <span class="hljs-comment">// When ready to stop receiving</span>
 <span class="hljs-keyword">await</span> receiveHandler.stop();</code></pre>
 				<h4 id="use-async-iterator">Use async iterator</h4>
-				<p>Use the <a href="link">getMessageIterator</a> to get an async iterator over events</p>
-				<p>This function takes an optional parameter called <code>abortSignal</code> to cancel current operation.</p>
+				<p>Use the <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/classes/eventhubconsumer.html#geteventiterator">getMessageIterator</a> to get an async iterator over events.</p>
+				<p>This function takes an optional <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/interfaces/eventiteratoroptions.html">EventIteratorOptions</a> parameter that includes <code>abortSignal</code> to cancel the current operation.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> events <span class="hljs-keyword">of</span> consumer.getEventIterator()){
   <span class="hljs-comment">// your code here</span>
 }</code></pre>
@@ -172,7 +174,7 @@
 				<p>You can use <code>EventHubClient</code> to work with IotHub as well. This is useful for receiving telemetry data of IotHub from the linked EventHub.
 				Most likely the associated connection string will not have send claims. Hence getting HubRuntimeInfo or PartitionRuntimeInfo and receiving events would be the possible operations.</p>
 				<ul>
-					<li>Please notice that we are awaiting on the <a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/event-hubs/eventhubclient?view=azure-node-latest#createfromiothubconnectionstring-string--clientoptions-">createFromIotHubConnectionString</a> method to get an instance of the EventHubClient. This is different from other static methods on the client. The method talks to the IotHub endpoint to get a redirect error which contains the EventHub endpoint to talk to. It then constructs the right EventHub connection string based on the information in the redirect error and returns an instance of the EventHubClient that you can play with.</li>
+					<li>Please notice that we are awaiting on the <a href="https://azure.github.io/azure-sdk-for-js/event-hubs/classes/eventhubclient.html#createfromiothubconnectionstring">createFromIotHubConnectionString</a> method to get an instance of the EventHubClient. This is different from other static methods on the client. The method talks to the IotHub endpoint to get a redirect error which contains the EventHub endpoint to talk to. It then constructs the right EventHub connection string based on the information in the redirect error and returns an instance of the EventHubClient that you can play with.</li>
 				</ul>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">await</span> EventHubClient.createFromIotHubConnectionString(<span class="hljs-string">"connectionString"</span>);
 <span class="hljs-keyword">await</span> client.getHubRuntimeInformation();
