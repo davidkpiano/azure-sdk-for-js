@@ -82,41 +82,39 @@
 					<li>RetryPolicy for retrying a given operation if a retryable error was encountered.</li>
 				</ul>
 				<h2 id="examples">Examples</h2>
-				<p>The examples below expect a connection string to a Azure Service Bus or Azure Event Hubs instance.
-					The entity path refers to an Event Hub name in case of Azure Event Hubs and a queue or a topic name
-				in case of Azure Service Bus.</p>
-				<h2 id="claims-based-authorization">Claims Based Authorization</h2>
 				<p><a href="https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-amqp-protocol-guide#claims-based-authorization">Claims Based Authorization</a>
 					need to be done for every AMQP link that your application creates. The claims also has to be renewed periodically.
 				For more details on CBS, please see the <a href="https://www.oasis-open.org/committees/download.php/62097/amqp-cbs-v1.0-wd05.doc">CBS Specification</a>.</p>
-				<p>In the below example, we use the Shared Key details present in the connection string to create a SAS token.
+				<p>In the below examples, we use the Shared Key details present in the connection string to create a SAS token.
 					This token is then used to make a request on the $cbs link to carry out Claims Based Authorization for a link to the given entity
 				in Azure Service Bus or Azure Event Hubs.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> connectionConfig = ConnectionConfig.create(
-  <span class="hljs-string">"your-connection-string-with-shared-key"</span>,
-  <span class="hljs-string">"entity-path"</span>
-);
-<span class="hljs-keyword">const</span> connectionContext = ConnectionContextBase.create({ <span class="hljs-attr">config</span>: connectionConfig });
-<span class="hljs-keyword">const</span> audience = <span class="hljs-string">`<span class="hljs-subst">${connectionConfig.endpoint}</span><span class="hljs-subst">${connectionConfig.entityPath}</span>`</span>;
-
-<span class="hljs-comment">// Initialize a $cbs link with the service</span>
-<span class="hljs-keyword">await</span> connectionContext.cbsSession.init();
-
-<span class="hljs-comment">// Use the SharedKeyCredential on the ConnectionContext to get the SAS token</span>
-<span class="hljs-keyword">const</span> token = <span class="hljs-keyword">await</span> connectionContext.tokenCredential.getToken(audience);
-
-<span class="hljs-comment">// Use the SAS token to carry out the Claims Based Authorization</span>
-<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> connectionContext.cbsSession.negotiateClaim(audience, tokenObject);
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Result is: <span class="hljs-subst">${result}</span>`</span>);</code></pre>
+				<p>The examples below expect a connection string to a Azure Service Bus or Azure Event Hubs instance.
+					The entity path refers to an Event Hub name in case of Azure Event Hubs and a queue or a topic name
+				in case of Azure Service Bus.</p>
 				<h2 id="create-a-sender-link">Create a sender link</h2>
-				<p>After you have run the sample code in the <a href="#claims-based-authorization">Claims Based Authorization example</a>,
-				you can use the <code>ConnectionContext.connection</code> to create a sender link as shown below.</p>
+				<p>In the below example, we first create a <code>ConnectionContext</code> which is used to carry out the claims
+					based authorization. Then, we create a sender link using the <code>ConnectionContext.connection</code> to
+				send a message.</p>
 				<pre><code class="language-js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">const</span> connectionConfig = ConnectionConfig.create(
     <span class="hljs-string">"your-connection-string-with-shared-key"</span>,
     <span class="hljs-string">"entity-path"</span>
   );
-  <span class="hljs-keyword">const</span> connectionContext = ConnectionContextBase.create({ <span class="hljs-attr">config</span>: connectionConfig });
+  <span class="hljs-keyword">const</span> connectionContext = ConnectionContextBase.create({
+    <span class="hljs-attr">config</span>: connectionConfig,
+    <span class="hljs-attr">connectionProperties</span>: {
+      <span class="hljs-attr">product</span>: <span class="hljs-string">"product"</span>,
+      <span class="hljs-attr">userAgent</span>: <span class="hljs-string">"/user-agent"</span>,
+      <span class="hljs-attr">version</span>: <span class="hljs-string">"0.0.0"</span>
+    }
+  });
+
+  <span class="hljs-comment">// Carry out the Claims Based Authorization</span>
+  <span class="hljs-keyword">await</span> connectionContext.cbsSession.init();
+  <span class="hljs-keyword">const</span> token = <span class="hljs-keyword">await</span> connectionContext.tokenCredential.getToken(audience);
+  <span class="hljs-keyword">await</span> connectionContext.cbsSession.negotiateClaim(audience, token, TokenType.CbsTokenTypeSas);
+
+  <span class="hljs-comment">// Create a sender</span>
   <span class="hljs-keyword">const</span> senderName = <span class="hljs-string">"your-sender-name"</span>;
   <span class="hljs-keyword">const</span> senderOptions = {
     <span class="hljs-attr">name</span>: senderName,
@@ -137,8 +135,9 @@
       }
     }
   };
-
   <span class="hljs-keyword">const</span> sender = <span class="hljs-keyword">await</span> connectionContext.connection.createSender(senderOptions);
+
+  <span class="hljs-comment">// Send a message</span>
   <span class="hljs-keyword">const</span> delivery = <span class="hljs-keyword">await</span> sender.send({ <span class="hljs-attr">body</span>: <span class="hljs-string">"your-message-body"</span> });
 
   <span class="hljs-keyword">await</span> sender.close();
@@ -147,17 +146,32 @@
 
 main().catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(err));</code></pre>
 				<h2 id="create-a-receiver-link">Create a receiver link</h2>
-				<p>After you have run the sample code in the <a href="#claims-based-authorization">Claims Based Authorization example</a>,
-				you can use the <code>ConnectionContext.connection</code> to create a receiver link as shown below.</p>
+				<p>In the below example, we first create a <code>ConnectionContext</code> which is used to carry out the claims
+					based authorization. Then, we create a receiver link using the <code>ConnectionContext.connection</code> to
+				receive messages for 30 seconds.</p>
 				<pre><code class="language-js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">const</span> connectionConfig = ConnectionConfig.create(
     <span class="hljs-string">"your-connection-string-with-shared-key"</span>,
     <span class="hljs-string">"entity-path"</span>
   );
-  <span class="hljs-keyword">const</span> connectionContext = ConnectionContextBase.create({ <span class="hljs-attr">config</span>: connectionConfig });
+  <span class="hljs-keyword">const</span> connectionContext = ConnectionContextBase.create({
+    <span class="hljs-attr">config</span>: connectionConfig,
+    <span class="hljs-attr">connectionProperties</span>: {
+      <span class="hljs-attr">product</span>: <span class="hljs-string">"product"</span>,
+      <span class="hljs-attr">userAgent</span>: <span class="hljs-string">"/user-agent"</span>,
+      <span class="hljs-attr">version</span>: <span class="hljs-string">"0.0.0"</span>
+    }
+  });
+
+  <span class="hljs-comment">// Carry out the Claims Based Authorization</span>
+  <span class="hljs-keyword">await</span> connectionContext.cbsSession.init();
+  <span class="hljs-keyword">const</span> token = <span class="hljs-keyword">await</span> connectionContext.tokenCredential.getToken(audience);
+  <span class="hljs-keyword">await</span> connectionContext.cbsSession.negotiateClaim(audience, token, TokenType.CbsTokenTypeSas);
+
+  <span class="hljs-comment">// Create a receiver</span>
   <span class="hljs-keyword">const</span> receiverName = <span class="hljs-string">"your-receiver-name"</span>;
   <span class="hljs-keyword">const</span> filterClause = <span class="hljs-string">`amqp.annotation.x-opt-enqueued-time &gt; '<span class="hljs-subst">${<span class="hljs-built_in">Date</span>.now() - <span class="hljs-number">3600</span> * <span class="hljs-number">1000</span>}</span>'`</span>; <span class="hljs-comment">// Get messages from the past hour</span>
-  <span class="hljs-keyword">const</span> receiverAddress = <span class="hljs-string">`<span class="hljs-subst">${path}</span>/ConsumerGroups/$default/Partitions/0`</span>; <span class="hljs-comment">// For ServiceBus "&lt;QueueName&gt;"</span>
+  <span class="hljs-keyword">const</span> receiverAddress = <span class="hljs-string">`<span class="hljs-subst">${connectionConfig.entityPath}</span>/ConsumerGroups/$default/Partitions/0`</span>; <span class="hljs-comment">// For ServiceBus "&lt;QueueName&gt;"</span>
   <span class="hljs-keyword">const</span> receiverOptions = {
     <span class="hljs-attr">name</span>: receiverName,
     <span class="hljs-attr">source</span>: {
@@ -173,6 +187,9 @@ main().catch(<span class="hljs-function">(<span class="hljs-params">err</span>) 
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"An error occurred for receiver '%s': %O."</span>, receiverName, receiverError);
       }
     },
+    <span class="hljs-attr">onMessage</span>: <span class="hljs-function">(<span class="hljs-params">context</span>) =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Received message: %O"</span>, context.message);
+    },
     <span class="hljs-attr">onSessionError</span>: <span class="hljs-function">(<span class="hljs-params">context</span>) =&gt;</span> {
       <span class="hljs-keyword">const</span> sessionError = context.session &amp;&amp; context.session.error;
       <span class="hljs-keyword">if</span> (sessionError) {
@@ -184,16 +201,13 @@ main().catch(<span class="hljs-function">(<span class="hljs-params">err</span>) 
       }
     }
   };
-
   <span class="hljs-keyword">const</span> receiver = <span class="hljs-keyword">await</span> connectionContext.connection.createReceiver(receiverOptions);
-  receiver.on(ReceiverEvents.message, (context) =&gt; {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Received message: %O"</span>, context.message);
-  });
 
-  <span class="hljs-comment">// sleeping for 2 mins to let the receiver receive messages and then closing it.</span>
-  <span class="hljs-keyword">await</span> delay(<span class="hljs-number">120000</span>);
+  <span class="hljs-comment">// sleeping for 30 seconds to let the receiver receive messages</span>
+  <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">r</span>) =&gt;</span> setTimeout(r, <span class="hljs-number">30000</span>));
+
+  <span class="hljs-comment">// Close the receiver to stop receiving messages</span>
   <span class="hljs-keyword">await</span> receiver.close();
-
   <span class="hljs-keyword">await</span> connectionContext.connection.close();
 }
 
