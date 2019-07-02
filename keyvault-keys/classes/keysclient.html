@@ -133,13 +133,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L150">index.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L150">index.ts:150</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Creates an instance of KeysClient.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">import</span> { KeysClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/keyvault-keys"</span>;
+<span class="hljs-keyword">import</span> { EnvironmentCredential } <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/identity"</span>;
+
+<span class="hljs-keyword">let</span> url = <span class="hljs-string">`https://&lt;MY KEYVAULT HERE&gt;.vault.azure.net`</span>;
+<span class="hljs-keyword">let</span> credentials = <span class="hljs-keyword">new</span> EnvironmentCredential();
+
+<span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
 									<dd><p>KeysClient</p>
@@ -176,7 +184,7 @@
 					<div class="tsd-signature tsd-kind-icon">credential<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ServiceClientCredentials</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">TokenCredential</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L149">index.ts:149</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L149">index.ts:149</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -191,7 +199,7 @@
 					<div class="tsd-signature tsd-kind-icon">pipeline<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pipeline</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L144">index.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L144">index.ts:144</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -206,7 +214,7 @@
 					<div class="tsd-signature tsd-kind-icon">vault<wbr>Base<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L139">index.ts:139</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L139">index.ts:139</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -228,7 +236,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L502">index.ts:502</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L587">index.ts:587</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -236,6 +244,9 @@
 									<p>Requests that a backup of the specified key be downloaded to the client. All versions of the
 									key will be downloaded. This operation requires the keys/backup permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">let</span> backupContents = <span class="hljs-keyword">await</span> client.backupKey(<span class="hljs-string">"MyKey"</span>);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Backs up the specified key.</p>
@@ -269,7 +280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L251">index.ts:251</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L275">index.ts:275</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -278,6 +289,9 @@
 										already exists, Azure Key Vault creates a new version of the key. It requires the keys/create
 									permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">let</span> result = <span class="hljs-keyword">await</span> client.createEcKey(<span class="hljs-string">"MyKey"</span>, { curve: <span class="hljs-string">"P-256"</span> });</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Creates a new key, stores it, then returns key parameters and attributes to the client.</p>
@@ -311,7 +325,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L206">index.ts:206</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L224">index.ts:224</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -320,6 +334,10 @@
 										already exists, Azure Key Vault creates a new version of the key. It requires the keys/create
 									permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-comment">// Create an elliptic-curve key:</span>
+<span class="hljs-keyword">let</span> result = <span class="hljs-keyword">await</span> client.createKey(<span class="hljs-string">"MyKey"</span>, <span class="hljs-string">"EC"</span>);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Creates a new key, stores it, then returns key parameters and attributes to the client.</p>
@@ -359,7 +377,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L292">index.ts:292</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L322">index.ts:322</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -368,6 +386,9 @@
 										already exists, Azure Key Vault creates a new version of the key. It requires the keys/create
 									permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">let</span> result = <span class="hljs-keyword">await</span> client.createRsaKey(<span class="hljs-string">"MyKey"</span>, { keySize: <span class="hljs-number">2048</span> });</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Creates a new key, stores it, then returns key parameters and attributes to the client.</p>
@@ -401,7 +422,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L372">index.ts:372</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L415">index.ts:415</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -409,6 +430,9 @@
 									<p>The DELETE operation applies to any key stored in Azure Key Vault. DELETE cannot be applied
 									to an individual version of a key. This operation requires the keys/delete permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">let</span> result = <span class="hljs-keyword">await</span> client.deleteKey(<span class="hljs-string">"MyKey"</span>);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Deletes a key from a specified key vault.</p>
@@ -442,7 +466,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L451">index.ts:451</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L514">index.ts:514</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -450,6 +474,9 @@
 									<p>The Get Deleted Key operation returns the specified deleted key along with its attributes.
 									This operation requires the keys/get permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">let</span> key = <span class="hljs-keyword">await</span> client.getDeletedKey(<span class="hljs-string">"MyDeletedKey"</span>);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Gets the specified deleted key.</p>
@@ -483,7 +510,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L433">index.ts:433</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L490">index.ts:490</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -491,6 +518,9 @@
 									<p>The GET operation is applicable to any key stored in Azure Key Vault. This operation requires
 									the keys/get permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">let</span> key = <span class="hljs-keyword">await</span> client.getKey(<span class="hljs-string">"MyKey"</span>);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Get a specified key from a given key vault.</p>
@@ -524,7 +554,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L333">index.ts:333</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L370">index.ts:370</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -533,6 +563,10 @@
 										named key already exists, Azure Key Vault creates a new version of the key. This operation
 									requires the keys/import permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-comment">// Key contents in myKeyContents</span>
+<span class="hljs-keyword">let</span> result = <span class="hljs-keyword">await</span> client.importKey(<span class="hljs-string">"MyKey"</span>, myKeyContents);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Imports an externally created key, stores it, and returns key parameters and attributes
@@ -572,7 +606,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L692">index.ts:692</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L812">index.ts:812</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -580,6 +614,12 @@
 									<p>Iterates the deleted keys in the vault.  The full key identifier and attributes are provided
 									in the response. No values are returned for the keys. This operations requires the keys/list permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> keyAttr of client.listDeletedKeys()) {
+  <span class="hljs-keyword">const</span> deletedKey = <span class="hljs-keyword">await</span> client.getKey(keyAttr.name);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"deleted key: "</span>, deletedKey);
+}</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>List all keys in the vault</p>
@@ -607,7 +647,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L576">index.ts:576</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L678">index.ts:678</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -615,6 +655,12 @@
 									<p>Iterates all versions of the given key in the vault. The full key identifier, attributes, and tags are provided
 									in the response. This operation requires the keys/list permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> keyAttr of client.listKeyVersions(<span class="hljs-string">"MyKey"</span>)) {
+  <span class="hljs-keyword">const</span> key = <span class="hljs-keyword">await</span> client.getKey(keyAttr.name);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"key version: "</span>, key);
+}</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -643,7 +689,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L632">index.ts:632</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L743">index.ts:743</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -651,6 +697,12 @@
 									<p>Iterates the latest version of all keys in the vault.  The full key identifier and attributes are provided
 									in the response. No values are returned for the keys. This operations requires the keys/list permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> keyAttr of client.listKeys()) {
+  <span class="hljs-keyword">const</span> key = <span class="hljs-keyword">await</span> client.getKey(keyAttr.name);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"key: "</span>, key);
+}</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>List all keys in the vault</p>
@@ -678,7 +730,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L469">index.ts:469</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L540">index.ts:540</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -687,6 +739,11 @@
 										recovery. This operation can only be enabled on a soft-delete enabled vault. This operation
 									requires the keys/purge permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">await</span> client.deleteKey(<span class="hljs-string">"MyKey"</span>);
+<span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">await</span> client.purgeDeletedKey(<span class="hljs-string">"MyKey"</span>);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Permanently deletes the specified key.</p>
@@ -720,7 +777,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L485">index.ts:485</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L564">index.ts:564</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -728,6 +785,11 @@
 									<p>Recovers the deleted key in the specified vault. This operation can only be performed on a
 									soft-delete enabled vault. This operation requires the keys/recover permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">await</span> client.deleteKey(<span class="hljs-string">"MyKey"</span>);
+<span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">await</span> client.recoverDeletedKey(<span class="hljs-string">"MyKey"</span>);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Recovers the deleted key to the latest version.</p>
@@ -761,7 +823,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L519">index.ts:519</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L612">index.ts:612</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -769,6 +831,11 @@
 									<p>Restores a backed up key, and all its versions, to a vault. This operation requires the
 									keys/restore permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">let</span> backupContents = <span class="hljs-keyword">await</span> client.backupKey(<span class="hljs-string">"MyKey"</span>);
+<span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">let</span> key = <span class="hljs-keyword">await</span> client.restoreKey(backupContents);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Restores a backed up key to a vault.</p>
@@ -802,7 +869,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L391">index.ts:391</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L442">index.ts:442</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -811,6 +878,11 @@
 										are not specified in the request are left unchanged. The value of a key itself cannot be
 									changed. This operation requires the keys/set permission.</p>
 								</div>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">let</span> keyName = <span class="hljs-string">"MyKey"</span>;
+<span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> KeysClient(url, credentials);
+<span class="hljs-keyword">let</span> key = <span class="hljs-keyword">await</span> client.getKey(keyName);
+<span class="hljs-keyword">let</span> result = <span class="hljs-keyword">await</span> client.updateKey(keyName, key.version, { enabled: <span class="hljs-literal">false</span> });</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>summary</dt>
 									<dd><p>Updates the attributes associated with a specified key in a given key vault.</p>
@@ -850,7 +922,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/keyvault/keyvault-keys/src/index.ts#L99">index.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/86d1791ac/sdk/keyvault/keyvault-keys/src/index.ts#L99">index.ts:99</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
