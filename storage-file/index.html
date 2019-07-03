@@ -64,13 +64,8 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="azure-storage-client-library-for-javascript-file">Azure Storage client library for JavaScript - File</h1>
 				<p>Azure Files offers fully managed file shares in the cloud that are accessible via the industry standard Server Message Block (SMB) protocol. Azure file shares can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS. Additionally, Azure file shares can be cached on Windows Servers with Azure File Sync for fast access near where the data is being used.</p>
-				<ul>
-					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file">Source Code</a></li>
-					<li><a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction">Product documentation</a></li>
-					<li><a href="https://badge.fury.io/js/%40azure%2Fstorage-file"><img src="https://badge.fury.io/js/%40azure%2Fstorage-file.svg" alt="npm version"></a></li>
-					<li><a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/storage-file/index?view=azure-node-preview">API Reference documentation</a></li>
-					<li><a href="https://docs.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api">Azure Storage File REST APIs</a></li>
-				</ul>
+				<p>This project provides a client library in JavaScript that makes it easy to consume Microsoft Azure File Storage service.</p>
+				<p><a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-file">Source code</a> | <a href="https://www.npmjs.com/package/@azure/storage-file">Package (npm)</a> | <a href="https://azure.github.io/azure-sdk-for-js/storage-file/index.html">API Reference Documentation</a> | <a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction">Product documentation</a> | <a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-file/samples">Samples</a> | <a href="https://docs.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api">Azure Storage File REST APIs</a></p>
 				<h2 id="key-concepts">Key concepts</h2>
 				<h3 id="features">Features</h3>
 				<ul>
@@ -135,7 +130,7 @@
 				<h2 id="getting-started">Getting started</h2>
 				<h3 id="npm">NPM</h3>
 				<p>The preferred way to install the Azure File Storage client library for JavaScript is to use the npm package manager. Simply type the following into a terminal window:</p>
-				<pre><code class="language-bash">npm install @azure/storage-file</code></pre>
+				<pre><code class="language-bash">npm install @azure/storage-file@12.0.0-preview.1</code></pre>
 				<p>In your TypeScript or JavaScript file, import via following:</p>
 				<pre><code class="language-JavaScript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Azure <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/storage-file"</span>;</code></pre>
 				<p>Or</p>
@@ -165,18 +160,18 @@
 				<h2 id="examples">Examples</h2>
 				<h3 id="create-the-file-service-client">Create the file service client</h3>
 				<p>Use the constructor to create a instance of <code>FileServiceClient</code>, passing in the credential.</p>
-				<pre><code class="language-javascript">  <span class="hljs-comment">// Enter your storage account name and shared key</span>
-  <span class="hljs-keyword">const</span> account = <span class="hljs-string">""</span>;
-  <span class="hljs-keyword">const</span> accountKey = <span class="hljs-string">""</span>;
+				<pre><code class="language-javascript"><span class="hljs-comment">// Enter your storage account name and shared key</span>
+<span class="hljs-keyword">const</span> account = <span class="hljs-string">""</span>;
+<span class="hljs-keyword">const</span> accountKey = <span class="hljs-string">""</span>;
 
-  <span class="hljs-comment">// Use SharedKeyCredential with storage account and account key</span>
-  <span class="hljs-comment">// SharedKeyCredential is only avaiable in Node.js runtime, not in browsers</span>
-  <span class="hljs-keyword">const</span> sharedKeyCredential = <span class="hljs-keyword">new</span> SharedKeyCredential(account, accountKey);
-  <span class="hljs-keyword">const</span> serviceClient = <span class="hljs-keyword">new</span> FileServiceClient(
-    <span class="hljs-comment">// When using AnonymousCredential, following url should include a valid SAS</span>
-    <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.file.core.windows.net`</span>,
-    sharedKeyCredential
-  );</code></pre>
+<span class="hljs-comment">// Use SharedKeyCredential with storage account and account key</span>
+<span class="hljs-comment">// SharedKeyCredential is only avaiable in Node.js runtime, not in browsers</span>
+<span class="hljs-keyword">const</span> sharedKeyCredential = <span class="hljs-keyword">new</span> SharedKeyCredential(account, accountKey);
+<span class="hljs-keyword">const</span> serviceClient = <span class="hljs-keyword">new</span> FileServiceClient(
+  <span class="hljs-comment">// When using AnonymousCredential, following url should include a valid SAS</span>
+  <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.file.core.windows.net`</span>,
+  sharedKeyCredential
+);</code></pre>
 				<h3 id="list-shares-in-the-account">List shares in the account</h3>
 				<p>Use <code>ShareServiceClient.listShares()</code> to iterator shares in this account,
 				with the new <code>for-await-of</code> syntax:</p>
@@ -187,33 +182,33 @@
     i++;
   }</code></pre>
 				<p>Alternatively without <code>for-await-of</code>:</p>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">let</span> shareIter2 = <span class="hljs-keyword">await</span> serviceClient.listShares();
-  i = <span class="hljs-number">1</span>;
-  <span class="hljs-keyword">let</span> shareItem = <span class="hljs-keyword">await</span> shareIter2.next();
-  <span class="hljs-keyword">while</span> (!shareItem.done) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Share<span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${shareItem.value.name}</span>`</span>);
-    shareItem = <span class="hljs-keyword">await</span> shareIter2.next();
-  }</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> shareIter2 = <span class="hljs-keyword">await</span> serviceClient.listShares();
+i = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> shareItem = <span class="hljs-keyword">await</span> shareIter2.next();
+<span class="hljs-keyword">while</span> (!shareItem.done) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Share<span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${shareItem.value.name}</span>`</span>);
+  shareItem = <span class="hljs-keyword">await</span> shareIter2.next();
+}</code></pre>
 				<h3 id="create-a-new-share-and-a-directory">Create a new share and a directory</h3>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> shareName = <span class="hljs-string">`newshare<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
-  <span class="hljs-keyword">const</span> shareClient = serviceClient.getShareClient(shareName);
-  <span class="hljs-keyword">await</span> shareClient.create();
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Create share <span class="hljs-subst">${shareName}</span> successfully`</span>);
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> shareName = <span class="hljs-string">`newshare<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
+<span class="hljs-keyword">const</span> shareClient = serviceClient.getShareClient(shareName);
+<span class="hljs-keyword">await</span> shareClient.create();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Create share <span class="hljs-subst">${shareName}</span> successfully`</span>);
 
-  <span class="hljs-keyword">const</span> directoryName = <span class="hljs-string">`newdirectory<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
-  <span class="hljs-keyword">const</span> directoryClient = shareClient.getDirectoryClient(directoryName);
-  <span class="hljs-keyword">await</span> directoryClient.create();
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Create directory <span class="hljs-subst">${directoryName}</span> successfully`</span>);</code></pre>
+<span class="hljs-keyword">const</span> directoryName = <span class="hljs-string">`newdirectory<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
+<span class="hljs-keyword">const</span> directoryClient = shareClient.getDirectoryClient(directoryName);
+<span class="hljs-keyword">await</span> directoryClient.create();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Create directory <span class="hljs-subst">${directoryName}</span> successfully`</span>);</code></pre>
 				<h3 id="create-an-azure-file-then-upload-to-it">Create an azure file then upload to it</h3>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> content = <span class="hljs-string">"Hello World!"</span>;
-  <span class="hljs-keyword">const</span> fileName = <span class="hljs-string">"newfile"</span> + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime();
-  <span class="hljs-keyword">const</span> fileClient = directoryClient.getFileClient(fileName);
-  <span class="hljs-keyword">await</span> fileClient.create(content.length);
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Create file <span class="hljs-subst">${fileName}</span> successfully`</span>);
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> content = <span class="hljs-string">"Hello World!"</span>;
+<span class="hljs-keyword">const</span> fileName = <span class="hljs-string">"newfile"</span> + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime();
+<span class="hljs-keyword">const</span> fileClient = directoryClient.getFileClient(fileName);
+<span class="hljs-keyword">await</span> fileClient.create(content.length);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Create file <span class="hljs-subst">${fileName}</span> successfully`</span>);
 
-  <span class="hljs-comment">// Upload file range</span>
-  <span class="hljs-keyword">await</span> fileClient.uploadRange(content, <span class="hljs-number">0</span>, content.length);
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Upload file range "<span class="hljs-subst">${content}</span>" to <span class="hljs-subst">${fileName}</span> successfully`</span>);</code></pre>
+<span class="hljs-comment">// Upload file range</span>
+<span class="hljs-keyword">await</span> fileClient.uploadRange(content, <span class="hljs-number">0</span>, content.length);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Upload file range "<span class="hljs-subst">${content}</span>" to <span class="hljs-subst">${fileName}</span> successfully`</span>);</code></pre>
 				<h3 id="list-files-and-directories-under-a-directory">List files and directories under a directory</h3>
 				<p>Use <code>DirectoryClient.listFilesAndDirectories()</code> to iterator over files and directories,
 					with the new <code>for-await-of</code> syntax. The <code>kind</code> property can be used to identify whether
@@ -229,33 +224,31 @@
     i++;
   }</code></pre>
 				<p>Alternatively without using <code>for-await-of</code>:</p>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">let</span> dirIter2 = <span class="hljs-keyword">await</span> directoryClient.listFilesAndDirectories();
-  i = <span class="hljs-number">1</span>;
-  <span class="hljs-keyword">let</span> item = <span class="hljs-keyword">await</span> dirIter2.next();
-  <span class="hljs-keyword">while</span> (!item.done) {
-    <span class="hljs-keyword">if</span> (item.value.kind === <span class="hljs-string">"directory"</span>) {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${i}</span> - directory\t: <span class="hljs-subst">${item.value.name}</span>`</span>);
-    } <span class="hljs-keyword">else</span> {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${i}</span> - file\t: <span class="hljs-subst">${item.value.name}</span>`</span>);
-    }
-    item = <span class="hljs-keyword">await</span> dirIter2.next();
-  }</code></pre>
-				<p>For a complete sample on iterating blobs please see <a href="./samples/iterators-files-and-directories.ts">samples/iterators-files-and-directories.ts</a>.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> dirIter2 = <span class="hljs-keyword">await</span> directoryClient.listFilesAndDirectories();
+i = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> item = <span class="hljs-keyword">await</span> dirIter2.next();
+<span class="hljs-keyword">while</span> (!item.done) {
+  <span class="hljs-keyword">if</span> (item.value.kind === <span class="hljs-string">"directory"</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${i}</span> - directory\t: <span class="hljs-subst">${item.value.name}</span>`</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${i}</span> - file\t: <span class="hljs-subst">${item.value.name}</span>`</span>);
+  }
+  item = <span class="hljs-keyword">await</span> dirIter2.next();
+}</code></pre>
+				<p>For a complete sample on iterating blobs please see <a href="https://github.com/Azure/azure-sdk-for-js/blob/feature/storage/sdk/storage/storage-file/samples/typescript/iterators-files-and-directories.ts">samples/iterators-files-and-directories.ts</a>.</p>
 				<h3 id="download-a-file-and-convert-it-to-a-string-node-js-">Download a file and convert it to a string (Node.js)</h3>
-				<pre><code class="language-javascript">  <span class="hljs-comment">// Get file content from position 0 to the end</span>
-  <span class="hljs-comment">// In Node.js, get downloaded data by accessing downloadFileResponse.readableStreamBody</span>
-  <span class="hljs-keyword">const</span> downloadFileResponse = <span class="hljs-keyword">await</span> fileClient.download(<span class="hljs-number">0</span>);
-  <span class="hljs-built_in">console</span>.log(
-    <span class="hljs-string">`Downloaded file content<span class="hljs-subst">${<span class="hljs-keyword">await</span> streamToString(
-      downloadFileResponse.readableStreamBody
-    )}</span>`</span>
-  );
+				<pre><code class="language-javascript"><span class="hljs-comment">// Get file content from position 0 to the end</span>
+<span class="hljs-comment">// In Node.js, get downloaded data by accessing downloadFileResponse.readableStreamBody</span>
+<span class="hljs-keyword">const</span> downloadFileResponse = <span class="hljs-keyword">await</span> fileClient.download(<span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.log(
+  <span class="hljs-string">`Downloaded file content<span class="hljs-subst">${<span class="hljs-keyword">await</span> streamToString(downloadFileResponse.readableStreamBody)}</span>`</span>
+);
 
 <span class="hljs-comment">// [Node.js only] A helper method used to read a Node.js readable stream into string</span>
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">streamToString</span>(<span class="hljs-params">readableStream</span>) </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
     <span class="hljs-keyword">const</span> chunks = [];
-    readableStream.on(<span class="hljs-string">"data"</span>, data =&gt; {
+    readableStream.on(<span class="hljs-string">"data"</span>, (data) =&gt; {
       chunks.push(data.toString());
     });
     readableStream.on(<span class="hljs-string">"end"</span>, () =&gt; {
@@ -285,7 +278,7 @@
     fileReader.readAsText(blob);
   });
 }</code></pre>
-				<p>A complete example of basic scenarios is at <a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file/samples/basic.js">samples/basic.js</a>.</p>
+				<p>A complete example of basic scenarios is at <a href="https://github.com/Azure/azure-sdk-for-js/blob/feature/storage/sdk/storage/storage-file/samples/typescript/basic.ts">samples/basic.ts</a>.</p>
 				<h2 id="troubleshooting">Troubleshooting</h2>
 				<p>It could help diagnozing issues by turning on the console logging. Here&#39;s an example logger implementation. First, add a custom logger:</p>
 				<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConsoleHttpPipelineLogger</span> </span>{
@@ -308,17 +301,18 @@
   }
 }</code></pre>
 				<p>When creating the <code>FileServiceClient</code> instance, pass the logger in the options</p>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> fileServiceClient = <span class="hljs-keyword">new</span> FileServiceClient(
-    <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.file.core.windows.net`</span>,
-    sharedKeyCredential, {
-      <span class="hljs-attr">logger</span>: <span class="hljs-keyword">new</span> ConsoleHttpPipelineLogger(HttpPipelineLogLevel.INFO),
-    }
-  );</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> fileServiceClient = <span class="hljs-keyword">new</span> FileServiceClient(
+  <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.file.core.windows.net`</span>,
+  sharedKeyCredential,
+  {
+    <span class="hljs-attr">logger</span>: <span class="hljs-keyword">new</span> ConsoleHttpPipelineLogger(HttpPipelineLogLevel.INFO)
+  }
+);</code></pre>
 				<h2 id="next-steps">Next steps</h2>
 				<p>More code samples</p>
 				<ul>
-					<li><a href="https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file/samples">File Storage Examples</a></li>
-					<li><a href="https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file/test">File Storage Examples - Test Cases</a></li>
+					<li><a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-file/samples">File Storage Examples</a></li>
+					<li><a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-file/test">File Storage Examples - Test Cases</a></li>
 				</ul>
 				<h2 id="contributing">Contributing</h2>
 				<p>This project welcomes contributions and suggestions. Most contributions require you to agree to a

@@ -65,13 +65,7 @@
 				<h1 id="azure-storage-client-library-for-javascript-queue">Azure Storage client library for JavaScript - Queue</h1>
 				<p>Azure Queue storage provides cloud messaging between application components. In designing applications for scale, application components are often decoupled, so that they can scale independently. Queue storage delivers asynchronous messaging for communication between application components, whether they are running in the cloud, on the desktop, on an on-premises server, or on a mobile device. Queue storage also supports managing asynchronous tasks and building process work flows.</p>
 				<p>This project provides a client library in JavaScript that makes it easy to consume Microsoft Azure Queue Storage service.</p>
-				<ul>
-					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue">Source Code</a></li>
-					<li><a href="https://docs.microsoft.com/en-us/azure/storage/queues/storage-dotnet-how-to-use-queues">Product documentation</a></li>
-					<li><a href="https://badge.fury.io/js/%40azure%2Fstorage-queue"><img src="https://badge.fury.io/js/%40azure%2Fstorage-queue.svg" alt="npm version"></a></li>
-					<li><a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/storage-queue/index?view=azure-node-preview">API Reference documentation</a></li>
-					<li><a href="https://docs.microsoft.com/en-us/rest/api/storageservices/queue-service-rest-api">Azure Storage Queue REST APIs</a></li>
-				</ul>
+				<p><a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-queue">Source code</a> | <a href="https://www.npmjs.com/package/@azure/storage-queue">Package (npm)</a> | <a href="https://azure.github.io/azure-sdk-for-js/storage-queue/index.html">API Reference Documentation</a> | <a href="https://docs.microsoft.com/en-us/azure/storage/queues/storage-dotnet-how-to-use-queues">Product documentation</a> | <a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-queue/samples">Samples</a> | <a href="https://docs.microsoft.com/en-us/rest/api/storageservices/queue-service-rest-api">Azure Storage Queue REST APIs</a></p>
 				<h2 id="key-concepts">Key concepts</h2>
 				<h3 id="features">Features</h3>
 				<ul>
@@ -121,7 +115,7 @@
 				<h2 id="getting-started">Getting started</h2>
 				<h3 id="npm">NPM</h3>
 				<p>The preferred way to install the Azure Queue Storage client library for JavaScript is to use the npm package manager. Simply type the following into a terminal window:</p>
-				<pre><code class="language-bash">npm install @azure/storage-queue</code></pre>
+				<pre><code class="language-bash">npm install @azure/storage-queue@12.0.0-preview.1</code></pre>
 				<p>In your TypeScript or JavaScript file, import via following:</p>
 				<pre><code class="language-JavaScript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Azure <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/storage-queue"</span>;</code></pre>
 				<p>Or</p>
@@ -151,20 +145,22 @@
 				<h2 id="examples">Examples</h2>
 				<h3 id="create-the-queue-service-client">Create the queue service client</h3>
 				<p>Use the constructor to create an instance of <code>QueueServiceClient</code>, passing in the credential, and options to configure the HTTP pipeline (optional).</p>
-				<pre><code class="language-javascript">  <span class="hljs-comment">// Enter your storage account name and shared key</span>
-  <span class="hljs-keyword">const</span> account = <span class="hljs-string">"&lt;account&gt;"</span>;
-  <span class="hljs-keyword">const</span> accountKey = <span class="hljs-string">"&lt;accountkey&gt;"</span>;
+				<pre><code class="language-javascript"><span class="hljs-comment">// Enter your storage account name and shared key</span>
+<span class="hljs-keyword">const</span> account = <span class="hljs-string">"&lt;account&gt;"</span>;
+<span class="hljs-keyword">const</span> accountKey = <span class="hljs-string">"&lt;accountkey&gt;"</span>;
 
-  <span class="hljs-comment">// Use SharedKeyCredential with storage account and account key</span>
-  <span class="hljs-comment">// SharedKeyCredential is only avaiable in Node.js runtime, not in browsers</span>
-  <span class="hljs-keyword">const</span> sharedKeyCredential = <span class="hljs-keyword">new</span> SharedKeyCredential(account, accountKey);
+<span class="hljs-comment">// Use SharedKeyCredential with storage account and account key</span>
+<span class="hljs-comment">// SharedKeyCredential is only avaiable in Node.js runtime, not in browsers</span>
+<span class="hljs-keyword">const</span> sharedKeyCredential = <span class="hljs-keyword">new</span> SharedKeyCredential(account, accountKey);
 
-  <span class="hljs-keyword">const</span> queueServiceClient = <span class="hljs-keyword">new</span> QueueServiceClient(
-    <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.queue.core.windows.net`</span>,
-    sharedKeyCredential, {
-      <span class="hljs-attr">retryOptions</span>: { <span class="hljs-attr">maxTries</span>: <span class="hljs-number">4</span> }, <span class="hljs-comment">// Retry options</span>
-      telemetry: { <span class="hljs-attr">value</span>: <span class="hljs-string">"BasicSample/V11.0.0"</span> } <span class="hljs-comment">// Customized telemetry string</span>
-  });</code></pre>
+<span class="hljs-keyword">const</span> queueServiceClient = <span class="hljs-keyword">new</span> QueueServiceClient(
+  <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.queue.core.windows.net`</span>,
+  sharedKeyCredential,
+  {
+    <span class="hljs-attr">retryOptions</span>: { <span class="hljs-attr">maxTries</span>: <span class="hljs-number">4</span> }, <span class="hljs-comment">// Retry options</span>
+    telemetry: { <span class="hljs-attr">value</span>: <span class="hljs-string">"BasicSample/V11.0.0"</span> } <span class="hljs-comment">// Customized telemetry string</span>
+  }
+);</code></pre>
 				<h3 id="list-queues-in-this-account">List queues in this account</h3>
 				<p>Use <code>QueueServiceClient.listContainers()</code> function to iterate the containers,
 				with the new <code>for-await-of</code> syntax:</p>
@@ -175,48 +171,38 @@
     i++;
   }</code></pre>
 				<p>Alternatively without <code>for-await-of</code>:</p>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">let</span> iter2 = <span class="hljs-keyword">await</span> queueServiceClient.listQueues();
-  i = <span class="hljs-number">1</span>;
-  <span class="hljs-keyword">let</span> item = <span class="hljs-keyword">await</span> iter2.next();
-  <span class="hljs-keyword">while</span> (!item.done) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Queue<span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${item.value.name}</span>`</span>);
-    item = <span class="hljs-keyword">await</span> iter2.next();
-  }</code></pre>
-				<p>For a complete sample on iterating queues please see <a href="./samples/iterators.ts">samples/iterators.ts</a>.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> iter2 = <span class="hljs-keyword">await</span> queueServiceClient.listQueues();
+i = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> item = <span class="hljs-keyword">await</span> iter2.next();
+<span class="hljs-keyword">while</span> (!item.done) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Queue<span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${item.value.name}</span>`</span>);
+  item = <span class="hljs-keyword">await</span> iter2.next();
+}</code></pre>
+				<p>For a complete sample on iterating queues please see <a href="https://github.com/Azure/azure-sdk-for-js/blob/feature/storage/sdk/storage/storage-queue/samples/typescript/iterators.ts">samples/iterators.ts</a>.</p>
 				<h3 id="create-a-new-queue">Create a new queue</h3>
 				<p>Use <code>QueueServiceClient.getQueueClient()</code> function to create a new queue.</p>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> queueName = <span class="hljs-string">`newqueue<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
-  <span class="hljs-keyword">const</span> queueClient = queueServiceClient.getQueueClient(queueName);
-  <span class="hljs-keyword">const</span> createQueueResponse = <span class="hljs-keyword">await</span> queueClient.create();
-  <span class="hljs-built_in">console</span>.log(
-    <span class="hljs-string">`Create queue <span class="hljs-subst">${queueName}</span> successfully, service assigned request Id: <span class="hljs-subst">${
-      createQueueResponse.requestId
-    }</span>`</span>
-  );</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> queueName = <span class="hljs-string">`newqueue<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
+<span class="hljs-keyword">const</span> queueClient = queueServiceClient.getQueueClient(queueName);
+<span class="hljs-keyword">const</span> createQueueResponse = <span class="hljs-keyword">await</span> queueClient.create();
+<span class="hljs-built_in">console</span>.log(
+  <span class="hljs-string">`Create queue <span class="hljs-subst">${queueName}</span> successfully, service assigned request Id: <span class="hljs-subst">${createQueueResponse.requestId}</span>`</span>
+);</code></pre>
 				<h3 id="send-a-message-to-the-queue">Send a message to the queue</h3>
 				<p>Send messages using a <code>MessageClient</code> instance which can be obtained by calling
 					<code>QueueClient.getMessagesClient()</code>. The returned response contains data about
 					the enqueued message, include a <code>messageId</code>, and a <code>popReceipt</code> that can be used
 				to update the message later.</p>
-				<pre><code class="language-javascript">  <span class="hljs-comment">// Enqueue a message into the queue using the enqueue method.</span>
-  <span class="hljs-keyword">const</span> messagesClient = queueClient.getMessagesClient();
-  <span class="hljs-keyword">const</span> enqueueQueueResponse = <span class="hljs-keyword">await</span> messagesClient.enqueue(
-    <span class="hljs-string">"Hello World!"</span>
-  );
-  <span class="hljs-built_in">console</span>.log(
-    <span class="hljs-string">`Enqueue message successfully, service assigned message Id: <span class="hljs-subst">${
-      enqueueQueueResponse.messageId
-    }</span>, service assigned request Id: <span class="hljs-subst">${enqueueQueueResponse.requestId}</span>`</span>
-  );</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-comment">// Enqueue a message into the queue using the enqueue method.</span>
+<span class="hljs-keyword">const</span> messagesClient = queueClient.getMessagesClient();
+<span class="hljs-keyword">const</span> enqueueQueueResponse = <span class="hljs-keyword">await</span> messagesClient.enqueue(<span class="hljs-string">"Hello World!"</span>);
+<span class="hljs-built_in">console</span>.log(
+  <span class="hljs-string">`Enqueue message successfully, service assigned message Id: <span class="hljs-subst">${enqueueQueueResponse.messageId}</span>, service assigned request Id: <span class="hljs-subst">${enqueueQueueResponse.requestId}</span>`</span>
+);</code></pre>
 				<h3 id="peek-a-message">Peek a message</h3>
 				<p><code>MessagesClient.peek()</code> allows looking at one or more messages in front of the queue. This call
 				doesn&#39;t prevent other code from accessing peeked messages.</p>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> peekQueueResponse = <span class="hljs-keyword">await</span> messagesClient.peek();
-  <span class="hljs-built_in">console</span>.log(
-    <span class="hljs-string">`The peeked message is: <span class="hljs-subst">${
-      peekQueueResponse.peekedMessageItems[<span class="hljs-number">0</span>].messageText
-    }</span>`</span>
-  );</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> peekQueueResponse = <span class="hljs-keyword">await</span> messagesClient.peek();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The peeked message is: <span class="hljs-subst">${peekQueueResponse.peekedMessageItems[<span class="hljs-number">0</span>].messageText}</span>`</span>);</code></pre>
 				<h3 id="processing-a-message">Processing a message</h3>
 				<p>Messages are processed in two steps.</p>
 				<ul>
@@ -224,34 +210,22 @@
 					<li>When processing of a message is done, call <code>MessagesClient.delete()</code> with the message&#39;s <code>popReceipt</code>.</li>
 				</ul>
 				<p>If your code fails to process a message due to hardware or software failure, this two-step process ensures that another instance of your code can get the same message and try again.</p>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> dequeueResponse = <span class="hljs-keyword">await</span> messagesClient.dequeue();
-  <span class="hljs-keyword">if</span> (dequeueResponse.dequeuedMessageItems.length == <span class="hljs-number">1</span>) {
-    <span class="hljs-keyword">const</span> dequeueMessageItem = dequeueResponse.dequeuedMessageItems[<span class="hljs-number">0</span>];
-    <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">`Processing &amp; deleting message with content: <span class="hljs-subst">${
-        dequeueMessageItem.messageText
-      }</span>`</span>
-    );
-    <span class="hljs-keyword">const</span> messageIdClient = messagesClient.getMessageIdClient(
-      dequeueMessageItem.messageId
-    );
-    <span class="hljs-keyword">const</span> deleteMessageResponse = <span class="hljs-keyword">await</span> messageIdClient.delete(
-      dequeueMessageItem.popReceipt
-    );
-    <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">`Delete message succesfully, service assigned request Id: <span class="hljs-subst">${
-        deleteMessageResponse.requestId
-      }</span>`</span>
-    );
-  }</code></pre>
-				<h3 id="delete-a-queue">Delete a queue</h3>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> deleteQueueResponse = <span class="hljs-keyword">await</span> queueClient.delete();
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> dequeueResponse = <span class="hljs-keyword">await</span> messagesClient.dequeue();
+<span class="hljs-keyword">if</span> (dequeueResponse.dequeuedMessageItems.length == <span class="hljs-number">1</span>) {
+  <span class="hljs-keyword">const</span> dequeueMessageItem = dequeueResponse.dequeuedMessageItems[<span class="hljs-number">0</span>];
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Processing &amp; deleting message with content: <span class="hljs-subst">${dequeueMessageItem.messageText}</span>`</span>);
+  <span class="hljs-keyword">const</span> messageIdClient = messagesClient.getMessageIdClient(dequeueMessageItem.messageId);
+  <span class="hljs-keyword">const</span> deleteMessageResponse = <span class="hljs-keyword">await</span> messageIdClient.delete(dequeueMessageItem.popReceipt);
   <span class="hljs-built_in">console</span>.log(
-    <span class="hljs-string">`Delete queue successfully, service assigned request Id: <span class="hljs-subst">${
-      deleteQueueResponse.requestId
-    }</span>`</span>
-  );</code></pre>
-				<p>A complete example of basic scenarios is at <a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/samples/basic.js">samples/basic.js</a>.</p>
+    <span class="hljs-string">`Delete message succesfully, service assigned request Id: <span class="hljs-subst">${deleteMessageResponse.requestId}</span>`</span>
+  );
+}</code></pre>
+				<h3 id="delete-a-queue">Delete a queue</h3>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> deleteQueueResponse = <span class="hljs-keyword">await</span> queueClient.delete();
+<span class="hljs-built_in">console</span>.log(
+  <span class="hljs-string">`Delete queue successfully, service assigned request Id: <span class="hljs-subst">${deleteQueueResponse.requestId}</span>`</span>
+);</code></pre>
+				<p>A complete example of basic scenarios is at <a href="https://github.com/Azure/azure-sdk-for-js/blob/feature/storage/sdk/storage/storage-queue/samples/typescript/basic.ts">samples/basic.ts</a>.</p>
 				<h2 id="troubleshooting">Troubleshooting</h2>
 				<p>It could help diagnozing issues by turning on the console logging. Here&#39;s an example logger implementation. First, add a custom logger:</p>
 				<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConsoleHttpPipelineLogger</span> </span>{
@@ -274,19 +248,20 @@
   }
 }</code></pre>
 				<p>When creating the <code>QueueServiceClient</code> instance, pass the logger in the options</p>
-				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> queueServiceClient = <span class="hljs-keyword">new</span> QueueServiceClient(
-    <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.queue.core.windows.net`</span>,
-    sharedKeyCredential, {
-      <span class="hljs-attr">logger</span>: <span class="hljs-keyword">new</span> ConsoleHttpPipelineLogger(HttpPipelineLogLevel.INFO),
-    }
-  );</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> queueServiceClient = <span class="hljs-keyword">new</span> QueueServiceClient(
+  <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.queue.core.windows.net`</span>,
+  sharedKeyCredential,
+  {
+    <span class="hljs-attr">logger</span>: <span class="hljs-keyword">new</span> ConsoleHttpPipelineLogger(HttpPipelineLogLevel.INFO)
+  }
+);</code></pre>
 				<h2 id="authenticating-with-azure-active-directory">Authenticating with Azure Active Directory</h2>
-				<p>If you have <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app">registered an application</a> with an Azure Active Directory tenant, you can <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad">assign it to an RBAC role</a> in your Azure Storage account.  This enables you to use the Azure.Identity library to authenticate with Azure Storage as shown in the <a href="./samples/azureAdAuth.ts">azureAdAuth.ts sample</a>.</p>
+				<p>If you have <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app">registered an application</a> with an Azure Active Directory tenant, you can <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad">assign it to an RBAC role</a> in your Azure Storage account. This enables you to use the Azure.Identity library to authenticate with Azure Storage as shown in the <a href="https://github.com/Azure/azure-sdk-for-js/blob/feature/storage/sdk/storage/storage-queue/samples/typescript/azureAdAuth.ts">azureAdAuth.ts sample</a>.</p>
 				<h2 id="next-steps">Next steps</h2>
 				<p>More code samples</p>
 				<ul>
-					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/samples">Queue Storage Examples</a></li>
-					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/test/">Queue Storage Examples - Test Cases</a></li>
+					<li><a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-queue/samples">Queue Storage Examples</a></li>
+					<li><a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-queue/test">Queue Storage Examples - Test Cases</a></li>
 				</ul>
 				<h2 id="contributing">Contributing</h2>
 				<p>This project welcomes contributions and suggestions. Most contributions require you to agree to a

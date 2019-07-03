@@ -65,13 +65,7 @@
 				<h1 id="azure-storage-client-library-for-javascript-blob">Azure Storage client library for JavaScript - Blob</h1>
 				<p>Azure Blob storage is Microsoft&#39;s object storage solution for the cloud. Blob storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that does not adhere to a particular data model or definition, such as text or binary data.</p>
 				<p>This project provides a client library in JavaScript that makes it easy to consume Microsoft Azure Blob Storage service.</p>
-				<ul>
-					<li><a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-overview">Product documentation</a></li>
-					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob">Source Code</a></li>
-					<li><a href="https://badge.fury.io/js/%40azure%2Fstorage-blob"><img src="https://badge.fury.io/js/%40azure%2Fstorage-blob.svg" alt="npm version"></a></li>
-					<li><a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/storage-blob/index?view=azure-node-preview">API Reference documentation</a></li>
-					<li><a href="https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api">Azure Storage Blob REST APIs</a></li>
-				</ul>
+				<p><a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-blob">Source code</a> | <a href="https://www.npmjs.com/package/@azure/storage-blob">Package (npm)</a> | <a href="https://azure.github.io/azure-sdk-for-js/storage-blob/index.html">API Reference Documentation</a> | <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-overview">Product documentation</a> | <a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-blob/samples">Samples</a> | <a href="https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api">Azure Storage Blob REST APIs</a></p>
 				<h2 id="key-concepts">Key concepts</h2>
 				<h3 id="features">Features</h3>
 				<ul>
@@ -137,7 +131,7 @@
 				<h2 id="getting-started">Getting started</h2>
 				<h3 id="npm">NPM</h3>
 				<p>The preferred way to install the Azure Blob Storage client library for JavaScript is to use the npm package manager. Simply type the following into a terminal window:</p>
-				<pre><code class="language-bash">npm install @azure/storage-blob</code></pre>
+				<pre><code class="language-bash">npm install @azure/storage-blob@12.0.0-preview.1</code></pre>
 				<p>In your TypeScript or JavaScript file, import via following:</p>
 				<pre><code class="language-JavaScript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Azure <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/storage-blob"</span>;</code></pre>
 				<p>Or</p>
@@ -211,7 +205,7 @@ iter = blobServiceClient.listContainers();
       }
     }
   }</code></pre>
-				<p>For a complete sample on iterating containers please see <a href="./samples/iterators-containers.ts">samples/iterators-containers.ts</a>.</p>
+				<p>For a complete sample on iterating containers please see <a href="https://github.com/Azure/azure-sdk-for-js/blob/feature/storage/sdk/storage/storage-blob/samples/typescript/iterators-containers.ts">samples/iterators-containers.ts</a>.</p>
 				<h3 id="create-a-blob-by-uploading-data-to">Create a blob by uploading data to</h3>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> content = <span class="hljs-string">"hello"</span>;
 <span class="hljs-keyword">const</span> blobName = <span class="hljs-string">"newblob"</span> + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime();
@@ -226,7 +220,7 @@ iter = blobServiceClient.listContainers();
   <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> blob <span class="hljs-keyword">of</span> iter) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Blob <span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${blob.name}</span>`</span>);
   }</code></pre>
-				<p>For a complete sample on iterating blobs please see <a href="./samples/iterators-blobs.ts">samples/iterators-blobs.ts</a>.</p>
+				<p>For a complete sample on iterating blobs please see <a href="https://github.com/Azure/azure-sdk-for-js/blob/feature/storage/sdk/storage/storage-blob/samples/typescript/iterators-blobs.ts">samples/iterators-blobs.ts</a>.</p>
 				<h3 id="download-a-blob-and-convert-it-to-a-string-node-js-">Download a blob and convert it to a string (Node.js)</h3>
 				<pre><code class="language-javascript"><span class="hljs-comment">// Get blob content from position 0 to the end</span>
 <span class="hljs-comment">// In Node.js, get downloaded data by accessing downloadBlockBlobResponse.readableStreamBody</span>
@@ -269,7 +263,7 @@ iter = blobServiceClient.listContainers();
     fileReader.readAsText(blob);
   });
 }</code></pre>
-				<p>A complete example of basic scenarios is at <a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples/basic.js">samples/basic.js</a>.</p>
+				<p>A complete example of basic scenarios is at <a href="https://github.com/Azure/azure-sdk-for-js/blob/feature/storage/sdk/storage/storage-blob/samples/typescript/basic.ts">samples/basic.ts</a>.</p>
 				<h2 id="troubleshooting">Troubleshooting</h2>
 				<p>It could help diagnozing issues by turning on the console logging. Here&#39;s an example logger implementation. First, add a custom logger:</p>
 				<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConsoleHttpPipelineLogger</span> </span>{
@@ -299,11 +293,13 @@ iter = blobServiceClient.listContainers();
     <span class="hljs-attr">logger</span>: <span class="hljs-keyword">new</span> ConsoleHttpPipelineLogger(HttpPipelineLogLevel.INFO)
   }
 );</code></pre>
+				<h2 id="authenticating-with-azure-active-directory">Authenticating with Azure Active Directory</h2>
+				<p>If you have <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app">registered an application</a> with an Azure Active Directory tenant, you can <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad">assign it to an RBAC role</a> in your Azure Storage account. This enables you to use the Azure.Identity library to authenticate with Azure Storage as shown in the <a href="https://github.com/Azure/azure-sdk-for-js/blob/feature/storage/sdk/storage/storage-blob/samples/typescript/azureAdAuth.ts">azureAdAuth.ts sample</a>.</p>
 				<h2 id="next-steps">Next steps</h2>
 				<p>More code examples</p>
 				<ul>
-					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples">Blob Storage Examples</a></li>
-					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/test/">Blob Storage Examples - Test Cases</a></li>
+					<li><a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-blob/samples">Blob Storage Examples</a></li>
+					<li><a href="https://github.com/Azure/azure-sdk-for-js/tree/feature/storage/sdk/storage/storage-blob/test/">Blob Storage Examples - Test Cases</a></li>
 				</ul>
 				<h2 id="contributing">Contributing</h2>
 				<p>This project welcomes contributions and suggestions. Most contributions require you to agree to a
