@@ -66,22 +66,16 @@
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd><p>An interface representing ContainerListBlobFlatSegmentOptionalParams.
-							Optional Parameters.</p>
-						</dd>
-						<dt>extends</dt>
-						<dd><p>RequestOptionsBase</p>
-						</dd>
-					</dl>
+					<div class="lead">
+						<p>Optional Parameters.</p>
+					</div>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">RequestOptionsBase</span>
+						<span class="tsd-signature-type">any</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">ContainerListBlobFlatSegmentOptionalParams</span>
@@ -90,10 +84,6 @@
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-kind-interface">
-				<h3 class="tsd-before-signature">Indexable</h3>
-				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -101,16 +91,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="containerlistblobflatsegmentoptionalparams.html#abortsignal" class="tsd-kind-icon">abort<wbr>Signal</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="containerlistblobflatsegmentoptionalparams.html#customheaders" class="tsd-kind-icon">custom<wbr>Headers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="containerlistblobflatsegmentoptionalparams.html#include" class="tsd-kind-icon">include</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="containerlistblobflatsegmentoptionalparams.html#marker" class="tsd-kind-icon">marker</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="containerlistblobflatsegmentoptionalparams.html#maxresults" class="tsd-kind-icon">maxresults</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="containerlistblobflatsegmentoptionalparams.html#ondownloadprogress" class="tsd-kind-icon">on<wbr>Download<wbr>Progress</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="containerlistblobflatsegmentoptionalparams.html#onuploadprogress" class="tsd-kind-icon">on<wbr>Upload<wbr>Progress</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="containerlistblobflatsegmentoptionalparams.html#prefix" class="tsd-kind-icon">prefix</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="containerlistblobflatsegmentoptionalparams.html#requestid" class="tsd-kind-icon">request<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="containerlistblobflatsegmentoptionalparams.html#timeout" class="tsd-kind-icon">timeout</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="containerlistblobflatsegmentoptionalparams.html#timeoutparameter" class="tsd-kind-icon">timeout<wbr>Parameter</a></li>
 							</ul>
 						</section>
@@ -119,57 +104,19 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="abortsignal" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> abort<wbr>Signal</h3>
-					<div class="tsd-signature tsd-kind-icon">abort<wbr>Signal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AbortSignalLike</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from RequestOptionsBase.abortSignal</p>
-						<ul>
-							<li>Defined in D:/a/1/s/sdk/storage/storage-blob/node_modules/@azure/ms-rest-js/es/lib/webResource.d.ts:213</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The signal which can be used to abort requests.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="customheaders" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> custom<wbr>Headers</h3>
-					<div class="tsd-signature tsd-kind-icon">custom<wbr>Headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from RequestOptionsBase.customHeaders</p>
-						<ul>
-							<li>Defined in D:/a/1/s/sdk/storage/storage-blob/node_modules/@azure/ms-rest-js/es/lib/webResource.d.ts:207</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>property</dt>
-							<dd><p>{object} [customHeaders] User defined custom request headers that
-								will be applied before the request is sent.</p>
-							</dd>
-						</dl>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="include" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> include</h3>
 					<div class="tsd-signature tsd-kind-icon">include<span class="tsd-signature-symbol">:</span> <a href="../globals.html#listblobsincludeitem" class="tsd-signature-type">ListBlobsIncludeItem</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L1489">generated/lib/models/index.ts:1489</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L992">generated/lib/models/index.ts:992</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>member</dt>
-							<dd><p>{ListBlobsIncludeItem[]} [include] Include this parameter to
-								specify one or more datasets to include in the response.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>Include this parameter to specify one or more datasets to include in the response.</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -178,21 +125,17 @@
 					<div class="tsd-signature tsd-kind-icon">marker<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L1474">generated/lib/models/index.ts:1474</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L979">generated/lib/models/index.ts:979</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>member</dt>
-							<dd><p>{string} [marker] A string value that identifies the portion of
-									the list of containers to be returned with the next listing operation. The
-									operation returns the NextMarker value within the response body if the
-									listing operation did not return all containers remaining to be listed
-									with the current page. The NextMarker value can be used as the value for
-									the marker parameter in a subsequent call to request the next page of list
-								items. The marker value is opaque to the client.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>A string value that identifies the portion of the list of containers to be returned with the
+								next listing operation. The operation returns the NextMarker value within the response body if
+								the listing operation did not return all containers remaining to be listed with the current
+								page. The NextMarker value can be used as the value for the marker parameter in a subsequent
+							call to request the next page of list items. The marker value is opaque to the client.</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -201,52 +144,17 @@
 					<div class="tsd-signature tsd-kind-icon">maxresults<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L1484">generated/lib/models/index.ts:1484</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>member</dt>
-							<dd><p>{number} [maxresults] Specifies the maximum number of containers
-									to return. If the request does not specify maxresults, or specifies a
-									value greater than 5000, the server will return up to 5000 items. Note
-									that if the listing operation crosses a partition boundary, then the
-									service will return a continuation token for retrieving the remainder of
-									the results. For this reason, it is possible that the service will return
-								fewer results than specified by maxresults, or than the default of 5000.</p>
-							</dd>
-						</dl>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="ondownloadprogress" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> on<wbr>Download<wbr>Progress</h3>
-					<div class="tsd-signature tsd-kind-icon">on<wbr>Download<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from RequestOptionsBase.onDownloadProgress</p>
-						<ul>
-							<li>Defined in D:/a/1/s/sdk/storage/storage-blob/node_modules/@azure/ms-rest-js/es/lib/webResource.d.ts:225</li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L988">generated/lib/models/index.ts:988</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Callback which fires upon download progress.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="onuploadprogress" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> on<wbr>Upload<wbr>Progress</h3>
-					<div class="tsd-signature tsd-kind-icon">on<wbr>Upload<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from RequestOptionsBase.onUploadProgress</p>
-						<ul>
-							<li>Defined in D:/a/1/s/sdk/storage/storage-blob/node_modules/@azure/ms-rest-js/es/lib/webResource.d.ts:221</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Callback which fires upon upload progress.</p>
+							<p>Specifies the maximum number of containers to return. If the request does not specify
+								maxresults, or specifies a value greater than 5000, the server will return up to 5000 items.
+								Note that if the listing operation crosses a partition boundary, then the service will return
+								a continuation token for retrieving the remainder of the results. For this reason, it is
+								possible that the service will return fewer results than specified by maxresults, or than the
+							default of 5000.</p>
 						</div>
 					</div>
 				</section>
@@ -256,16 +164,13 @@
 					<div class="tsd-signature tsd-kind-icon">prefix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L1464">generated/lib/models/index.ts:1464</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L971">generated/lib/models/index.ts:971</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>member</dt>
-							<dd><p>{string} [prefix] Filters the results to return only containers
-								whose name begins with the specified prefix.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>Filters the results to return only containers whose name begins with the specified prefix.</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -274,32 +179,13 @@
 					<div class="tsd-signature tsd-kind-icon">request<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L1502">generated/lib/models/index.ts:1502</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>member</dt>
-							<dd><p>{string} [requestId] Provides a client-generated, opaque value
-									with a 1 KB character limit that is recorded in the analytics logs when
-								storage analytics logging is enabled.</p>
-							</dd>
-						</dl>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="timeout" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> timeout</h3>
-					<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from RequestOptionsBase.timeout</p>
-						<ul>
-							<li>Defined in D:/a/1/s/sdk/storage/storage-blob/node_modules/@azure/ms-rest-js/es/lib/webResource.d.ts:217</li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L1003">generated/lib/models/index.ts:1003</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The number of milliseconds a request can take before automatically being terminated.</p>
+							<p>Provides a client-generated, opaque value with a 1 KB character limit that is recorded in the
+							analytics logs when storage analytics logging is enabled.</p>
 						</div>
 					</div>
 				</section>
@@ -309,18 +195,15 @@
 					<div class="tsd-signature tsd-kind-icon">timeout<wbr>Parameter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L1496">generated/lib/models/index.ts:1496</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/generated/lib/models/index.ts#L998">generated/lib/models/index.ts:998</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>member</dt>
-							<dd><p>{number} [timeoutParameter] The timeout parameter is expressed in
-									seconds. For more information, see <a
-									href="https://docs.microsoft.com/en-us/rest/api/storageservices/fileservices/setting-timeouts-for-blob-service-operations">Setting
-								Timeouts for Blob Service Operations.</a></p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>The timeout parameter is expressed in seconds. For more information, see <a
+								href="https://docs.microsoft.com/en-us/rest/api/storageservices/fileservices/setting-timeouts-for-blob-service-operations">Setting
+							Timeouts for Blob Service Operations.</a></p>
+						</div>
 					</div>
 				</section>
 			</section>
@@ -340,12 +223,6 @@
 					<li class="current tsd-kind-interface">
 						<a href="containerlistblobflatsegmentoptionalparams.html" class="tsd-kind-icon">Container<wbr>List<wbr>Blob<wbr>Flat<wbr>Segment<wbr>Optional<wbr>Params</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="containerlistblobflatsegmentoptionalparams.html#abortsignal" class="tsd-kind-icon">abort<wbr>Signal</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="containerlistblobflatsegmentoptionalparams.html#customheaders" class="tsd-kind-icon">custom<wbr>Headers</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="containerlistblobflatsegmentoptionalparams.html#include" class="tsd-kind-icon">include</a>
 							</li>
@@ -355,20 +232,11 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="containerlistblobflatsegmentoptionalparams.html#maxresults" class="tsd-kind-icon">maxresults</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="containerlistblobflatsegmentoptionalparams.html#ondownloadprogress" class="tsd-kind-icon">on<wbr>Download<wbr>Progress</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="containerlistblobflatsegmentoptionalparams.html#onuploadprogress" class="tsd-kind-icon">on<wbr>Upload<wbr>Progress</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="containerlistblobflatsegmentoptionalparams.html#prefix" class="tsd-kind-icon">prefix</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="containerlistblobflatsegmentoptionalparams.html#requestid" class="tsd-kind-icon">request<wbr>Id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="containerlistblobflatsegmentoptionalparams.html#timeout" class="tsd-kind-icon">timeout</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="containerlistblobflatsegmentoptionalparams.html#timeoutparameter" class="tsd-kind-icon">timeout<wbr>Parameter</a>

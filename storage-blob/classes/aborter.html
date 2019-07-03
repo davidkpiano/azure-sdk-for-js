@@ -83,26 +83,26 @@
 					<dl class="tsd-comment-tags">
 						<dt>example</dt>
 						<dd><p>// Abort without timeout
-							await blockBlobURL.upload(Aborter.none, buf, buf.length);</p>
+							await blockBlobClient.upload(buf, buf.length);</p>
 						</dd>
 						<dt>example</dt>
 						<dd><p>// Abort container create in 1000ms
-							await blockBlobURL.upload(Aborter.timeout(1000), buf, buf.length);</p>
+							await blockBlobClient.upload(Aborter.timeout(1000), buf, buf.length);</p>
 						</dd>
 						<dt>example</dt>
 						<dd><p>// Share aborter cross multiple operations in 30s
 								// Upload the same data to 2 different data centers at the same time, abort another when any of them is finished
 								const aborter = Aborter.timeout(30 * 1000);
-								blockBlobURL1.upload(aborter, buf, buf.length).then(aborter.abort);
-							blockBlobURL2.upload(aborter, buf, buf.length).then(aborter.abort);</p>
+								blockBlobClient1.upload(aborter, buf, buf.length).then(aborter.abort);
+							blockBlobClient2.upload(aborter, buf, buf.length).then(aborter.abort);</p>
 						</dd>
 						<dt>example</dt>
 						<dd><p>// Cascaded aborting
 								// All operations can&#39;t take more than 30 seconds
 							const aborter = Aborter.timeout(30 * 1000);</p>
 							<p>// Following 2 operations can&#39;t take more than 25 seconds
-								await blockBlobURL.upload(aborter.withTimeout(25 * 1000), buf, buf.length);
-							await blockBlobURL.upload(aborter.withTimeout(25 * 1000), buf, buf.length);</p>
+								await blockBlobClient.upload(aborter.withTimeout(25 * 1000), buf, buf.length);
+							await blockBlobClient.upload(aborter.withTimeout(25 * 1000), buf, buf.length);</p>
 						</dd>
 						<dt>export</dt>
 						<dd></dd>
@@ -126,7 +126,7 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">AbortSignalLike</span></li>
+					<li><span class="tsd-signature-type">any</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -169,7 +169,7 @@
 					<div class="tsd-signature tsd-kind-icon">onabort<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L86">Aborter.ts:86</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L89">Aborter.ts:89</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -196,7 +196,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L52">Aborter.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L55">Aborter.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -228,7 +228,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L64">Aborter.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L67">Aborter.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -265,7 +265,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L200">Aborter.ts:200</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L203">Aborter.ts:203</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -297,7 +297,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L244">Aborter.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L247">Aborter.ts:247</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -357,7 +357,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L181">Aborter.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L184">Aborter.ts:184</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -401,7 +401,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L259">Aborter.ts:259</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L262">Aborter.ts:262</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -461,7 +461,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L145">Aborter.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L148">Aborter.ts:148</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -499,7 +499,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L165">Aborter.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L168">Aborter.ts:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -540,7 +540,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Aborter.ts#L77">Aborter.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Aborter.ts#L80">Aborter.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

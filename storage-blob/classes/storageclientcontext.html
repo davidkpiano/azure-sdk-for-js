@@ -68,7 +68,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">ServiceClient</span>
+						<span class="tsd-signature-type">any</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">StorageClientContext</span>
@@ -84,23 +84,14 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="storageclientcontext.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="storageclientcontext.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="storageclientcontext.html#baseuri" class="tsd-kind-icon">base<wbr>Uri</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="storageclientcontext.html#requestcontenttype" class="tsd-kind-icon">request<wbr>Content<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="storageclientcontext.html#url" class="tsd-kind-icon">url</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="storageclientcontext.html#version" class="tsd-kind-icon">version</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-inherited">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="storageclientcontext.html#sendoperationrequest" class="tsd-kind-icon">send<wbr>Operation<wbr>Request</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="storageclientcontext.html#sendrequest" class="tsd-kind-icon">send<wbr>Request</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,18 +99,17 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Storage<wbr>Client<wbr>Context<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">msRest.ServiceClientOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="storageclientcontext.html" class="tsd-signature-type">StorageClientContext</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Storage<wbr>Client<wbr>Context<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">coreHttp.ServiceClientOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="storageclientcontext.html" class="tsd-signature-type">StorageClientContext</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides ServiceClient.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/generated/lib/storageClientContext.ts#L18">generated/lib/storageClientContext.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/generated/lib/storageClientContext.ts#L18">generated/lib/storageClientContext.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -139,7 +129,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">msRest.ServiceClientOptions</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">coreHttp.ServiceClientOptions</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="storageclientcontext.html" class="tsd-signature-type">StorageClientContext</a></h4>
@@ -149,47 +139,13 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="baseuri" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagOptional">Optional</span> base<wbr>Uri</h3>
-					<div class="tsd-signature tsd-kind-icon">base<wbr>Uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from ServiceClient.baseUri</p>
-						<ul>
-							<li>Defined in D:/a/1/s/sdk/storage/storage-blob/node_modules/@azure/ms-rest-js/es/lib/serviceClient.d.ts:92</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>If specified, this is the base URI that requests will be made against for this ServiceClient.
-							If it is not specified, then all OperationSpecs must contain a baseUrl property.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="requestcontenttype" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagOptional">Optional</span> request<wbr>Content<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">request<wbr>Content<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from ServiceClient.requestContentType</p>
-						<ul>
-							<li>Defined in D:/a/1/s/sdk/storage/storage-blob/node_modules/@azure/ms-rest-js/es/lib/serviceClient.d.ts:97</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The default request content type for the service.
-							Used if no requestContentType is present on an OperationSpec.</p>
-						</div>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="url" class="tsd-anchor"></a>
 					<h3>url</h3>
 					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/generated/lib/storageClientContext.ts#L17">generated/lib/storageClientContext.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/generated/lib/storageClientContext.ts#L17">generated/lib/storageClientContext.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -199,85 +155,9 @@
 					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/generated/lib/storageClientContext.ts#L18">generated/lib/storageClientContext.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/generated/lib/storageClientContext.ts#L18">generated/lib/storageClientContext.ts:18</a></li>
 						</ul>
 					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="sendoperationrequest" class="tsd-anchor"></a>
-					<h3>send<wbr>Operation<wbr>Request</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">send<wbr>Operation<wbr>Request<span class="tsd-signature-symbol">(</span>operationArguments<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OperationArguments</span>, operationSpec<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OperationSpec</span>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ServiceCallback</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">RestResponse</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from ServiceClient.sendOperationRequest</p>
-								<ul>
-									<li>Defined in D:/a/1/s/sdk/storage/storage-blob/node_modules/@azure/ms-rest-js/es/lib/serviceClient.d.ts:122</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Send an HTTP request that is populated using the provided OperationSpec.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>operationArguments: <span class="tsd-signature-type">OperationArguments</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The arguments that the HTTP request&#39;s templated values will be populated from.</p>
-									</div>
-								</li>
-								<li>
-									<h5>operationSpec: <span class="tsd-signature-type">OperationSpec</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The OperationSpec to use to populate the httpRequest.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-type">ServiceCallback</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The callback to call when the response is received.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">RestResponse</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="sendrequest" class="tsd-anchor"></a>
-					<h3>send<wbr>Request</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">send<wbr>Request<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPrepareOptions</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">WebResource</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">HttpOperationResponse</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from ServiceClient.sendRequest</p>
-								<ul>
-									<li>Defined in D:/a/1/s/sdk/storage/storage-blob/node_modules/@azure/ms-rest-js/es/lib/serviceClient.d.ts:115</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Send the provided httpRequest.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>options: <span class="tsd-signature-type">RequestPrepareOptions</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">WebResource</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">HttpOperationResponse</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -296,26 +176,14 @@
 					<li class="current tsd-kind-class">
 						<a href="storageclientcontext.html" class="tsd-kind-icon">Storage<wbr>Client<wbr>Context</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="storageclientcontext.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="storageclientcontext.html#baseuri" class="tsd-kind-icon">base<wbr>Uri</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="storageclientcontext.html#requestcontenttype" class="tsd-kind-icon">request<wbr>Content<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="storageclientcontext.html#url" class="tsd-kind-icon">url</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="storageclientcontext.html#version" class="tsd-kind-icon">version</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="storageclientcontext.html#sendoperationrequest" class="tsd-kind-icon">send<wbr>Operation<wbr>Request</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="storageclientcontext.html#sendrequest" class="tsd-kind-icon">send<wbr>Request</a>
 							</li>
 						</ul>
 					</li>

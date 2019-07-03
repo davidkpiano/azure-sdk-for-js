@@ -62,15 +62,17 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="azure-storage-sdk-v10-for-javascript-blob">Azure Storage SDK V10 for JavaScript - Blob</h1>
+				<h1 id="azure-storage-client-library-for-javascript-blob">Azure Storage client library for JavaScript - Blob</h1>
+				<p>Azure Blob storage is Microsoft&#39;s object storage solution for the cloud. Blob storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that does not adhere to a particular data model or definition, such as text or binary data.</p>
+				<p>This project provides a client library in JavaScript that makes it easy to consume Microsoft Azure Blob Storage service.</p>
 				<ul>
+					<li><a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-overview">Product documentation</a></li>
+					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob">Source Code</a></li>
 					<li><a href="https://badge.fury.io/js/%40azure%2Fstorage-blob"><img src="https://badge.fury.io/js/%40azure%2Fstorage-blob.svg" alt="npm version"></a></li>
 					<li><a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/storage-blob/index?view=azure-node-preview">API Reference documentation</a></li>
-					<li><a href="https://github.com/Azure/azure-storage-js/wiki">Advanced Examples in Wiki</a></li>
+					<li><a href="https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api">Azure Storage Blob REST APIs</a></li>
 				</ul>
-				<h2 id="introduction">Introduction</h2>
-				<p>This project provides a SDK in JavaScript that makes it easy to consume Microsoft Azure Storage services.</p>
-				<p>Please note that this version of the SDK is a compete overhaul of the current <a href="https://github.com/azure/azure-storage-node">Azure Storage SDK for Node.js and JavaScript in Browsers</a>, and is based on the new Storage SDK architecture.</p>
+				<h2 id="key-concepts">Key concepts</h2>
 				<h3 id="features">Features</h3>
 				<ul>
 					<li>Blob Storage<ul>
@@ -89,10 +91,10 @@
 					</li>
 				</ul>
 				<h3 id="compatibility">Compatibility</h3>
-				<p>This SDK is compatible with Node.js and browsers, and validated against LTS Node.js versions (&gt;=6.5) and latest versions of Chrome, Firefox and Edge.</p>
+				<p>This library is compatible with Node.js and browsers, and validated against LTS Node.js versions (&gt;=8.16.0) and latest versions of Chrome, Firefox and Edge.</p>
 				<h4 id="compatible-with-ie11">Compatible with IE11</h4>
-				<p>You need polyfills to make this library work with IE11. The easiest way is to use <a href="https://babeljs.io/docs/en/babel-polyfill">@babel/polyfill</a>, or <a href="https://polyfill.io/v2/docs/">polyfill service</a>.
-					Or you can load separate polyfills for missed ES feature(s).
+				<p>You need polyfills to make this library work with IE11. The easiest way is to use <a href="https://babeljs.io/docs/en/babel-polyfill">@babel/polyfill</a>, or <a href="https://polyfill.io/v2/docs/">polyfill service</a>.</p>
+				<p>You can also load separate polyfills for missed ES feature(s).
 				This library depends on following ES features which need external polyfills loaded.</p>
 				<ul>
 					<li><code>Promise</code></li>
@@ -102,9 +104,10 @@
 					<li><code>String.prototype.includes</code></li>
 					<li><code>Array.prototype.includes</code></li>
 					<li><code>Object.keys</code> (Override IE11&#39;s <code>Object.keys</code> with ES6 polyfill forcely to enable <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys#Notes">ES6 behavior</a>)</li>
+					<li><code>Symbol</code></li>
 				</ul>
 				<h4 id="differences-between-node-js-and-browsers">Differences between Node.js and browsers</h4>
-				<p>There are differences between Node.js and browsers runtime. When getting start with this SDK, pay attention to APIs or classes marked with <em>&quot;ONLY AVAILABLE IN NODE.JS RUNTIME&quot;</em> or <em>&quot;ONLY AVAILABLE IN BROWSERS&quot;</em>.</p>
+				<p>There are differences between Node.js and browsers runtime. When getting started with this library, pay attention to APIs or classes marked with <em>&quot;ONLY AVAILABLE IN NODE.JS RUNTIME&quot;</em> or <em>&quot;ONLY AVAILABLE IN BROWSERS&quot;</em>.</p>
 				<h5 id="following-features-interfaces-classes-or-functions-are-only-available-in-node-js">Following features, interfaces, classes or functions are only available in Node.js</h5>
 				<ul>
 					<li>Shared Key Authorization based on account name and account key<ul>
@@ -117,29 +120,30 @@
 						</ul>
 					</li>
 					<li>Parallel uploading and downloading<ul>
-							<li><code>uploadFileToBlockBlob()</code></li>
-							<li><code>uploadStreamToBlockBlob()</code></li>
-							<li><code>downloadBlobToBuffer()</code></li>
+							<li><code>BlockBlobClient.uploadFile()</code></li>
+							<li><code>BlockBlobClient.uploadStream()</code></li>
+							<li><code>BlobClient.downloadToBuffer()</code></li>
+							<li><code>BlobClient.downloadToFile()</code></li>
 						</ul>
 					</li>
 				</ul>
 				<h5 id="following-features-interfaces-classes-or-functions-are-only-available-in-browsers">Following features, interfaces, classes or functions are only available in browsers</h5>
 				<ul>
 					<li>Parallel uploading and downloading<ul>
-							<li><code>uploadBrowserDataToBlockBlob()</code></li>
+							<li><code>BlockBlobClient.uploadBrowserData()</code></li>
 						</ul>
 					</li>
 				</ul>
-				<h2 id="getting-started">Getting Started</h2>
+				<h2 id="getting-started">Getting started</h2>
 				<h3 id="npm">NPM</h3>
-				<p>The preferred way to install the Azure Storage SDK for JavaScript is to use the npm package manager. Simply type the following into a terminal window:</p>
+				<p>The preferred way to install the Azure Blob Storage client library for JavaScript is to use the npm package manager. Simply type the following into a terminal window:</p>
 				<pre><code class="language-bash">npm install @azure/storage-blob</code></pre>
 				<p>In your TypeScript or JavaScript file, import via following:</p>
 				<pre><code class="language-JavaScript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Azure <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/storage-blob"</span>;</code></pre>
 				<p>Or</p>
 				<pre><code class="language-JavaScript"><span class="hljs-keyword">const</span> Azure = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@azure/storage-blob"</span>);</code></pre>
-				<h3 id="javascript-bundle">JavaScript Bundle</h3>
-				<p>To use the SDK with JS bundle in the browsers, simply add a script tag to your HTML pages pointing to the downloaded JS bundle file(s):</p>
+				<h3 id="javascript-bundle">JavaScript bundle</h3>
+				<p>To use the library with JS bundle in the browsers, simply add a script tag to your HTML pages pointing to the downloaded JS bundle file(s):</p>
 				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://mydomain/azure-storage-blob.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 				<p>The JS bundled file is compatible with <a href="https://github.com/umdjs/umd">UMD</a> standard, if no module system found, following global variable(s) will be exported:</p>
 				<ul>
@@ -160,124 +164,83 @@
 					<li>Exposed headers: *</li>
 					<li>Maximum age (seconds): 86400</li>
 				</ul>
-				<h2 id="sdk-architecture">SDK Architecture</h2>
-				<p>The Azure Storage SDK for JavaScript provides low-level and high-level APIs.</p>
-				<ul>
-					<li><p>ServiceURL, ContainerURL and BlobURL objects provide the low-level API functionality and map one-to-one to the <a href="https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api">Azure Storage Blob REST APIs</a>.</p>
-					</li>
-					<li><p>The high-level APIs provide convenience abstractions such as uploading a large stream to a block blob (using multiple PutBlock requests).</p>
-					</li>
-				</ul>
-				<h2 id="code-samples">Code Samples</h2>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> {
-  Aborter,
-  BlobURL,
-  BlockBlobURL,
-  ContainerURL,
-  ServiceURL,
-  StorageURL,
-  SharedKeyCredential,
-  AnonymousCredential,
-  TokenCredential
-} = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@azure/storage-blob"</span>);
+				<h2 id="examples">Examples</h2>
+				<h3 id="create-the-blob-service-client">Create the blob service client</h3>
+				<p>Use the constructor to create a instance of <code>BlobServiceClient</code>.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">// Enter your storage account name and shared key</span>
+<span class="hljs-keyword">const</span> account = <span class="hljs-string">"account"</span>;
+<span class="hljs-keyword">const</span> accountKey = <span class="hljs-string">"accountkey"</span>;
 
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// Enter your storage account name and shared key</span>
-  <span class="hljs-keyword">const</span> account = <span class="hljs-string">"account"</span>;
-  <span class="hljs-keyword">const</span> accountKey = <span class="hljs-string">"accountkey"</span>;
+<span class="hljs-comment">// Use SharedKeyCredential with storage account and account key</span>
+<span class="hljs-comment">// SharedKeyCredential is only avaiable in Node.js runtime, not in browsers</span>
+<span class="hljs-keyword">const</span> sharedKeyCredential = <span class="hljs-keyword">new</span> SharedKeyCredential(account, accountKey);
+<span class="hljs-keyword">const</span> blobServiceClient = <span class="hljs-keyword">new</span> BlobServiceClient(
+  <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.blob.core.windows.net`</span>,
+  sharedKeyCredential
+);</code></pre>
+				<h3 id="create-a-new-container">Create a new container</h3>
+				<p>Use <code>BlobServiceClient.getContainerClient()</code> to create a new container.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">// Create a container</span>
+<span class="hljs-keyword">const</span> containerName = <span class="hljs-string">`newcontainer<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
+<span class="hljs-keyword">const</span> containerClient = blobServiceClient.getContainerClient(containerName);
 
-  <span class="hljs-comment">// Use SharedKeyCredential with storage account and account key</span>
-  <span class="hljs-keyword">const</span> sharedKeyCredential = <span class="hljs-keyword">new</span> SharedKeyCredential(account, accountKey);
-
-  <span class="hljs-comment">// Use TokenCredential with OAuth token</span>
-  <span class="hljs-keyword">const</span> tokenCredential = <span class="hljs-keyword">new</span> TokenCredential(<span class="hljs-string">"token"</span>);
-  tokenCredential.token = <span class="hljs-string">"renewedToken"</span>; <span class="hljs-comment">// Renew the token by updating token field of token credential</span>
-
-  <span class="hljs-comment">// Use AnonymousCredential when url already includes a SAS signature</span>
-  <span class="hljs-keyword">const</span> anonymousCredential = <span class="hljs-keyword">new</span> AnonymousCredential();
-
-  <span class="hljs-comment">// Use sharedKeyCredential, tokenCredential or anonymousCredential to create a pipeline</span>
-  <span class="hljs-keyword">const</span> pipeline = StorageURL.newPipeline(sharedKeyCredential);
-
-  <span class="hljs-comment">// List containers</span>
-  <span class="hljs-keyword">const</span> serviceURL = <span class="hljs-keyword">new</span> ServiceURL(
-    <span class="hljs-comment">// When using AnonymousCredential, following url should include a valid SAS or support public access</span>
-    <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.blob.core.windows.net`</span>,
-    pipeline
-  );
-
-  <span class="hljs-keyword">let</span> marker;
-  <span class="hljs-keyword">do</span> {
-    <span class="hljs-keyword">const</span> listContainersResponse = <span class="hljs-keyword">await</span> serviceURL.listContainersSegment(
-      Aborter.none,
-      marker
-    );
-
-    marker = listContainersResponse.nextMarker;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> container <span class="hljs-keyword">of</span> listContainersResponse.containerItems) {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Container: <span class="hljs-subst">${container.name}</span>`</span>);
+<span class="hljs-keyword">const</span> createContainerResponse = <span class="hljs-keyword">await</span> containerClient.create();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Create container <span class="hljs-subst">${containerName}</span> successfully`</span>, createContainerResponse.requestId);</code></pre>
+				<h3 id="list-the-containers">List the containers</h3>
+				<p>Use <code>BlobServiceClient.listContainers()</code> function to iterate the containers,
+				with the new <code>for-await-of</code> syntax:</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">let</span> iter = <span class="hljs-keyword">await</span> blobServiceClient.listContainers();
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> container <span class="hljs-keyword">of</span> iter) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Container <span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${container.name}</span>`</span>);
+  }</code></pre>
+				<p>Alternatively without using <code>for-await-of</code>:</p>
+				<pre><code class="language-javascript">i = <span class="hljs-number">1</span>;
+iter = blobServiceClient.listContainers();
+<span class="hljs-keyword">let</span> containerItem = <span class="hljs-keyword">await</span> iter.next();
+<span class="hljs-keyword">while</span> (!containerItem.done) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Container <span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${containerItem.value.name}</span>`</span>);
+  containerItem = <span class="hljs-keyword">await</span> iter.next();
+}</code></pre>
+				<p>In addition, pagination is supported for listing too via <code>byPage()</code>:</p>
+				<pre><code class="language-javascript">  i = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> response <span class="hljs-keyword">of</span> blobServiceClient.listContainers().byPage({ <span class="hljs-attr">maxPageSize</span>: <span class="hljs-number">20</span> })) {
+    <span class="hljs-keyword">if</span> (response.containerItems) {
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> container <span class="hljs-keyword">of</span> response.containerItems) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Container <span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${container.name}</span>`</span>);
+      }
     }
-  } <span class="hljs-keyword">while</span> (marker);
+  }</code></pre>
+				<p>For a complete sample on iterating containers please see <a href="./samples/iterators-containers.ts">samples/iterators-containers.ts</a>.</p>
+				<h3 id="create-a-blob-by-uploading-data-to">Create a blob by uploading data to</h3>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> content = <span class="hljs-string">"hello"</span>;
+<span class="hljs-keyword">const</span> blobName = <span class="hljs-string">"newblob"</span> + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime();
+<span class="hljs-keyword">const</span> blobClient = containerClient.getBlobClient(blobName);
+<span class="hljs-keyword">const</span> blockBlobClient = blobClient.getBlockBlobClient();
+<span class="hljs-keyword">const</span> uploadBlobResponse = <span class="hljs-keyword">await</span> blockBlobClient.upload(content, content.length);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Upload block blob <span class="hljs-subst">${blobName}</span> successfully`</span>, uploadBlobResponse.requestId);</code></pre>
+				<h3 id="list-blobs-inside-a-container">List blobs inside a container</h3>
+				<p>Similar to listing containers.</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">let</span> iter = <span class="hljs-keyword">await</span> containerClient.listBlobsFlat();
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> blob <span class="hljs-keyword">of</span> iter) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Blob <span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${blob.name}</span>`</span>);
+  }</code></pre>
+				<p>For a complete sample on iterating blobs please see <a href="./samples/iterators-blobs.ts">samples/iterators-blobs.ts</a>.</p>
+				<h3 id="download-a-blob-and-convert-it-to-a-string-node-js-">Download a blob and convert it to a string (Node.js)</h3>
+				<pre><code class="language-javascript"><span class="hljs-comment">// Get blob content from position 0 to the end</span>
+<span class="hljs-comment">// In Node.js, get downloaded data by accessing downloadBlockBlobResponse.readableStreamBody</span>
+<span class="hljs-keyword">const</span> downloadBlockBlobResponse = <span class="hljs-keyword">await</span> blobClient.download(<span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.log(
+  <span class="hljs-string">"Downloaded blob content"</span>,
+  <span class="hljs-keyword">await</span> streamToString(downloadBlockBlobResponse.readableStreamBody)
+);
 
-  <span class="hljs-comment">// Create a container</span>
-  <span class="hljs-keyword">const</span> containerName = <span class="hljs-string">`newcontainer<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
-  <span class="hljs-keyword">const</span> containerURL = ContainerURL.fromServiceURL(serviceURL, containerName);
-
-  <span class="hljs-keyword">const</span> createContainerResponse = <span class="hljs-keyword">await</span> containerURL.create(Aborter.none);
-  <span class="hljs-built_in">console</span>.log(
-    <span class="hljs-string">`Create container <span class="hljs-subst">${containerName}</span> successfully`</span>,
-    createContainerResponse.requestId
-  );
-
-  <span class="hljs-comment">// Create a blob</span>
-  <span class="hljs-keyword">const</span> content = <span class="hljs-string">"hello"</span>;
-  <span class="hljs-keyword">const</span> blobName = <span class="hljs-string">"newblob"</span> + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime();
-  <span class="hljs-keyword">const</span> blobURL = BlobURL.fromContainerURL(containerURL, blobName);
-  <span class="hljs-keyword">const</span> blockBlobURL = BlockBlobURL.fromBlobURL(blobURL);
-  <span class="hljs-keyword">const</span> uploadBlobResponse = <span class="hljs-keyword">await</span> blockBlobURL.upload(
-    Aborter.none,
-    content,
-    content.length
-  );
-  <span class="hljs-built_in">console</span>.log(
-    <span class="hljs-string">`Upload block blob <span class="hljs-subst">${blobName}</span> successfully`</span>,
-    uploadBlobResponse.requestId
-  );
-
-  <span class="hljs-comment">// List blobs</span>
-  marker = <span class="hljs-literal">undefined</span>;
-  <span class="hljs-keyword">do</span> {
-    <span class="hljs-keyword">const</span> listBlobsResponse = <span class="hljs-keyword">await</span> containerURL.listBlobFlatSegment(
-      Aborter.none,
-      marker
-    );
-
-    marker = listBlobsResponse.nextMarker;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> blob <span class="hljs-keyword">of</span> listBlobsResponse.segment.blobItems) {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Blob: <span class="hljs-subst">${blob.name}</span>`</span>);
-    }
-  } <span class="hljs-keyword">while</span> (marker);
-
-  <span class="hljs-comment">// Get blob content from position 0 to the end</span>
-  <span class="hljs-comment">// In Node.js, get downloaded data by accessing downloadBlockBlobResponse.readableStreamBody</span>
-  <span class="hljs-comment">// In browsers, get downloaded data by accessing downloadBlockBlobResponse.blobBody</span>
-  <span class="hljs-keyword">const</span> downloadBlockBlobResponse = <span class="hljs-keyword">await</span> blobURL.download(Aborter.none, <span class="hljs-number">0</span>);
-  <span class="hljs-built_in">console</span>.log(
-    <span class="hljs-string">"Downloaded blob content"</span>,
-    <span class="hljs-keyword">await</span> streamToString(downloadBlockBlobResponse.readableStreamBody)
-  );
-
-  <span class="hljs-comment">// Delete container</span>
-  <span class="hljs-keyword">await</span> containerURL.delete(Aborter.none);
-
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"deleted container"</span>);
-}
-
-<span class="hljs-comment">// A helper method used to read a Node.js readable stream into string</span>
+<span class="hljs-comment">// [Node.js only] A helper method used to read a Node.js readable stream into string</span>
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">streamToString</span>(<span class="hljs-params">readableStream</span>) </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
     <span class="hljs-keyword">const</span> chunks = [];
-    readableStream.on(<span class="hljs-string">"data"</span>, data =&gt; {
+    readableStream.on(<span class="hljs-string">"data"</span>, (data) =&gt; {
       chunks.push(data.toString());
     });
     readableStream.on(<span class="hljs-string">"end"</span>, () =&gt; {
@@ -285,24 +248,63 @@
     });
     readableStream.on(<span class="hljs-string">"error"</span>, reject);
   });
-}
+}</code></pre>
+				<h3 id="download-a-blob-and-convert-it-to-a-string-browsers-">Download a blob and convert it to a string (Browsers)</h3>
+				<pre><code class="language-javascript">  <span class="hljs-comment">// Get blob content from position 0 to the end</span>
+  <span class="hljs-comment">// In browsers, get downloaded data by accessing downloadBlockBlobResponse.blobBody</span>
+  <span class="hljs-keyword">const</span> downloadBlockBlobResponse = <span class="hljs-keyword">await</span> blobClient.download(<span class="hljs-number">0</span>);
+  <span class="hljs-built_in">console</span>.log(
+    <span class="hljs-string">"Downloaded blob content"</span>,
+    <span class="hljs-keyword">await</span> blobToString(downloadBlockBlobResponse.blobBody)
+  );
 
-<span class="hljs-comment">// An async method returns a Promise object, which is compatible with then().catch() coding style.</span>
-main()
-  .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Successfully executed sample."</span>);
-  })
-  .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(err.message);
-  });</code></pre>
-				<h2 id="more-code-samples">More Code Samples</h2>
+<span class="hljs-comment">// [Browsers only] A helper method used to convert a browser Blob into string.</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">blobToString</span>(<span class="hljs-params">blob: Blob</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">string</span>&gt; </span>{
+  <span class="hljs-keyword">const</span> fileReader = <span class="hljs-keyword">new</span> FileReader();
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>&lt;string&gt;<span class="hljs-function">(<span class="hljs-params">(resolve, reject</span>) =&gt;</span> {
+    fileReader.onloadend = <span class="hljs-function">(<span class="hljs-params">ev: any</span>) =&gt;</span> {
+      resolve(ev.target!.result);
+    };
+    fileReader.onerror = reject;
+    fileReader.readAsText(blob);
+  });
+}</code></pre>
+				<p>A complete example of basic scenarios is at <a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples/basic.js">samples/basic.js</a>.</p>
+				<h2 id="troubleshooting">Troubleshooting</h2>
+				<p>It could help diagnozing issues by turning on the console logging. Here&#39;s an example logger implementation. First, add a custom logger:</p>
+				<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConsoleHttpPipelineLogger</span> </span>{
+  <span class="hljs-keyword">constructor</span>(minimumLogLevel) {
+    <span class="hljs-keyword">this</span>.minimumLogLevel = minimumLogLevel;
+  }
+  log(logLevel, message) {
+    <span class="hljs-keyword">const</span> logMessage = <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toISOString()}</span> <span class="hljs-subst">${HttpPipelineLogLevel[logLevel]}</span>: <span class="hljs-subst">${message}</span>`</span>;
+    <span class="hljs-keyword">switch</span> (logLevel) {
+      <span class="hljs-keyword">case</span> HttpPipelineLogLevel.ERROR:
+        <span class="hljs-built_in">console</span>.error(logMessage);
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> HttpPipelineLogLevel.WARNING:
+        <span class="hljs-built_in">console</span>.warn(logMessage);
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> HttpPipelineLogLevel.INFO:
+        <span class="hljs-built_in">console</span>.log(logMessage);
+        <span class="hljs-keyword">break</span>;
+    }
+  }
+}</code></pre>
+				<p>When creating the <code>BlobServiceClient</code> instance, pass the logger in the options</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> blobServiceClient = <span class="hljs-keyword">new</span> BlobServiceClient(
+  <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.blob.core.windows.net`</span>,
+  sharedKeyCredential,
+  {
+    <span class="hljs-attr">logger</span>: <span class="hljs-keyword">new</span> ConsoleHttpPipelineLogger(HttpPipelineLogLevel.INFO)
+  }
+);</code></pre>
+				<h2 id="next-steps">Next steps</h2>
+				<p>More code examples</p>
 				<ul>
-					<li><a href="https://github.com/Azure/azure-storage-js/wiki">Advanced Examples in Wiki</a></li>
 					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples">Blob Storage Examples</a></li>
 					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/test/">Blob Storage Examples - Test Cases</a></li>
 				</ul>
-				<h2 id="license">License</h2>
-				<p>This project is licensed under MIT.</p>
 				<h2 id="contributing">Contributing</h2>
 				<p>This project welcomes contributions and suggestions. Most contributions require you to agree to a
 					Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
@@ -353,7 +355,7 @@ main()
 						<a href="classes/appendblob.html" class="tsd-kind-icon">Append<wbr>Blob</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/appendbloburl.html" class="tsd-kind-icon">Append<wbr>BlobURL</a>
+						<a href="classes/appendblobclient.html" class="tsd-kind-icon">Append<wbr>Blob<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/batch.html" class="tsd-kind-icon">Batch</a>
@@ -362,19 +364,22 @@ main()
 						<a href="classes/blob.html" class="tsd-kind-icon">Blob</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/blobclient.html" class="tsd-kind-icon">Blob<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/blobdownloadresponse.html" class="tsd-kind-icon">Blob<wbr>Download<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/blobsaspermissions.html" class="tsd-kind-icon">BlobSASPermissions</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/bloburl.html" class="tsd-kind-icon">BlobURL</a>
+						<a href="classes/blobserviceclient.html" class="tsd-kind-icon">Blob<wbr>Service<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/blockblob.html" class="tsd-kind-icon">Block<wbr>Blob</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/blockbloburl.html" class="tsd-kind-icon">Block<wbr>BlobURL</a>
+						<a href="classes/blockblobclient.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/browserpolicy.html" class="tsd-kind-icon">Browser<wbr>Policy</a>
@@ -389,16 +394,19 @@ main()
 						<a href="classes/container.html" class="tsd-kind-icon">Container</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/containersaspermissions.html" class="tsd-kind-icon">ContainerSASPermissions</a>
+						<a href="classes/containerclient.html" class="tsd-kind-icon">Container<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/containerurl.html" class="tsd-kind-icon">ContainerURL</a>
+						<a href="classes/containersaspermissions.html" class="tsd-kind-icon">ContainerSASPermissions</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/credential.html" class="tsd-kind-icon">Credential</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/credentialpolicy.html" class="tsd-kind-icon">Credential<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/leaseclient.html" class="tsd-kind-icon">Lease<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/loggingpolicy.html" class="tsd-kind-icon">Logging<wbr>Policy</a>
@@ -410,10 +418,13 @@ main()
 						<a href="classes/pageblob.html" class="tsd-kind-icon">Page<wbr>Blob</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/pagebloburl.html" class="tsd-kind-icon">Page<wbr>BlobURL</a>
+						<a href="classes/pageblobclient.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/pipeline.html" class="tsd-kind-icon">Pipeline</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/rawtokencredential.html" class="tsd-kind-icon">Raw<wbr>Token<wbr>Credential</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/retriablereadablestream.html" class="tsd-kind-icon">Retriable<wbr>Readable<wbr>Stream</a>
@@ -431,19 +442,16 @@ main()
 						<a href="classes/service.html" class="tsd-kind-icon">Service</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/serviceurl.html" class="tsd-kind-icon">ServiceURL</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/sharedkeycredential.html" class="tsd-kind-icon">Shared<wbr>Key<wbr>Credential</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/sharedkeycredentialpolicy.html" class="tsd-kind-icon">Shared<wbr>Key<wbr>Credential<wbr>Policy</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/storageclientcontext.html" class="tsd-kind-icon">Storage<wbr>Client<wbr>Context</a>
+						<a href="classes/storageclient.html" class="tsd-kind-icon">Storage<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/storageurl.html" class="tsd-kind-icon">StorageURL</a>
+						<a href="classes/storageclientcontext.html" class="tsd-kind-icon">Storage<wbr>Client<wbr>Context</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/telemetrypolicy.html" class="tsd-kind-icon">Telemetry<wbr>Policy</a>
@@ -452,307 +460,265 @@ main()
 						<a href="classes/telemetrypolicyfactory.html" class="tsd-kind-icon">Telemetry<wbr>Policy<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/tokencredential.html" class="tsd-kind-icon">Token<wbr>Credential</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/tokencredentialpolicy.html" class="tsd-kind-icon">Token<wbr>Credential<wbr>Policy</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/uniquerequestidpolicy.html" class="tsd-kind-icon">Unique<wbr>RequestIDPolicy</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/uniquerequestidpolicyfactory.html" class="tsd-kind-icon">Unique<wbr>RequestIDPolicy<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/accountsassignaturevalues.html" class="tsd-kind-icon">AccountSASSignature<wbr>Values</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/appendblobaccessconditions.html" class="tsd-kind-icon">Append<wbr>Blob<wbr>Access<wbr>Conditions</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/appendblobappendblockoptionalparams.html" class="tsd-kind-icon">Append<wbr>Blob<wbr>Append<wbr>Block<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/appendblobappendblockoptions.html" class="tsd-kind-icon">Append<wbr>Blob<wbr>Append<wbr>Block<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/appendblobcreateoptionalparams.html" class="tsd-kind-icon">Append<wbr>Blob<wbr>Create<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/appendblobcreateoptions.html" class="tsd-kind-icon">Append<wbr>Blob<wbr>Create<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobabortcopyfromurloptionalparams.html" class="tsd-kind-icon">Blob<wbr>Abort<wbr>Copy<wbr>FromURLOptional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobabortcopyfromurloptions.html" class="tsd-kind-icon">Blob<wbr>Abort<wbr>Copy<wbr>FromURLOptions</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobaccessconditions.html" class="tsd-kind-icon">Blob<wbr>Access<wbr>Conditions</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobacquireleaseoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Acquire<wbr>Lease<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobacquireleaseoptions.html" class="tsd-kind-icon">Blob<wbr>Acquire<wbr>Lease<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobbreakleaseoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Break<wbr>Lease<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobbreakleaseoptions.html" class="tsd-kind-icon">Blob<wbr>Break<wbr>Lease<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobchangeleaseoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Change<wbr>Lease<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobchangeleaseoptions.html" class="tsd-kind-icon">Blob<wbr>Change<wbr>Lease<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobcreatesnapshotoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Create<wbr>Snapshot<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobcreatesnapshotoptions.html" class="tsd-kind-icon">Blob<wbr>Create<wbr>Snapshot<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobdeletemethodoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Delete<wbr>Method<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobdeleteoptions.html" class="tsd-kind-icon">Blob<wbr>Delete<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobdownloadoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Download<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobdownloadoptions.html" class="tsd-kind-icon">Blob<wbr>Download<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobgetpropertiesoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Get<wbr>Properties<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobgetpropertiesoptions.html" class="tsd-kind-icon">Blob<wbr>Get<wbr>Properties<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobreleaseleaseoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Release<wbr>Lease<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobreleaseleaseoptions.html" class="tsd-kind-icon">Blob<wbr>Release<wbr>Lease<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobrenewleaseoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Renew<wbr>Lease<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobrenewleaseoptions.html" class="tsd-kind-icon">Blob<wbr>Renew<wbr>Lease<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobsassignaturevalues.html" class="tsd-kind-icon">BlobSASSignature<wbr>Values</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobsethttpheadersoptionalparams.html" class="tsd-kind-icon">Blob<wbr>SetHTTPHeaders<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobsethttpheadersoptions.html" class="tsd-kind-icon">Blob<wbr>SetHTTPHeaders<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobsetmetadataoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Set<wbr>Metadata<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobsetmetadataoptions.html" class="tsd-kind-icon">Blob<wbr>Set<wbr>Metadata<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobsettieroptionalparams.html" class="tsd-kind-icon">Blob<wbr>Set<wbr>Tier<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobsettieroptions.html" class="tsd-kind-icon">Blob<wbr>Set<wbr>Tier<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobstartcopyfromurloptionalparams.html" class="tsd-kind-icon">Blob<wbr>Start<wbr>Copy<wbr>FromURLOptional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobstartcopyfromurloptions.html" class="tsd-kind-icon">Blob<wbr>Start<wbr>Copy<wbr>FromURLOptions</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blobundeleteoptionalparams.html" class="tsd-kind-icon">Blob<wbr>Undelete<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blobundeleteoptions.html" class="tsd-kind-icon">Blob<wbr>Undelete<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blockblobcommitblocklistoptionalparams.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Commit<wbr>Block<wbr>List<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blockblobcommitblocklistoptions.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Commit<wbr>Block<wbr>List<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blockblobgetblocklistoptionalparams.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Get<wbr>Block<wbr>List<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blockblobgetblocklistoptions.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Get<wbr>Block<wbr>List<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blockblobstageblockfromurloptionalparams.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Stage<wbr>Block<wbr>FromURLOptional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blockblobstageblockfromurloptions.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Stage<wbr>Block<wbr>FromURLOptions</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/blockblobstageblockoptionalparams.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Stage<wbr>Block<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blockblobstageblockoptions.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Stage<wbr>Block<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blockblobuploadoptionalparams.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Upload<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/blockblobuploadoptions.html" class="tsd-kind-icon">Block<wbr>Blob<wbr>Upload<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/containeraccessconditions.html" class="tsd-kind-icon">Container<wbr>Access<wbr>Conditions</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/containeracquireleaseoptionalparams.html" class="tsd-kind-icon">Container<wbr>Acquire<wbr>Lease<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/containeracquireleaseoptions.html" class="tsd-kind-icon">Container<wbr>Acquire<wbr>Lease<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/containerbreakleaseoptionalparams.html" class="tsd-kind-icon">Container<wbr>Break<wbr>Lease<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/containerbreakleaseoptions.html" class="tsd-kind-icon">Container<wbr>Break<wbr>Lease<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/containerchangeleaseoptionalparams.html" class="tsd-kind-icon">Container<wbr>Change<wbr>Lease<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/containerchangeleaseoptions.html" class="tsd-kind-icon">Container<wbr>Change<wbr>Lease<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/containercreateoptionalparams.html" class="tsd-kind-icon">Container<wbr>Create<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/containercreateoptions.html" class="tsd-kind-icon">Container<wbr>Create<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/containerdeletemethodoptionalparams.html" class="tsd-kind-icon">Container<wbr>Delete<wbr>Method<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/containerdeletemethodoptions.html" class="tsd-kind-icon">Container<wbr>Delete<wbr>Method<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/containergetaccesspolicyoptionalparams.html" class="tsd-kind-icon">Container<wbr>Get<wbr>Access<wbr>Policy<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/containergetaccesspolicyoptions.html" class="tsd-kind-icon">Container<wbr>Get<wbr>Access<wbr>Policy<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/containergetpropertiesoptionalparams.html" class="tsd-kind-icon">Container<wbr>Get<wbr>Properties<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/containergetpropertiesoptions.html" class="tsd-kind-icon">Container<wbr>Get<wbr>Properties<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/containerlistblobflatsegmentnextoptionalparams.html" class="tsd-kind-icon">Container<wbr>List<wbr>Blob<wbr>Flat<wbr>Segment<wbr>Next<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/containerlistblobflatsegmentoptionalparams.html" class="tsd-kind-icon">Container<wbr>List<wbr>Blob<wbr>Flat<wbr>Segment<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/containerlistblobhierarchysegmentnextoptionalparams.html" class="tsd-kind-icon">Container<wbr>List<wbr>Blob<wbr>Hierarchy<wbr>Segment<wbr>Next<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/containerlistblobhierarchysegmentoptionalparams.html" class="tsd-kind-icon">Container<wbr>List<wbr>Blob<wbr>Hierarchy<wbr>Segment<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/containerlistblobsoptions.html" class="tsd-kind-icon">Container<wbr>List<wbr>Blobs<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/containerreleaseleaseoptionalparams.html" class="tsd-kind-icon">Container<wbr>Release<wbr>Lease<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/containerreleaseleaseoptions.html" class="tsd-kind-icon">Container<wbr>Release<wbr>Lease<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/containerrenewleaseoptionalparams.html" class="tsd-kind-icon">Container<wbr>Renew<wbr>Lease<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/containerrenewleaseoptions.html" class="tsd-kind-icon">Container<wbr>Renew<wbr>Lease<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/containersetaccesspolicyoptionalparams.html" class="tsd-kind-icon">Container<wbr>Set<wbr>Access<wbr>Policy<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/containersetaccesspolicyoptions.html" class="tsd-kind-icon">Container<wbr>Set<wbr>Access<wbr>Policy<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/containersetmetadataoptionalparams.html" class="tsd-kind-icon">Container<wbr>Set<wbr>Metadata<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iaccountsassignaturevalues.html" class="tsd-kind-icon">IAccountSASSignature<wbr>Values</a>
+						<a href="interfaces/containersetmetadataoptions.html" class="tsd-kind-icon">Container<wbr>Set<wbr>Metadata<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iappendblobaccessconditions.html" class="tsd-kind-icon">IAppend<wbr>Blob<wbr>Access<wbr>Conditions</a>
+						<a href="interfaces/downloadfrombloboptions.html" class="tsd-kind-icon">Download<wbr>From<wbr>Blob<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iappendblobappendblockoptions.html" class="tsd-kind-icon">IAppend<wbr>Blob<wbr>Append<wbr>Block<wbr>Options</a>
+						<a href="interfaces/iprange.html" class="tsd-kind-icon">IPRange</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iappendblobcreateoptions.html" class="tsd-kind-icon">IAppend<wbr>Blob<wbr>Create<wbr>Options</a>
+						<a href="interfaces/lease.html" class="tsd-kind-icon">Lease</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobabortcopyfromurloptions.html" class="tsd-kind-icon">IBlob<wbr>Abort<wbr>Copy<wbr>FromURLOptions</a>
+						<a href="interfaces/leaseoperationoptions.html" class="tsd-kind-icon">Lease<wbr>Operation<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobaccessconditions.html" class="tsd-kind-icon">IBlob<wbr>Access<wbr>Conditions</a>
+						<a href="interfaces/metadata.html" class="tsd-kind-icon">Metadata</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobacquireleaseoptions.html" class="tsd-kind-icon">IBlob<wbr>Acquire<wbr>Lease<wbr>Options</a>
+						<a href="interfaces/newpipelineoptions.html" class="tsd-kind-icon">New<wbr>Pipeline<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobbreakleaseoptions.html" class="tsd-kind-icon">IBlob<wbr>Break<wbr>Lease<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobchangeleaseoptions.html" class="tsd-kind-icon">IBlob<wbr>Change<wbr>Lease<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobcreatesnapshotoptions.html" class="tsd-kind-icon">IBlob<wbr>Create<wbr>Snapshot<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobdeleteoptions.html" class="tsd-kind-icon">IBlob<wbr>Delete<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobdownloadoptions.html" class="tsd-kind-icon">IBlob<wbr>Download<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobgetpropertiesoptions.html" class="tsd-kind-icon">IBlob<wbr>Get<wbr>Properties<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobreleaseleaseoptions.html" class="tsd-kind-icon">IBlob<wbr>Release<wbr>Lease<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobrenewleaseoptions.html" class="tsd-kind-icon">IBlob<wbr>Renew<wbr>Lease<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobsassignaturevalues.html" class="tsd-kind-icon">IBlobSASSignature<wbr>Values</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobsethttpheadersoptions.html" class="tsd-kind-icon">IBlob<wbr>SetHTTPHeaders<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobsetmetadataoptions.html" class="tsd-kind-icon">IBlob<wbr>Set<wbr>Metadata<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobsettieroptions.html" class="tsd-kind-icon">IBlob<wbr>Set<wbr>Tier<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblobstartcopyfromurloptions.html" class="tsd-kind-icon">IBlob<wbr>Start<wbr>Copy<wbr>FromURLOptions</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblockblobcommitblocklistoptions.html" class="tsd-kind-icon">IBlock<wbr>Blob<wbr>Commit<wbr>Block<wbr>List<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblockblobgetblocklistoptions.html" class="tsd-kind-icon">IBlock<wbr>Blob<wbr>Get<wbr>Block<wbr>List<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblockblobstageblockfromurloptions.html" class="tsd-kind-icon">IBlock<wbr>Blob<wbr>Stage<wbr>Block<wbr>FromURLOptions</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblockblobstageblockoptions.html" class="tsd-kind-icon">IBlock<wbr>Blob<wbr>Stage<wbr>Block<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iblockblobuploadoptions.html" class="tsd-kind-icon">IBlock<wbr>Blob<wbr>Upload<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontaineraccessconditions.html" class="tsd-kind-icon">IContainer<wbr>Access<wbr>Conditions</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontaineracquireleaseoptions.html" class="tsd-kind-icon">IContainer<wbr>Acquire<wbr>Lease<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainerbreakleaseoptions.html" class="tsd-kind-icon">IContainer<wbr>Break<wbr>Lease<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainerchangeleaseoptions.html" class="tsd-kind-icon">IContainer<wbr>Change<wbr>Lease<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainercreateoptions.html" class="tsd-kind-icon">IContainer<wbr>Create<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainerdeletemethodoptions.html" class="tsd-kind-icon">IContainer<wbr>Delete<wbr>Method<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainergetaccesspolicyoptions.html" class="tsd-kind-icon">IContainer<wbr>Get<wbr>Access<wbr>Policy<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainergetpropertiesoptions.html" class="tsd-kind-icon">IContainer<wbr>Get<wbr>Properties<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainerlistblobssegmentoptions.html" class="tsd-kind-icon">IContainer<wbr>List<wbr>Blobs<wbr>Segment<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainerreleaseleaseoptions.html" class="tsd-kind-icon">IContainer<wbr>Release<wbr>Lease<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainerrenewleaseoptions.html" class="tsd-kind-icon">IContainer<wbr>Renew<wbr>Lease<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainersetaccesspolicyoptions.html" class="tsd-kind-icon">IContainer<wbr>Set<wbr>Access<wbr>Policy<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/icontainersetmetadataoptions.html" class="tsd-kind-icon">IContainer<wbr>Set<wbr>Metadata<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/idownloadfrombloboptions.html" class="tsd-kind-icon">IDownload<wbr>From<wbr>Blob<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iiprange.html" class="tsd-kind-icon">IIPRange</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/imetadata.html" class="tsd-kind-icon">IMetadata</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/inewpipelineoptions.html" class="tsd-kind-icon">INew<wbr>Pipeline<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipageblobaccessconditions.html" class="tsd-kind-icon">IPage<wbr>Blob<wbr>Access<wbr>Conditions</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipageblobclearpagesoptions.html" class="tsd-kind-icon">IPage<wbr>Blob<wbr>Clear<wbr>Pages<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipageblobcreateoptions.html" class="tsd-kind-icon">IPage<wbr>Blob<wbr>Create<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipageblobgetpagerangesdiffoptions.html" class="tsd-kind-icon">IPage<wbr>Blob<wbr>Get<wbr>Page<wbr>Ranges<wbr>Diff<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipageblobgetpagerangesoptions.html" class="tsd-kind-icon">IPage<wbr>Blob<wbr>Get<wbr>Page<wbr>Ranges<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipageblobresizeoptions.html" class="tsd-kind-icon">IPage<wbr>Blob<wbr>Resize<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipageblobstartcopyincrementaloptions.html" class="tsd-kind-icon">IPage<wbr>Blob<wbr>Start<wbr>Copy<wbr>Incremental<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipageblobupdatesequencenumberoptions.html" class="tsd-kind-icon">IPage<wbr>Blob<wbr>Update<wbr>Sequence<wbr>Number<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipageblobuploadpagesoptions.html" class="tsd-kind-icon">IPage<wbr>Blob<wbr>Upload<wbr>Pages<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipipelineoptions.html" class="tsd-kind-icon">IPipeline<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/irange.html" class="tsd-kind-icon">IRange</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/irequestlogoptions.html" class="tsd-kind-icon">IRequest<wbr>Log<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iretriablereadablestreamoptions.html" class="tsd-kind-icon">IRetriable<wbr>Readable<wbr>Stream<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iretryoptions.html" class="tsd-kind-icon">IRetry<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iservicelistcontainerssegmentoptions.html" class="tsd-kind-icon">IService<wbr>List<wbr>Containers<wbr>Segment<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/isignedidentifier.html" class="tsd-kind-icon">ISigned<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/itelemetryoptions.html" class="tsd-kind-icon">ITelemetry<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iuploadstreamtoblockbloboptions.html" class="tsd-kind-icon">IUpload<wbr>Stream<wbr>ToBlock<wbr>Blob<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iuploadtoblockbloboptions.html" class="tsd-kind-icon">IUpload<wbr>ToBlock<wbr>Blob<wbr>Options</a>
+						<a href="interfaces/pageblobaccessconditions.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Access<wbr>Conditions</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/pageblobclearpagesoptionalparams.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Clear<wbr>Pages<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pageblobclearpagesoptions.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Clear<wbr>Pages<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/pageblobcopyincrementaloptionalparams.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Copy<wbr>Incremental<wbr>Optional<wbr>Params</a>
@@ -761,31 +727,97 @@ main()
 						<a href="interfaces/pageblobcreateoptionalparams.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Create<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/pageblobcreateoptions.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Create<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/pageblobgetpagerangesdiffoptionalparams.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Get<wbr>Page<wbr>Ranges<wbr>Diff<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pageblobgetpagerangesdiffoptions.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Get<wbr>Page<wbr>Ranges<wbr>Diff<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/pageblobgetpagerangesoptionalparams.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Get<wbr>Page<wbr>Ranges<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/pageblobgetpagerangesoptions.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Get<wbr>Page<wbr>Ranges<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/pageblobresizeoptionalparams.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Resize<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pageblobresizeoptions.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Resize<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pageblobstartcopyincrementaloptions.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Start<wbr>Copy<wbr>Incremental<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/pageblobupdatesequencenumberoptionalparams.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Update<wbr>Sequence<wbr>Number<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/pageblobupdatesequencenumberoptions.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Update<wbr>Sequence<wbr>Number<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/pageblobuploadpagesoptionalparams.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Upload<wbr>Pages<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pageblobuploadpagesoptions.html" class="tsd-kind-icon">Page<wbr>Blob<wbr>Upload<wbr>Pages<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pipelineoptions.html" class="tsd-kind-icon">Pipeline<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/proxyoptions.html" class="tsd-kind-icon">Proxy<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/range.html" class="tsd-kind-icon">Range</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/requestlogoptions.html" class="tsd-kind-icon">Request<wbr>Log<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/retriablereadablestreamoptions.html" class="tsd-kind-icon">Retriable<wbr>Readable<wbr>Stream<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/retryoptions.html" class="tsd-kind-icon">Retry<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicegetaccountinfooptions.html" class="tsd-kind-icon">Service<wbr>Get<wbr>Account<wbr>Info<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/servicegetpropertiesoptionalparams.html" class="tsd-kind-icon">Service<wbr>Get<wbr>Properties<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicegetpropertiesoptions.html" class="tsd-kind-icon">Service<wbr>Get<wbr>Properties<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/servicegetstatisticsoptionalparams.html" class="tsd-kind-icon">Service<wbr>Get<wbr>Statistics<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicegetstatisticsoptions.html" class="tsd-kind-icon">Service<wbr>Get<wbr>Statistics<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicelistcontainersoptions.html" class="tsd-kind-icon">Service<wbr>List<wbr>Containers<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicelistcontainerssegmentnextoptionalparams.html" class="tsd-kind-icon">Service<wbr>List<wbr>Containers<wbr>Segment<wbr>Next<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/servicelistcontainerssegmentoptionalparams.html" class="tsd-kind-icon">Service<wbr>List<wbr>Containers<wbr>Segment<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/servicesetpropertiesoptionalparams.html" class="tsd-kind-icon">Service<wbr>Set<wbr>Properties<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicesetpropertiesoptions.html" class="tsd-kind-icon">Service<wbr>Set<wbr>Properties<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/telemetryoptions.html" class="tsd-kind-icon">Telemetry<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/uploadstreamtoblockbloboptions.html" class="tsd-kind-icon">Upload<wbr>Stream<wbr>ToBlock<wbr>Blob<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/uploadtoblockbloboptions.html" class="tsd-kind-icon">Upload<wbr>ToBlock<wbr>Blob<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#accesstier" class="tsd-kind-icon">Access<wbr>Tier</a>
@@ -929,6 +961,9 @@ main()
 						<a href="globals.html#leasedurationtype" class="tsd-kind-icon">Lease<wbr>Duration<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#leaseoperationresponse" class="tsd-kind-icon">Lease<wbr>Operation<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#leasestatetype" class="tsd-kind-icon">Lease<wbr>State<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -1043,10 +1078,10 @@ main()
 						<a href="globals.html#blobtoarraybuffer" class="tsd-kind-icon">blob<wbr>ToArray<wbr>Buffer</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#downloadblobtobuffer" class="tsd-kind-icon">download<wbr>Blob<wbr>ToBuffer</a>
+						<a href="globals.html#escapeurlpath" class="tsd-kind-icon">escapeURLPath</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#escapeurlpath" class="tsd-kind-icon">escapeURLPath</a>
+						<a href="globals.html#extractconnectionstringparts" class="tsd-kind-icon">extract<wbr>Connection<wbr>String<wbr>Parts</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#generateaccountsasqueryparameters" class="tsd-kind-icon">generate<wbr>AccountSASQuery<wbr>Parameters</a>
@@ -1070,10 +1105,22 @@ main()
 						<a href="globals.html#iprangetostring" class="tsd-kind-icon">ip<wbr>Range<wbr>ToString</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#newpipeline" class="tsd-kind-icon">new<wbr>Pipeline</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#padstart" class="tsd-kind-icon">pad<wbr>Start</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#rangetostring" class="tsd-kind-icon">range<wbr>ToString</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#readstreamtolocalfile" class="tsd-kind-icon">read<wbr>Stream<wbr>ToLocal<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#sanitizeheaders" class="tsd-kind-icon">sanitize<wbr>Headers</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#sanitizeurl" class="tsd-kind-icon">sanitizeURL</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#seturlhost" class="tsd-kind-icon">setURLHost</a>
@@ -1086,15 +1133,6 @@ main()
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#truncatediso8061date" class="tsd-kind-icon">truncatedISO8061<wbr>Date</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#uploadbrowserdatatoblockblob" class="tsd-kind-icon">upload<wbr>Browser<wbr>Data<wbr>ToBlock<wbr>Blob</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#uploadfiletoblockblob" class="tsd-kind-icon">upload<wbr>File<wbr>ToBlock<wbr>Blob</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#uploadstreamtoblockblob" class="tsd-kind-icon">upload<wbr>Stream<wbr>ToBlock<wbr>Blob</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#accesspolicy" class="tsd-kind-icon">Access<wbr>Policy</a>
@@ -1530,6 +1568,9 @@ main()
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#metadata" class="tsd-kind-icon">metadata</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#nextpagelink" class="tsd-kind-icon">next<wbr>Page<wbr>Link</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#pagewrite0" class="tsd-kind-icon">page<wbr>Write0</a>

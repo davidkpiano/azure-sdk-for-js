@@ -68,9 +68,9 @@
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p>A Pipeline class containing HTTP request policies.
-							You can create a default Pipeline by calling StorageURL.newPipeline().
+							You can create a default Pipeline by calling newPipeline().
 							Or you can create a Pipeline with your own policies by the constructor of Pipeline.
-							Refer to StorageURL.newPipeline() and provided policies as reference before
+							Refer to newPipeline() and provided policies as reference before
 						implementing your customized Pipeline.</p>
 					</div>
 					<dl class="tsd-comment-tags">
@@ -122,13 +122,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Pipeline<span class="tsd-signature-symbol">(</span>factories<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPolicyFactory</span><span class="tsd-signature-symbol">[]</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/ipipelineoptions.html" class="tsd-signature-type">IPipelineOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="pipeline.html" class="tsd-signature-type">Pipeline</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Pipeline<span class="tsd-signature-symbol">(</span>factories<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPolicyFactory</span><span class="tsd-signature-symbol">[]</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pipelineoptions.html" class="tsd-signature-type">PipelineOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="pipeline.html" class="tsd-signature-type">Pipeline</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Pipeline.ts#L55">Pipeline.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Pipeline.ts#L118">Pipeline.ts:118</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -147,7 +147,7 @@
 									<h5>factories: <span class="tsd-signature-type">RequestPolicyFactory</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/ipipelineoptions.html" class="tsd-signature-type">IPipelineOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/pipelineoptions.html" class="tsd-signature-type">PipelineOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="pipeline.html" class="tsd-signature-type">Pipeline</a></h4>
@@ -163,19 +163,45 @@
 					<div class="tsd-signature tsd-kind-icon">factories<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RequestPolicyFactory</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Pipeline.ts#L54">Pipeline.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Pipeline.ts#L111">Pipeline.ts:111</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A list of chained request policy factories.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{RequestPolicyFactory[]}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>Pipeline</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="options" class="tsd-anchor"></a>
 					<h3>options</h3>
-					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/ipipelineoptions.html" class="tsd-signature-type">IPipelineOptions</a></div>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/pipelineoptions.html" class="tsd-signature-type">PipelineOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Pipeline.ts#L55">Pipeline.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Pipeline.ts#L118">Pipeline.ts:118</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Configures pipeline logger and HTTP client.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{PipelineOptions}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>Pipeline</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -190,7 +216,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-blob/src/Pipeline.ts#L76">Pipeline.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-blob/src/Pipeline.ts#L139">Pipeline.ts:139</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -205,6 +231,7 @@
 								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ServiceClientOptions</span></h4>
+							<p>The ServiceClientOptions object from this Pipeline.</p>
 						</li>
 					</ul>
 				</section>

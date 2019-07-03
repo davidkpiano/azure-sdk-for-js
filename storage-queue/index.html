@@ -62,14 +62,17 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="azure-storage-sdk-v10-for-javascript-queue">Azure Storage SDK V10 for JavaScript - Queue</h1>
+				<h1 id="azure-storage-client-library-for-javascript-queue">Azure Storage client library for JavaScript - Queue</h1>
+				<p>Azure Queue storage provides cloud messaging between application components. In designing applications for scale, application components are often decoupled, so that they can scale independently. Queue storage delivers asynchronous messaging for communication between application components, whether they are running in the cloud, on the desktop, on an on-premises server, or on a mobile device. Queue storage also supports managing asynchronous tasks and building process work flows.</p>
+				<p>This project provides a client library in JavaScript that makes it easy to consume Microsoft Azure Queue Storage service.</p>
 				<ul>
+					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue">Source Code</a></li>
+					<li><a href="https://docs.microsoft.com/en-us/azure/storage/queues/storage-dotnet-how-to-use-queues">Product documentation</a></li>
 					<li><a href="https://badge.fury.io/js/%40azure%2Fstorage-queue"><img src="https://badge.fury.io/js/%40azure%2Fstorage-queue.svg" alt="npm version"></a></li>
 					<li><a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/storage-queue/index?view=azure-node-preview">API Reference documentation</a></li>
+					<li><a href="https://docs.microsoft.com/en-us/rest/api/storageservices/queue-service-rest-api">Azure Storage Queue REST APIs</a></li>
 				</ul>
-				<h2 id="introduction">Introduction</h2>
-				<p>This project provides a SDK in JavaScript that makes it easy to consume Microsoft Azure Storage services.</p>
-				<p>Please note that this version of the SDK is a compete overhaul of the current <a href="https://github.com/azure/azure-storage-node">Azure Storage SDK for Node.js and JavaScript in Browsers</a>, and is based on the new Storage SDK architecture.</p>
+				<h2 id="key-concepts">Key concepts</h2>
 				<h3 id="features">Features</h3>
 				<ul>
 					<li>Queue Storage<ul>
@@ -86,10 +89,10 @@
 					</li>
 				</ul>
 				<h3 id="compatibility">Compatibility</h3>
-				<p>This SDK is compatible with Node.js and browsers, and validated against LTS Node.js versions (&gt;=6.5) and latest versions of Chrome, Firefox and Edge.</p>
+				<p>This library is compatible with Node.js and browsers, and validated against LTS Node.js versions (&gt;=8.16.0) and latest versions of Chrome, Firefox and Edge.</p>
 				<h4 id="compatible-with-ie11">Compatible with IE11</h4>
-				<p>You need polyfills to make this library work with IE11. The easiest way is to use <a href="https://babeljs.io/docs/en/babel-polyfill">@babel/polyfill</a>, or <a href="https://polyfill.io/v2/docs/">polyfill service</a>.
-					Or you can load separate polyfills for missed ES feature(s).
+				<p>You need polyfills to make this library work with IE11. The easiest way is to use <a href="https://babeljs.io/docs/en/babel-polyfill">@babel/polyfill</a>, or <a href="https://polyfill.io/v2/docs/">polyfill service</a>.</p>
+				<p>You can also load separate polyfills for missed ES feature(s).
 				This library depends on following ES features which need external polyfills loaded.</p>
 				<ul>
 					<li><code>Promise</code></li>
@@ -99,9 +102,10 @@
 					<li><code>String.prototype.includes</code></li>
 					<li><code>Array.prototype.includes</code></li>
 					<li><code>Object.keys</code> (Override IE11&#39;s <code>Object.keys</code> with ES6 polyfill forcely to enable <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys#Notes">ES6 behavior</a>)</li>
+					<li><code>Symbol</code></li>
 				</ul>
 				<h4 id="differences-between-node-js-and-browsers">Differences between Node.js and browsers</h4>
-				<p>There are differences between Node.js and browsers runtime. When getting start with this SDK, pay attention to APIs or classes marked with <em>&quot;ONLY AVAILABLE IN NODE.JS RUNTIME&quot;</em> or <em>&quot;ONLY AVAILABLE IN BROWSERS&quot;</em>.</p>
+				<p>There are differences between Node.js and browsers runtime. When getting started with this library, pay attention to APIs or classes marked with <em>&quot;ONLY AVAILABLE IN NODE.JS RUNTIME&quot;</em> or <em>&quot;ONLY AVAILABLE IN BROWSERS&quot;</em>.</p>
 				<h5 id="following-features-interfaces-classes-or-functions-are-only-available-in-node-js">Following features, interfaces, classes or functions are only available in Node.js</h5>
 				<ul>
 					<li>Shared Key Authorization based on account name and account key<ul>
@@ -114,16 +118,16 @@
 						</ul>
 					</li>
 				</ul>
-				<h2 id="getting-started">Getting Started</h2>
+				<h2 id="getting-started">Getting started</h2>
 				<h3 id="npm">NPM</h3>
-				<p>The preferred way to install the Azure Storage SDK for JavaScript is to use the npm package manager. Simply type the following into a terminal window:</p>
+				<p>The preferred way to install the Azure Queue Storage client library for JavaScript is to use the npm package manager. Simply type the following into a terminal window:</p>
 				<pre><code class="language-bash">npm install @azure/storage-queue</code></pre>
 				<p>In your TypeScript or JavaScript file, import via following:</p>
 				<pre><code class="language-JavaScript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Azure <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/storage-queue"</span>;</code></pre>
 				<p>Or</p>
 				<pre><code class="language-JavaScript"><span class="hljs-keyword">const</span> Azure = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@azure/storage-queue"</span>);</code></pre>
-				<h3 id="javascript-bundle">JavaScript Bundle</h3>
-				<p>To use the SDK with JS bundle in the browsers, simply add a script tag to your HTML pages pointing to the downloaded JS bundle file(s):</p>
+				<h3 id="javascript-bundle">JavaScript bundle</h3>
+				<p>To use the library with JS bundle in the browsers, simply add a script tag to your HTML pages pointing to the downloaded JS bundle file(s):</p>
 				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://mydomain/azure-storage-queue.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 				<p>The JS bundled file is compatible with <a href="https://github.com/umdjs/umd">UMD</a> standard, if no module system found, following global variable(s) will be exported:</p>
 				<ul>
@@ -144,103 +148,83 @@
 					<li>Exposed headers: *</li>
 					<li>Maximum age (seconds): 86400</li>
 				</ul>
-				<h2 id="sdk-architecture">SDK Architecture</h2>
-				<p>The Azure Storage SDK for JavaScript provides low-level and high-level APIs.</p>
-				<ul>
-					<li>ServiceURL, QueueURL, MessagesURL and MessageIdURL objects provide the low-level API functionality and map one-to-one to the <a href="https://docs.microsoft.com/en-us/rest/api/storageservices/queue-service-rest-api">Azure Storage Queue REST APIs</a>.</li>
-				</ul>
-				<h2 id="code-samples">Code Samples</h2>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> {
-  Aborter,
-  QueueURL,
-  MessagesURL,
-  MessageIdURL,
-  ServiceURL,
-  StorageURL,
-  SharedKeyCredential,
-  AnonymousCredential,
-  TokenCredential
-} = <span class="hljs-built_in">require</span>(<span class="hljs-string">".."</span>); <span class="hljs-comment">// Change to "@azure/storage-queue" in your package</span>
-
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// Enter your storage account name and shared key</span>
+				<h2 id="examples">Examples</h2>
+				<h3 id="create-the-queue-service-client">Create the queue service client</h3>
+				<p>Use the constructor to create an instance of <code>QueueServiceClient</code>, passing in the credential, and options to configure the HTTP pipeline (optional).</p>
+				<pre><code class="language-javascript">  <span class="hljs-comment">// Enter your storage account name and shared key</span>
   <span class="hljs-keyword">const</span> account = <span class="hljs-string">"&lt;account&gt;"</span>;
   <span class="hljs-keyword">const</span> accountKey = <span class="hljs-string">"&lt;accountkey&gt;"</span>;
 
   <span class="hljs-comment">// Use SharedKeyCredential with storage account and account key</span>
+  <span class="hljs-comment">// SharedKeyCredential is only avaiable in Node.js runtime, not in browsers</span>
   <span class="hljs-keyword">const</span> sharedKeyCredential = <span class="hljs-keyword">new</span> SharedKeyCredential(account, accountKey);
 
-  <span class="hljs-comment">// Use TokenCredential with OAuth token</span>
-  <span class="hljs-keyword">const</span> tokenCredential = <span class="hljs-keyword">new</span> TokenCredential(<span class="hljs-string">"token"</span>);
-  tokenCredential.token = <span class="hljs-string">"renewedToken"</span>; <span class="hljs-comment">// Renew the token by updating token field of token credential</span>
-
-  <span class="hljs-comment">// Use AnonymousCredential when url already includes a SAS signature</span>
-  <span class="hljs-keyword">const</span> anonymousCredential = <span class="hljs-keyword">new</span> AnonymousCredential();
-
-  <span class="hljs-comment">// Use sharedKeyCredential, tokenCredential or anonymousCredential to create a pipeline</span>
-  <span class="hljs-keyword">const</span> pipeline = StorageURL.newPipeline(sharedKeyCredential, {
-    <span class="hljs-comment">// httpClient: MyHTTPClient, // A customized HTTP client implementing IHttpClient interface</span>
-    <span class="hljs-comment">// logger: MyLogger, // A customized logger implementing IHttpPipelineLogger interface</span>
-    retryOptions: { <span class="hljs-attr">maxTries</span>: <span class="hljs-number">4</span> }, <span class="hljs-comment">// Retry options</span>
-    telemetry: { <span class="hljs-attr">value</span>: <span class="hljs-string">"BasicSample V10.0.0"</span> } <span class="hljs-comment">// Customized telemetry string</span>
-  });
-
-  <span class="hljs-comment">// List queues</span>
-  <span class="hljs-keyword">const</span> serviceURL = <span class="hljs-keyword">new</span> ServiceURL(
-    <span class="hljs-comment">// When using AnonymousCredential, following url should include a valid SAS or support public access</span>
+  <span class="hljs-keyword">const</span> queueServiceClient = <span class="hljs-keyword">new</span> QueueServiceClient(
     <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.queue.core.windows.net`</span>,
-    pipeline
-  );
-
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`List queues`</span>);
-  <span class="hljs-keyword">let</span> marker;
-  <span class="hljs-keyword">do</span> {
-    <span class="hljs-keyword">const</span> listQueuesResponse = <span class="hljs-keyword">await</span> serviceURL.listQueuesSegment(
-      Aborter.none,
-      marker
-    );
-
-    marker = listQueuesResponse.nextMarker;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> queue <span class="hljs-keyword">of</span> listQueuesResponse.queueItems) {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Queue: <span class="hljs-subst">${queue.name}</span>`</span>);
-    }
-  } <span class="hljs-keyword">while</span> (marker);
-
-  <span class="hljs-comment">// Create a new queue</span>
-  <span class="hljs-keyword">const</span> queueName = <span class="hljs-string">`newqueue<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
-  <span class="hljs-keyword">const</span> queueURL = QueueURL.fromServiceURL(serviceURL, queueName);
-  <span class="hljs-keyword">const</span> createQueueResponse = <span class="hljs-keyword">await</span> queueURL.create(Aborter.none);
+    sharedKeyCredential, {
+      <span class="hljs-attr">retryOptions</span>: { <span class="hljs-attr">maxTries</span>: <span class="hljs-number">4</span> }, <span class="hljs-comment">// Retry options</span>
+      telemetry: { <span class="hljs-attr">value</span>: <span class="hljs-string">"BasicSample/V11.0.0"</span> } <span class="hljs-comment">// Customized telemetry string</span>
+  });</code></pre>
+				<h3 id="list-queues-in-this-account">List queues in this account</h3>
+				<p>Use <code>QueueServiceClient.listContainers()</code> function to iterate the containers,
+				with the new <code>for-await-of</code> syntax:</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">let</span> iter1 = queueServiceClient.listQueues();
+  <span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> iter1) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Queue<span class="hljs-subst">${i}</span>: <span class="hljs-subst">${item.name}</span>`</span>);
+    i++;
+  }</code></pre>
+				<p>Alternatively without <code>for-await-of</code>:</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">let</span> iter2 = <span class="hljs-keyword">await</span> queueServiceClient.listQueues();
+  i = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">let</span> item = <span class="hljs-keyword">await</span> iter2.next();
+  <span class="hljs-keyword">while</span> (!item.done) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Queue<span class="hljs-subst">${i++}</span>: <span class="hljs-subst">${item.value.name}</span>`</span>);
+    item = <span class="hljs-keyword">await</span> iter2.next();
+  }</code></pre>
+				<p>For a complete sample on iterating queues please see <a href="./samples/iterators.ts">samples/iterators.ts</a>.</p>
+				<h3 id="create-a-new-queue">Create a new queue</h3>
+				<p>Use <code>QueueServiceClient.getQueueClient()</code> function to create a new queue.</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> queueName = <span class="hljs-string">`newqueue<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()}</span>`</span>;
+  <span class="hljs-keyword">const</span> queueClient = queueServiceClient.getQueueClient(queueName);
+  <span class="hljs-keyword">const</span> createQueueResponse = <span class="hljs-keyword">await</span> queueClient.create();
   <span class="hljs-built_in">console</span>.log(
     <span class="hljs-string">`Create queue <span class="hljs-subst">${queueName}</span> successfully, service assigned request Id: <span class="hljs-subst">${
       createQueueResponse.requestId
     }</span>`</span>
-  );
-
-  <span class="hljs-comment">// Enqueue a message into the queue using the enqueue method.</span>
-  <span class="hljs-keyword">const</span> messagesURL = MessagesURL.fromQueueURL(queueURL);
-  <span class="hljs-keyword">const</span> enqueueQueueResponse = <span class="hljs-keyword">await</span> messagesURL.enqueue(
-    Aborter.none,
+  );</code></pre>
+				<h3 id="send-a-message-to-the-queue">Send a message to the queue</h3>
+				<p>Send messages using a <code>MessageClient</code> instance which can be obtained by calling
+					<code>QueueClient.getMessagesClient()</code>. The returned response contains data about
+					the enqueued message, include a <code>messageId</code>, and a <code>popReceipt</code> that can be used
+				to update the message later.</p>
+				<pre><code class="language-javascript">  <span class="hljs-comment">// Enqueue a message into the queue using the enqueue method.</span>
+  <span class="hljs-keyword">const</span> messagesClient = queueClient.getMessagesClient();
+  <span class="hljs-keyword">const</span> enqueueQueueResponse = <span class="hljs-keyword">await</span> messagesClient.enqueue(
     <span class="hljs-string">"Hello World!"</span>
   );
   <span class="hljs-built_in">console</span>.log(
     <span class="hljs-string">`Enqueue message successfully, service assigned message Id: <span class="hljs-subst">${
       enqueueQueueResponse.messageId
     }</span>, service assigned request Id: <span class="hljs-subst">${enqueueQueueResponse.requestId}</span>`</span>
-  );
-
-  <span class="hljs-comment">// Peek a message using peek method.</span>
-  <span class="hljs-keyword">const</span> peekQueueResponse = <span class="hljs-keyword">await</span> messagesURL.peek(Aborter.none);
+  );</code></pre>
+				<h3 id="peek-a-message">Peek a message</h3>
+				<p><code>MessagesClient.peek()</code> allows looking at one or more messages in front of the queue. This call
+				doesn&#39;t prevent other code from accessing peeked messages.</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> peekQueueResponse = <span class="hljs-keyword">await</span> messagesClient.peek();
   <span class="hljs-built_in">console</span>.log(
     <span class="hljs-string">`The peeked message is: <span class="hljs-subst">${
       peekQueueResponse.peekedMessageItems[<span class="hljs-number">0</span>].messageText
     }</span>`</span>
-  );
-
-  <span class="hljs-comment">// You de-queue a message in two steps. Call GetMessage at which point the message becomes invisible to any other code reading messages</span>
-  <span class="hljs-comment">// from this queue for a default period of 30 seconds. To finish removing the message from the queue, you call DeleteMessage.</span>
-  <span class="hljs-comment">// This two-step process ensures that if your code fails to process a message due to hardware or software failure, another instance</span>
-  <span class="hljs-comment">// of your code can get the same message and try again.</span>
-  <span class="hljs-keyword">const</span> dequeueResponse = <span class="hljs-keyword">await</span> messagesURL.dequeue(Aborter.none);
+  );</code></pre>
+				<h3 id="processing-a-message">Processing a message</h3>
+				<p>Messages are processed in two steps.</p>
+				<ul>
+					<li>First call <code>MessagesClient.dequeue()</code>. This makes the messages invisible to other code reading messagse from this queue for a default period of 30 seconds.</li>
+					<li>When processing of a message is done, call <code>MessagesClient.delete()</code> with the message&#39;s <code>popReceipt</code>.</li>
+				</ul>
+				<p>If your code fails to process a message due to hardware or software failure, this two-step process ensures that another instance of your code can get the same message and try again.</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> dequeueResponse = <span class="hljs-keyword">await</span> messagesClient.dequeue();
   <span class="hljs-keyword">if</span> (dequeueResponse.dequeuedMessageItems.length == <span class="hljs-number">1</span>) {
     <span class="hljs-keyword">const</span> dequeueMessageItem = dequeueResponse.dequeuedMessageItems[<span class="hljs-number">0</span>];
     <span class="hljs-built_in">console</span>.log(
@@ -248,12 +232,10 @@
         dequeueMessageItem.messageText
       }</span>`</span>
     );
-    <span class="hljs-keyword">const</span> messageIdURL = MessageIdURL.fromMessagesURL(
-      messagesURL,
+    <span class="hljs-keyword">const</span> messageIdClient = messagesClient.getMessageIdClient(
       dequeueMessageItem.messageId
     );
-    <span class="hljs-keyword">const</span> deleteMessageResponse = <span class="hljs-keyword">await</span> messageIdURL.delete(
-      Aborter.none,
+    <span class="hljs-keyword">const</span> deleteMessageResponse = <span class="hljs-keyword">await</span> messageIdClient.delete(
       dequeueMessageItem.popReceipt
     );
     <span class="hljs-built_in">console</span>.log(
@@ -261,32 +243,51 @@
         deleteMessageResponse.requestId
       }</span>`</span>
     );
-  }
-
-  <span class="hljs-comment">// Delete the queue.</span>
-  <span class="hljs-keyword">const</span> deleteQueueResponse = <span class="hljs-keyword">await</span> queueURL.delete(Aborter.none);
+  }</code></pre>
+				<h3 id="delete-a-queue">Delete a queue</h3>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> deleteQueueResponse = <span class="hljs-keyword">await</span> queueClient.delete();
   <span class="hljs-built_in">console</span>.log(
     <span class="hljs-string">`Delete queue successfully, service assigned request Id: <span class="hljs-subst">${
       deleteQueueResponse.requestId
     }</span>`</span>
-  );
-}
-
-<span class="hljs-comment">// An async method returns a Promise object, which is compatible with then().catch() coding style.</span>
-main()
-  .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Successfully executed sample."</span>);
-  })
-  .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(err.message);
-  });</code></pre>
-				<h2 id="more-code-samples">More Code Samples</h2>
+  );</code></pre>
+				<p>A complete example of basic scenarios is at <a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/samples/basic.js">samples/basic.js</a>.</p>
+				<h2 id="troubleshooting">Troubleshooting</h2>
+				<p>It could help diagnozing issues by turning on the console logging. Here&#39;s an example logger implementation. First, add a custom logger:</p>
+				<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConsoleHttpPipelineLogger</span> </span>{
+  <span class="hljs-keyword">constructor</span>(minimumLogLevel) {
+    <span class="hljs-keyword">this</span>.minimumLogLevel = minimumLogLevel;
+  }
+  log(logLevel, message) {
+    <span class="hljs-keyword">const</span> logMessage = <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toISOString()}</span> <span class="hljs-subst">${HttpPipelineLogLevel[logLevel]}</span>: <span class="hljs-subst">${message}</span>`</span>;
+    <span class="hljs-keyword">switch</span> (logLevel) {
+      <span class="hljs-keyword">case</span> HttpPipelineLogLevel.ERROR:
+        <span class="hljs-built_in">console</span>.error(logMessage);
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> HttpPipelineLogLevel.WARNING:
+        <span class="hljs-built_in">console</span>.warn(logMessage);
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> HttpPipelineLogLevel.INFO:
+        <span class="hljs-built_in">console</span>.log(logMessage);
+        <span class="hljs-keyword">break</span>;
+    }
+  }
+}</code></pre>
+				<p>When creating the <code>QueueServiceClient</code> instance, pass the logger in the options</p>
+				<pre><code class="language-javascript">  <span class="hljs-keyword">const</span> queueServiceClient = <span class="hljs-keyword">new</span> QueueServiceClient(
+    <span class="hljs-string">`https://<span class="hljs-subst">${account}</span>.queue.core.windows.net`</span>,
+    sharedKeyCredential, {
+      <span class="hljs-attr">logger</span>: <span class="hljs-keyword">new</span> ConsoleHttpPipelineLogger(HttpPipelineLogLevel.INFO),
+    }
+  );</code></pre>
+				<h2 id="authenticating-with-azure-active-directory">Authenticating with Azure Active Directory</h2>
+				<p>If you have <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app">registered an application</a> with an Azure Active Directory tenant, you can <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad">assign it to an RBAC role</a> in your Azure Storage account.  This enables you to use the Azure.Identity library to authenticate with Azure Storage as shown in the <a href="./samples/azureAdAuth.ts">azureAdAuth.ts sample</a>.</p>
+				<h2 id="next-steps">Next steps</h2>
+				<p>More code samples</p>
 				<ul>
 					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/samples">Queue Storage Examples</a></li>
 					<li><a href="https://github.com/azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/test/">Queue Storage Examples - Test Cases</a></li>
 				</ul>
-				<h2 id="license">License</h2>
-				<p>This project is licensed under MIT.</p>
 				<h2 id="contributing">Contributing</h2>
 				<p>This project welcomes contributions and suggestions. Most contributions require you to agree to a
 					Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
@@ -355,13 +356,13 @@ main()
 						<a href="classes/messageid.html" class="tsd-kind-icon">Message<wbr>Id</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/messageidurl.html" class="tsd-kind-icon">Message<wbr>IdURL</a>
+						<a href="classes/messageidclient.html" class="tsd-kind-icon">Message<wbr>IdClient</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/messages.html" class="tsd-kind-icon">Messages</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/messagesurl.html" class="tsd-kind-icon">MessagesURL</a>
+						<a href="classes/messagesclient.html" class="tsd-kind-icon">Messages<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/pipeline.html" class="tsd-kind-icon">Pipeline</a>
@@ -370,10 +371,16 @@ main()
 						<a href="classes/queue.html" class="tsd-kind-icon">Queue</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/queueclient.html" class="tsd-kind-icon">Queue<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/queuesaspermissions.html" class="tsd-kind-icon">QueueSASPermissions</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/queueurl.html" class="tsd-kind-icon">QueueURL</a>
+						<a href="classes/queueserviceclient.html" class="tsd-kind-icon">Queue<wbr>Service<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/rawtokencredential.html" class="tsd-kind-icon">Raw<wbr>Token<wbr>Credential</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/retrypolicy.html" class="tsd-kind-icon">Retry<wbr>Policy</a>
@@ -388,19 +395,16 @@ main()
 						<a href="classes/service.html" class="tsd-kind-icon">Service</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/serviceurl.html" class="tsd-kind-icon">ServiceURL</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/sharedkeycredential.html" class="tsd-kind-icon">Shared<wbr>Key<wbr>Credential</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/sharedkeycredentialpolicy.html" class="tsd-kind-icon">Shared<wbr>Key<wbr>Credential<wbr>Policy</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/storageclientcontext.html" class="tsd-kind-icon">Storage<wbr>Client<wbr>Context</a>
+						<a href="classes/storageclient.html" class="tsd-kind-icon">Storage<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/storageurl.html" class="tsd-kind-icon">StorageURL</a>
+						<a href="classes/storageclientcontext.html" class="tsd-kind-icon">Storage<wbr>Client<wbr>Context</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/telemetrypolicy.html" class="tsd-kind-icon">Telemetry<wbr>Policy</a>
@@ -409,100 +413,139 @@ main()
 						<a href="classes/telemetrypolicyfactory.html" class="tsd-kind-icon">Telemetry<wbr>Policy<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/tokencredential.html" class="tsd-kind-icon">Token<wbr>Credential</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/tokencredentialpolicy.html" class="tsd-kind-icon">Token<wbr>Credential<wbr>Policy</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/uniquerequestidpolicy.html" class="tsd-kind-icon">Unique<wbr>RequestIDPolicy</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/uniquerequestidpolicyfactory.html" class="tsd-kind-icon">Unique<wbr>RequestIDPolicy<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iaccountsassignaturevalues.html" class="tsd-kind-icon">IAccountSASSignature<wbr>Values</a>
+						<a href="interfaces/accountsassignaturevalues.html" class="tsd-kind-icon">AccountSASSignature<wbr>Values</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iiprange.html" class="tsd-kind-icon">IIPRange</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/imetadata.html" class="tsd-kind-icon">IMetadata</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/inewpipelineoptions.html" class="tsd-kind-icon">INew<wbr>Pipeline<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipipelineoptions.html" class="tsd-kind-icon">IPipeline<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iqueuecreateoptions.html" class="tsd-kind-icon">IQueue<wbr>Create<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iqueuesassignaturevalues.html" class="tsd-kind-icon">IQueueSASSignature<wbr>Values</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/irequestlogoptions.html" class="tsd-kind-icon">IRequest<wbr>Log<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iretryoptions.html" class="tsd-kind-icon">IRetry<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iservicelistqueuessegmentoptions.html" class="tsd-kind-icon">IService<wbr>List<wbr>Queues<wbr>Segment<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/isignedidentifier.html" class="tsd-kind-icon">ISigned<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/itelemetryoptions.html" class="tsd-kind-icon">ITelemetry<wbr>Options</a>
+						<a href="interfaces/iprange.html" class="tsd-kind-icon">IPRange</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/messageiddeletemethodoptionalparams.html" class="tsd-kind-icon">Message<wbr>IdDelete<wbr>Method<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/messageiddeleteoptions.html" class="tsd-kind-icon">Message<wbr>IdDelete<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/messageidupdateoptionalparams.html" class="tsd-kind-icon">Message<wbr>IdUpdate<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/messageidupdateoptions.html" class="tsd-kind-icon">Message<wbr>IdUpdate<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/messagesclearoptionalparams.html" class="tsd-kind-icon">Messages<wbr>Clear<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/messagesclearoptions.html" class="tsd-kind-icon">Messages<wbr>Clear<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/messagesdequeueoptionalparams.html" class="tsd-kind-icon">Messages<wbr>Dequeue<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/messagesdequeueoptions.html" class="tsd-kind-icon">Messages<wbr>Dequeue<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/messagesenqueueoptionalparams.html" class="tsd-kind-icon">Messages<wbr>Enqueue<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/messagesenqueueoptions.html" class="tsd-kind-icon">Messages<wbr>Enqueue<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/messagespeekoptionalparams.html" class="tsd-kind-icon">Messages<wbr>Peek<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/messagespeekoptions.html" class="tsd-kind-icon">Messages<wbr>Peek<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/metadata.html" class="tsd-kind-icon">Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/newpipelineoptions.html" class="tsd-kind-icon">New<wbr>Pipeline<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pipelineoptions.html" class="tsd-kind-icon">Pipeline<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/proxyoptions.html" class="tsd-kind-icon">Proxy<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/queuecreateoptionalparams.html" class="tsd-kind-icon">Queue<wbr>Create<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/queuecreateoptions.html" class="tsd-kind-icon">Queue<wbr>Create<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/queuedeletemethodoptionalparams.html" class="tsd-kind-icon">Queue<wbr>Delete<wbr>Method<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/queuedeleteoptions.html" class="tsd-kind-icon">Queue<wbr>Delete<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/queuegetaccesspolicyoptionalparams.html" class="tsd-kind-icon">Queue<wbr>Get<wbr>Access<wbr>Policy<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/queuegetaccesspolicyoptions.html" class="tsd-kind-icon">Queue<wbr>Get<wbr>Access<wbr>Policy<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/queuegetpropertiesoptionalparams.html" class="tsd-kind-icon">Queue<wbr>Get<wbr>Properties<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/queuegetpropertiesoptions.html" class="tsd-kind-icon">Queue<wbr>Get<wbr>Properties<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/queuesassignaturevalues.html" class="tsd-kind-icon">QueueSASSignature<wbr>Values</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/queuesetaccesspolicyoptionalparams.html" class="tsd-kind-icon">Queue<wbr>Set<wbr>Access<wbr>Policy<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/queuesetaccesspolicyoptions.html" class="tsd-kind-icon">Queue<wbr>Set<wbr>Access<wbr>Policy<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/queuesetmetadataoptionalparams.html" class="tsd-kind-icon">Queue<wbr>Set<wbr>Metadata<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/queuesetmetadataoptions.html" class="tsd-kind-icon">Queue<wbr>Set<wbr>Metadata<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/requestlogoptions.html" class="tsd-kind-icon">Request<wbr>Log<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/retryoptions.html" class="tsd-kind-icon">Retry<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/servicegetpropertiesoptionalparams.html" class="tsd-kind-icon">Service<wbr>Get<wbr>Properties<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicegetpropertiesoptions.html" class="tsd-kind-icon">Service<wbr>Get<wbr>Properties<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/servicegetstatisticsoptionalparams.html" class="tsd-kind-icon">Service<wbr>Get<wbr>Statistics<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicegetstatisticsoptions.html" class="tsd-kind-icon">Service<wbr>Get<wbr>Statistics<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicelistqueuesoptions.html" class="tsd-kind-icon">Service<wbr>List<wbr>Queues<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicelistqueuessegmentnextoptionalparams.html" class="tsd-kind-icon">Service<wbr>List<wbr>Queues<wbr>Segment<wbr>Next<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/servicelistqueuessegmentoptionalparams.html" class="tsd-kind-icon">Service<wbr>List<wbr>Queues<wbr>Segment<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/servicesetpropertiesoptionalparams.html" class="tsd-kind-icon">Service<wbr>Set<wbr>Properties<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/servicesetpropertiesoptions.html" class="tsd-kind-icon">Service<wbr>Set<wbr>Properties<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/telemetryoptions.html" class="tsd-kind-icon">Telemetry<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#credentialpolicycreator" class="tsd-kind-icon">Credential<wbr>Policy<wbr>Creator</a>
@@ -583,6 +626,9 @@ main()
 						<a href="globals.html#appendtourlpath" class="tsd-kind-icon">append<wbr>ToURLPath</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#extractconnectionstringparts" class="tsd-kind-icon">extract<wbr>Connection<wbr>String<wbr>Parts</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#generateaccountsasqueryparameters" class="tsd-kind-icon">generate<wbr>AccountSASQuery<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-function">
@@ -601,7 +647,16 @@ main()
 						<a href="globals.html#iprangetostring" class="tsd-kind-icon">ip<wbr>Range<wbr>ToString</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#newpipeline" class="tsd-kind-icon">new<wbr>Pipeline</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#padstart" class="tsd-kind-icon">pad<wbr>Start</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#sanitizeheaders" class="tsd-kind-icon">sanitize<wbr>Headers</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#sanitizeurl" class="tsd-kind-icon">sanitizeURL</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#seturlhost" class="tsd-kind-icon">setURLHost</a>
@@ -746,6 +801,9 @@ main()
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#metadata" class="tsd-kind-icon">metadata</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#nextpagelink" class="tsd-kind-icon">next<wbr>Page<wbr>Link</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#numberofmessages" class="tsd-kind-icon">number<wbr>OfMessages</a>

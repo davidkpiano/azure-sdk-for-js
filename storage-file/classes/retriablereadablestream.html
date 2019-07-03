@@ -158,14 +158,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Retriable<wbr>Readable<wbr>Stream<span class="tsd-signature-symbol">(</span>aborter<span class="tsd-signature-symbol">: </span><a href="aborter.html" class="tsd-signature-type">Aborter</a>, source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadableStream</span>, getter<span class="tsd-signature-symbol">: </span><a href="../globals.html#readablestreamgetter" class="tsd-signature-type">ReadableStreamGetter</a>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/iretriablereadablestreamoptions.html" class="tsd-signature-type">IRetriableReadableStreamOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="retriablereadablestream.html" class="tsd-signature-type">RetriableReadableStream</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Retriable<wbr>Readable<wbr>Stream<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadableStream</span>, getter<span class="tsd-signature-symbol">: </span><a href="../globals.html#readablestreamgetter" class="tsd-signature-type">ReadableStreamGetter</a>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/retriablereadablestreamoptions.html" class="tsd-signature-type">RetriableReadableStreamOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="retriablereadablestream.html" class="tsd-signature-type">RetriableReadableStream</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides Readable.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-file/src/utils/RetriableReadableStream.ts#L56">utils/RetriableReadableStream.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-file/src/utils/RetriableReadableStream.ts#L60">utils/RetriableReadableStream.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -180,15 +180,6 @@
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
-								<li>
-									<h5>aborter: <a href="aborter.html" class="tsd-signature-type">Aborter</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Create a new Aborter instance with Aborter.none or Aborter.timeout(),
-											goto documents of Aborter for more examples about request cancellation</p>
-										</div>
-									</div>
-								</li>
 								<li>
 									<h5>source: <span class="tsd-signature-type">ReadableStream</span></h5>
 									<div class="tsd-comment tsd-typography">
@@ -223,7 +214,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/iretriablereadablestreamoptions.html" class="tsd-signature-type">IRetriableReadableStreamOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/retriablereadablestreamoptions.html" class="tsd-signature-type">RetriableReadableStreamOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="retriablereadablestream.html" class="tsd-signature-type">RetriableReadableStream</a></h4>
@@ -325,7 +316,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Readable._read</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/54c0f6eda/sdk/storage/storage-file/src/utils/RetriableReadableStream.ts#L101">utils/RetriableReadableStream.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/888a7a950/sdk/storage/storage-file/src/utils/RetriableReadableStream.ts#L103">utils/RetriableReadableStream.ts:103</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
