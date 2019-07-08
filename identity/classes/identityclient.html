@@ -88,11 +88,16 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="identityclient.html#authorityhost" class="tsd-kind-icon">authority<wbr>Host</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="identityclient.html#authenticateclientcertificate" class="tsd-kind-icon">authenticate<wbr>Client<wbr>Certificate</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="identityclient.html#authenticateclientsecret" class="tsd-kind-icon">authenticate<wbr>Client<wbr>Secret</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="identityclient.html#authenticatemanagedidentity" class="tsd-kind-icon">authenticate<wbr>Managed<wbr>Identity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="identityclient.html#createwebresource" class="tsd-kind-icon">create<wbr>Web<wbr>Resource</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="identityclient.html#sendtokenrequest" class="tsd-kind-icon">send<wbr>Token<wbr>Request</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="identityclient.html#getdefaultoptions" class="tsd-kind-icon">get<wbr>Default<wbr>Options</a></li>
 							</ul>
 						</section>
@@ -111,7 +116,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/6516e6939/sdk/identity/identity/src/client/identityClient.ts#L25">client/identityClient.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/be8fccf9e/sdk/identity/identity/src/client/identityClient.ts#L16">client/identityClient.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -126,106 +131,63 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="authorityhost" class="tsd-anchor"></a>
+					<h3>authority<wbr>Host</h3>
+					<div class="tsd-signature tsd-kind-icon">authority<wbr>Host<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/be8fccf9e/sdk/identity/identity/src/client/identityClient.ts#L16">client/identityClient.ts:16</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="authenticateclientcertificate" class="tsd-anchor"></a>
-					<h3>authenticate<wbr>Client<wbr>Certificate</h3>
+					<a name="createwebresource" class="tsd-anchor"></a>
+					<h3>create<wbr>Web<wbr>Resource</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">authenticate<wbr>Client<wbr>Certificate<span class="tsd-signature-symbol">(</span>tenantId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, clientId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, certificateString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, certificateX5t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, scopes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, getTokenOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">GetTokenOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessToken</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Web<wbr>Resource<span class="tsd-signature-symbol">(</span>requestOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPrepareOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WebResource</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/6516e6939/sdk/identity/identity/src/client/identityClient.ts#L255">client/identityClient.ts:255</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/be8fccf9e/sdk/identity/identity/src/client/identityClient.ts#L25">client/identityClient.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>tenantId: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>clientId: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>certificateString: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>certificateX5t: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>scopes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> getTokenOptions: <span class="tsd-signature-type">GetTokenOptions</span></h5>
+									<h5>requestOptions: <span class="tsd-signature-type">RequestPrepareOptions</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessToken</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">WebResource</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="authenticateclientsecret" class="tsd-anchor"></a>
-					<h3>authenticate<wbr>Client<wbr>Secret</h3>
+					<a name="sendtokenrequest" class="tsd-anchor"></a>
+					<h3>send<wbr>Token<wbr>Request</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">authenticate<wbr>Client<wbr>Secret<span class="tsd-signature-symbol">(</span>tenantId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, clientId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, clientSecret<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, scopes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, getTokenOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">GetTokenOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessToken</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">send<wbr>Token<wbr>Request<span class="tsd-signature-symbol">(</span>webResource<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WebResource</span>, expiresOnParser<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessToken</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/6516e6939/sdk/identity/identity/src/client/identityClient.ts#L179">client/identityClient.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/be8fccf9e/sdk/identity/identity/src/client/identityClient.ts#L31">client/identityClient.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>tenantId: <span class="tsd-signature-type">string</span></h5>
+									<h5>webResource: <span class="tsd-signature-type">WebResource</span></h5>
 								</li>
 								<li>
-									<h5>clientId: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>clientSecret: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>scopes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> getTokenOptions: <span class="tsd-signature-type">GetTokenOptions</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessToken</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="authenticatemanagedidentity" class="tsd-anchor"></a>
-					<h3>authenticate<wbr>Managed<wbr>Identity</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">authenticate<wbr>Managed<wbr>Identity<span class="tsd-signature-symbol">(</span>scopes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, checkIfImdsEndpointAvailable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, clientId<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, getTokenOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">GetTokenOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessToken</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/6516e6939/sdk/identity/identity/src/client/identityClient.ts#L208">client/identityClient.ts:208</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>scopes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li>
-									<h5>checkIfImdsEndpointAvailable: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> clientId: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> getTokenOptions: <span class="tsd-signature-type">GetTokenOptions</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> expiresOnParser: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessToken</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -242,7 +204,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/6516e6939/sdk/identity/identity/src/client/identityClient.ts#L309">client/identityClient.ts:309</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/be8fccf9e/sdk/identity/identity/src/client/identityClient.ts#L51">client/identityClient.ts:51</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/identityclientoptions.html" class="tsd-signature-type">IdentityClientOptions</a></h4>
@@ -290,14 +252,14 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="identityclient.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="identityclient.html#authenticateclientcertificate" class="tsd-kind-icon">authenticate<wbr>Client<wbr>Certificate</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="identityclient.html#authorityhost" class="tsd-kind-icon">authority<wbr>Host</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="identityclient.html#authenticateclientsecret" class="tsd-kind-icon">authenticate<wbr>Client<wbr>Secret</a>
+								<a href="identityclient.html#createwebresource" class="tsd-kind-icon">create<wbr>Web<wbr>Resource</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="identityclient.html#authenticatemanagedidentity" class="tsd-kind-icon">authenticate<wbr>Managed<wbr>Identity</a>
+								<a href="identityclient.html#sendtokenrequest" class="tsd-kind-icon">send<wbr>Token<wbr>Request</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 								<a href="identityclient.html#getdefaultoptions" class="tsd-kind-icon">get<wbr>Default<wbr>Options</a>
